@@ -128,10 +128,14 @@ async def entrypoint(ctx: agents.JobContext):
     session = AgentSession(
         stt=stt_lib.StreamAdapter(stt=FasterWhisperSTT(model=os.getenv("WHISPER_MODEL", "small.en")),
                                   vad=silero.VAD.load()),
-        llm=openai.LLM.with_ollama(
-            model=os.getenv("OLLAMA_MODEL", "qwen2.5:7b-instruct"),
-            base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")),
-        tts=inference.TTS(model=os.getenv("TTS_MODEL", "cartesia/sonic-3"), language="en"),
+        llm=openai.LLM(
+            model=os.getenv("OLLAMA_MODEL", "qwen3:14b"),
+            api_key="ollama",
+            base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1"),
+            # Ollama's native flag to turn off qwen3 reasoning; sent in the
+            # request body via the OpenAI-compatible endpoint.
+            extra_body={"think": False}),
+        tts=inference.TTS(model=os.getenv("TTS_MODEL", "cartesia/sonic-2"), language="en"),
         turn_detection="manual",
     )
 

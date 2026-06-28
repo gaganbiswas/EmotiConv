@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Conversation study</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #ffffff;
+        --line: rgba(0, 0, 0, 0.1);
+        --ink: #16181d;
+        --muted: #5b6470;
+        --green: #22c55e;
+        --green-deep: #16a34a;
+        --green-soft: rgba(34, 197, 94, 0.3);
+        --grey: #d3d8df;
+        --grey-ink: rgba(0, 0, 0, 0.42);
+        --wave: #3a4150;
+        --accent: #2f6fed;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
+        border-radius: 8px;
+      }
+
+      .screen {
+        display: none;
+        position: fixed;
+        inset: 0;
+      }
+      .screen.active {
+        display: flex;
+      }
+      .centered {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 26px;
+        text-align: center;
+        padding: 32px;
+      }
+
+      .lead {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: 650;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+      .sub {
+        font-size: 1rem;
+        line-height: 1.55;
+        color: var(--muted);
+        margin: 0;
+        max-width: 34ch;
+      }
+      .eyebrow {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0;
+      }
+
+      .form-screen {
+        flex-direction: column;
+      }
+      .formbar {
+        flex: 0 0 auto;
+        padding: 18px 24px;
+        text-align: center;
+        border-bottom: 1px solid var(--line);
+        background: #f6f7f9;
+      }
+      .formbar .eyebrow {
+        margin-bottom: 4px;
+      }
+      .formbar p {
+        margin: 0;
+        font-size: 1.02rem;
+        font-weight: 550;
+      }
+      .form-screen iframe {
+        flex: 1 1 auto;
+        width: 100%;
+        border: 0;
+        background: #fff;
+      }
+
+      #screen-session {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 32px;
+        text-align: center;
+      }
+
+      .stage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 34px;
+      }
+      .wave {
+        width: min(360px, 76vw);
+        height: 66px;
+        overflow: visible;
+        display: block;
+      }
+      .wave path {
+        fill: none;
+        stroke: var(--wave);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        opacity: 0.92;
+      }
+      .wave .amp {
+        transform: scaleY(0);
+        transform-box: fill-box;
+        transform-origin: center;
+        transition: transform 0.45s ease;
+      }
+      .wave .flow {
+        animation: none;
+      }
+      .stage[data-state="speaking"] .wave .amp {
+        transform: scaleY(1);
+      }
+      .stage[data-state="speaking"] .wave .flow {
+        animation: flow 2.6s linear infinite;
+      }
+      @keyframes flow {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-120px);
+        }
+      }
+      .stage[data-state="ended"] .wave path {
+        stroke: var(--grey);
+        opacity: 0.5;
+      }
+
+      #ptt {
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        background: var(--green);
+        box-shadow:
+          0 0 0 4px var(--green-soft),
+          0 8px 22px rgba(0, 0, 0, 0.14);
+        transition:
+          background 0.2s ease,
+          box-shadow 0.2s ease,
+          transform 0.12s ease;
+      }
+      #ptt svg {
+        width: 34px;
+        height: 34px;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      #ptt .check {
+        display: none;
+      }
+
+      .stage[data-state="ready"] #ptt {
+        background: var(--green);
+        box-shadow:
+          0 0 0 5px var(--green-soft),
+          0 0 0 1.5px rgba(255, 255, 255, 0.7) inset,
+          0 8px 24px rgba(34, 197, 94, 0.3);
+        animation: breathe 3.2s ease-in-out infinite;
+      }
+      .stage[data-state="ready"] #ptt:hover {
+        transform: translateY(-2px);
+      }
+      .stage[data-state="live"] #ptt {
+        background: var(--green-deep);
+        transform: scale(1.06);
+        box-shadow:
+          0 0 0 9px var(--green-soft),
+          0 8px 24px rgba(34, 197, 94, 0.38);
+      }
+      .stage[data-state="idle"] #ptt,
+      .stage[data-state="thinking"] #ptt,
+      .stage[data-state="speaking"] #ptt,
+      .stage[data-state="ended"] #ptt {
+        background: var(--grey);
+        box-shadow:
+          0 0 0 4px rgba(0, 0, 0, 0.06),
+          0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+      .stage[data-state="idle"] #ptt svg,
+      .stage[data-state="thinking"] #ptt svg,
+      .stage[data-state="speaking"] #ptt svg {
+        stroke: var(--grey-ink);
+      }
+      .stage[data-state="ended"] #ptt .mic {
+        display: none;
+      }
+      .stage[data-state="ended"] #ptt .check {
+        display: block;
+        stroke: var(--grey-ink);
+      }
+      #ptt:disabled {
+        cursor: default;
+      }
+      @keyframes breathe {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.03);
+        }
+      }
+
+      #status {
+        font-size: 1.25rem;
+        font-weight: 600;
+        min-height: 1.4em;
+        letter-spacing: -0.01em;
+      }
+      .instruct {
+        font-size: 0.9rem;
+        color: var(--muted);
+        max-width: 32ch;
+        line-height: 1.5;
+        min-height: 1.4em;
+      }
+
+      .btn {
+        padding: 15px 36px;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 12px;
+        color: #fff;
+        cursor: pointer;
+        background: var(--green);
+        box-shadow: 0 12px 36px var(--green-soft);
+        transition:
+          transform 0.12s ease,
+          opacity 0.2s ease;
+      }
+      .btn:hover:not(:disabled) {
+        transform: translateY(-2px);
+      }
+      .btn:disabled {
+        opacity: 0.55;
+        cursor: default;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="screen-welcome" class="screen centered">
+      <p class="eyebrow">Conversation study</p>
+      <p class="lead">Welcome, and thank you for taking part</p>
+      <p class="sub">
+        Please wait here. The researcher will start the study in a moment.
+      </p>
+    </section>
+
+    <section id="screen-demographic" class="screen form-screen">
+      <div class="formbar">
+        <p class="eyebrow">Step 1</p>
+        <p>A few quick questions before we begin</p>
+      </div>
+      <iframe
+        id="demoFrame"
+        title="Background questionnaire"
+        allow="fullscreen"
+      ></iframe>
+    </section>
+
+    <section id="screen-session" class="screen">
+      <div class="stage" id="stage" data-state="idle">
+        <svg
+          class="wave"
+          viewBox="0 0 240 60"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <g class="amp">
+            <g class="flow">
+              <path
+                d="M0 30 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"
+              />
+            </g>
+          </g>
+        </svg>
+        <button id="ptt" hidden aria-label="Hold to speak">
+          <svg class="mic" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="9" y="2.5" width="6" height="11" rx="3" />
+            <path d="M5 11a7 7 0 0 0 14 0" />
+            <line x1="12" y1="18" x2="12" y2="21.5" />
+            <line x1="8.5" y1="21.5" x2="15.5" y2="21.5" />
+          </svg>
+          <svg class="check" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 13l4 4 10-11" />
+          </svg>
+        </button>
+      </div>
+
+      <div id="status">Ready when you are</div>
+      <p class="instruct" id="instruct">
+        When the button turns green, press and hold it — or hold the spacebar —
+        while you talk, then let go.
+      </p>
+      <button id="start" class="btn">Start the conversation</button>
+      <audio id="agentAudio" autoplay></audio>
+    </section>
+
+    <section id="screen-survey" class="screen form-screen">
+      <div class="formbar">
+        <p class="eyebrow">After the conversation</p>
+        <p>Please tell us how that conversation felt</p>
+      </div>
+      <iframe
+        id="surveyFrame"
+        title="Post-conversation survey"
+        allow="fullscreen"
+      ></iframe>
+    </section>
+
+    <section id="screen-thanks" class="screen centered">
+      <p class="eyebrow">All done</p>
+      <p class="lead">Thank you</p>
+      <p class="sub">
+        That's the end of the study. We really appreciate your time and your
+        answers.
+      </p>
+    </section>
+
+    <script type="module">
+      import {
+        Room,
+        RoomEvent,
+        ParticipantKind,
+      } from "https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.esm.mjs";
+
+      const screens = {
+        welcome: document.getElementById("screen-welcome"),
+        demographic: document.getElementById("screen-demographic"),
+        session: document.getElementById("screen-session"),
+        survey: document.getElementById("screen-survey"),
+        thanks: document.getElementById("screen-thanks"),
+      };
+      const demoFrame = document.getElementById("demoFrame");
+      const surveyFrame = document.getElementById("surveyFrame");
+
+      function showScreen(page) {
+        for (const [name, el] of Object.entries(screens))
+          el.classList.toggle("active", name === page);
+      }
+      function setFrame(frame, url) {
+        const target = url || "about:blank";
+        if (frame.getAttribute("src") !== target)
+          frame.setAttribute("src", target);
+      }
+
+      const statusEl = document.getElementById("status");
+      const instructEl = document.getElementById("instruct");
+      const startBtn = document.getElementById("start");
+      const ptt = document.getElementById("ptt");
+      const stage = document.getElementById("stage");
+      const agentAudio = document.getElementById("agentAudio");
+
+      const setStatus = (t) => {
+        statusEl.textContent = t;
+      };
+      const setInstruct = (t) => {
+        instructEl.textContent = t;
+      };
+      const setStage = (s) => {
+        stage.dataset.state = s;
+      };
+
+      const voice = {
+        room: null,
+        agentId: null,
+        roomName: null,
+        talking: false,
+        ended: false,
+        agentReady: false,
+      };
+
+      function resetSessionUI() {
+        voice.talking = false;
+        voice.ended = false;
+        voice.agentReady = false;
+        voice.agentId = null;
+        startBtn.hidden = false;
+        startBtn.disabled = false;
+        ptt.hidden = true;
+        ptt.disabled = true;
+        setStage("idle");
+        setStatus("Ready when you are");
+        setInstruct(
+          "When the button turns green, press and hold it — or hold the spacebar — while you talk, then let go.",
+        );
+      }
+
+      async function teardownVoice() {
+        if (voice.room) {
+          try {
+            await voice.room.disconnect();
+          } catch (e) {}
+        }
+        voice.room = null;
+        voice.roomName = null;
+      }
+
+      function isAgent(p) {
+        return (
+          p.kind === ParticipantKind.AGENT ||
+          p.isAgent ||
+          (p.identity || "").startsWith("agent")
+        );
+      }
+
+      function applyAgentState(state) {
+        if (voice.ended) return;
+        voice.agentReady = state === "listening" || state === "idle";
+        if (voice.talking) return;
+        if (voice.agentReady) {
+          ptt.disabled = false;
+          setStage("ready");
+          setStatus("Your turn");
+          setInstruct(
+            "Press and hold the button (or the spacebar) and speak. Let go when you finish.",
+          );
+        } else {
+          ptt.disabled = true;
+          setStage(state === "thinking" ? "thinking" : "speaking");
+          setStatus(
+            state === "thinking" ? "One moment…" : "Companion is speaking",
+          );
+          setInstruct(
+            state === "thinking"
+              ? "Preparing a reply."
+              : "Please listen, then it will be your turn.",
+          );
+        }
+      }
+
+      function noSpeech() {
+        if (voice.ended || voice.talking) return;
+        setStatus("Sorry, I didn’t catch that");
+        setInstruct(
+          "Hold the button (or the spacebar) and speak clearly, then let go.",
+        );
+        voice.agentReady = true;
+        ptt.disabled = false;
+        setStage("ready");
+      }
+
+      function sessionComplete() {
+        if (voice.ended) return;
+        voice.ended = true;
+        ptt.disabled = true;
+        setStage("ended");
+        setStatus("Conversation complete");
+        setInstruct(
+          "Thank you. Please wait — the researcher will continue shortly.",
+        );
+      }
+
+      startBtn.onclick = async () => {
+        startBtn.disabled = true;
+        setStatus("Connecting…");
+        setInstruct("Please allow microphone access if asked.");
+        let url, token;
+        try {
+          const res = await fetch("/token");
+          if (!res.ok) throw new Error("no session");
+          ({ url, token } = await res.json());
+        } catch (e) {
+          setStatus("Not quite ready");
+          setInstruct("Please wait for the researcher.");
+          startBtn.disabled = false;
+          return;
+        }
+
+        const room = new Room();
+        voice.room = room;
+        room.on(RoomEvent.TrackSubscribed, (track) => {
+          if (track.kind === "audio") track.attach(agentAudio);
+        });
+        room.on(RoomEvent.ParticipantConnected, (p) => {
+          if (isAgent(p)) voice.agentId = p.identity;
+        });
+        room.on(RoomEvent.DataReceived, (payload, _p, _k, topic) => {
+          const msg = new TextDecoder().decode(payload);
+          if (topic === "agent_state") applyAgentState(msg);
+          else if (topic === "notice") {
+            if (msg === "no_speech") noSpeech();
+          } else if (msg === "session_ended") sessionComplete();
+        });
+        room.on(RoomEvent.Disconnected, () => {
+          if (!voice.ended) sessionComplete();
+        });
+
+        await room.connect(url, token);
+        await room.localParticipant.setMicrophoneEnabled(true);
+        for (const p of room.remoteParticipants.values())
+          if (isAgent(p)) voice.agentId = p.identity;
+
+        startBtn.hidden = true;
+        ptt.hidden = false;
+        ptt.disabled = true;
+        setStage("idle");
+        setStatus("Getting ready…");
+        setInstruct("Your companion will say hello in a moment.");
+      };
+
+      async function rpc(method) {
+        if (!voice.agentId || !voice.room) return;
+        try {
+          await voice.room.localParticipant.performRpc({
+            destinationIdentity: voice.agentId,
+            method,
+            payload: "",
+          });
+        } catch (e) {}
+      }
+
+      async function startTalk() {
+        if (voice.talking || voice.ended || ptt.disabled || !voice.agentReady)
+          return;
+        voice.talking = true;
+        setStage("live");
+        setStatus("Listening");
+        setInstruct("Keep holding while you talk. Let go when you finish.");
+        await rpc("start_turn");
+      }
+      async function stopTalk() {
+        if (!voice.talking) return;
+        voice.talking = false;
+        voice.agentReady = false;
+        ptt.disabled = true;
+        setStage("thinking");
+        setStatus("One moment…");
+        setInstruct("Preparing a reply.");
+        await rpc("end_turn");
+      }
+
+      const onSession = () => screens.session.classList.contains("active");
+      ptt.addEventListener("mousedown", startTalk);
+      ptt.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        startTalk();
+      });
+      window.addEventListener("mouseup", stopTalk);
+      ptt.addEventListener("touchend", (e) => {
+        e.preventDefault();
+        stopTalk();
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.code === "Space" && !e.repeat && onSession()) {
+          e.preventDefault();
+          startTalk();
+        }
+      });
+      window.addEventListener("keyup", (e) => {
+        if (e.code === "Space" && onSession()) {
+          e.preventDefault();
+          stopTalk();
+        }
+      });
+
+      let state = {};
+      function handle(s) {
+        const prev = state;
+        state = s;
+        if (s.page === "demographic") setFrame(demoFrame, s.demographic_url);
+        if (s.page === "survey") setFrame(surveyFrame, s.survey_url);
+        if (s.page === "session") {
+          if (s.room !== voice.roomName) {
+            teardownVoice().then(() => {
+              voice.roomName = s.room;
+              resetSessionUI();
+            });
+          }
+        } else if (prev.page === "session") {
+          teardownVoice();
+        }
+        showScreen(s.page);
+      }
+      const es = new EventSource("/events");
+      es.onmessage = (e) => {
+        try {
+          handle(JSON.parse(e.data));
+        } catch (err) {}
+      };
+    </script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-livekit-agents[google]~=1.5
+livekit-agents~=1.5
 livekit-plugins-silero~=1.5
 livekit-api~=1.0
 faster-whisper>=1.0

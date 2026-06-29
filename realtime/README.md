@@ -2,7 +2,7 @@
 
 Push-to-talk voice agent. Per user turn: faster-whisper transcribes the audio, the
 trained GAT classifies the user's emotion (+confidence), that signal is injected into
-the prompt, and a self-hosted Ollama LLM (Qwen2.5-7B-Instruct) generates an empathetic reply spoken via LiveKit TTS.
+the prompt, and Google Gemini 2.5 Flash (via LiveKit Inference) generates an empathetic reply spoken via LiveKit TTS.
 Each session runs for 15 turns (1 greeting + 7 user + 7 agent), logs every turn to
 `log.txt`, then ends and clears the in-session memory.
 
@@ -20,7 +20,7 @@ agent worker reads it straight off `ctx.room.name`.
 
 ## Pieces
 
-- `agent.py` — LiveKit agent (manual/push-to-talk turns, STT tee -> emotion -> Ollama LLM -> TTS, logging, turn limit, both conditions).
+- `agent.py` — LiveKit agent (manual/push-to-talk turns, STT tee -> emotion -> Gemini 2.5 Flash LLM -> TTS, logging, turn limit, both conditions).
 - `emotion_engine.py` — loads `../iemocap/model_4class/best.pt`, runs the causal GAT over the running user-turn context.
 - `stt_faster_whisper.py` — faster-whisper STT plugin.
 - `tts_qwen.py` — optional local Qwen3-TTS plugin (not currently wired; the agent uses LiveKit Inference TTS). Swap it back in if you want fully local TTS.
@@ -31,13 +31,11 @@ agent worker reads it straight off `ctx.room.name`.
 
 ## Setup
 
-1. A LiveKit Cloud project (gives `LIVEKIT_URL/API_KEY/API_SECRET`; LiveKit Inference TTS uses it).
-2. A self-hosted Ollama server (e.g. on another PC in the LAN) running the LLM. Set
-   `OLLAMA_MODEL` (default `qwen2.5:7b-instruct`) and `OLLAMA_BASE_URL`
-   (e.g. `http://192.168.1.50:11434/v1`). On the Ollama PC: `ollama pull qwen2.5:7b-instruct`,
-   and start it with `OLLAMA_HOST=0.0.0.0` so the LAN can reach it.
-3. Install deps (from repo root): `uv sync`.
-4. Copy `.env.example` to `.env` and fill in the keys.
+1. A LiveKit Cloud project (gives `LIVEKIT_URL/API_KEY/API_SECRET`; LiveKit Inference
+   serves both the LLM and TTS, so no separate provider key is needed). Optionally set
+   `LLM_MODEL` (default `google/gemini-2.5-flash`).
+2. Install deps (from repo root): `uv sync`.
+3. Copy `.env.example` to `.env` and fill in the keys.
 
 ## Run (quick, single session)
 
@@ -84,9 +82,9 @@ The server starts on the `welcome` screen; use the study console (below) or POST
 - Emotion model: IEMOCAP 4-class (`neutral, happy, angry, sad`).
   Point `EmotionEngine(ckpt_path=...)` elsewhere to use the 6-class or MELD checkpoint.
 - `WHISPER_MODEL` (default `small.en`), `TTS_MODEL` (default `cartesia/sonic-2s` via LiveKit
-  Inference), and `OLLAMA_MODEL` / `OLLAMA_BASE_URL` are env-configurable.
+  Inference), and `LLM_MODEL` (default `google/gemini-2.5-flash` via LiveKit Inference) are env-configurable.
 - The emotion graph uses the running context of **user** turns only (speaker 0); bot turns are not fed in.
 - `log.txt` is appended across sessions; only the model/dialogue memory is reset between sessions.
-- Pinned to `livekit-agents ~=1.5`. Running end-to-end needs LiveKit creds, a reachable Ollama server + a mic;
+- Pinned to `livekit-agents ~=1.5`. Running end-to-end needs LiveKit creds + a mic;
   if a method signature differs in your installed version (e.g. `commit_user_turn`, `inference.TTS`, `agent_state_changed`),
   adjust to that version's API.

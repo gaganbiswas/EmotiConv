@@ -5,7 +5,6 @@ import datetime
 import os
 from pathlib import Path
 
-import httpx
 import numpy as np
 import librosa
 from dotenv import load_dotenv
@@ -13,7 +12,7 @@ from livekit import agents, rtc
 from livekit.agents import (
     Agent, AgentServer, AgentSession, StopResponse, inference, stt as stt_lib,
 )
-from livekit.plugins import openai, silero
+from livekit.plugins import silero
 
 from emotion_engine import EmotionEngine
 from prompt import (
@@ -36,20 +35,6 @@ def get_engine() -> EmotionEngine:
     if _engine is None:
         _engine = EmotionEngine()
     return _engine
-
-async def warm_ollama() -> None:
-    """Load the model into memory and pin it so the first turn isn't a cold
-    start (which the LLM client gives up on with a 499)."""
-    base = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1").rstrip("/")
-    api = base[:-3] if base.endswith("/v1") else base  # native API root
-    model = os.getenv("OLLAMA_MODEL", "qwen3:14b")
-    try:
-        async with httpx.AsyncClient(timeout=300.0) as client:
-            await client.post(
-                f"{api}/api/generate",
-                json={"model": model, "prompt": "", "keep_alive": -1})
-    except Exception:
-        pass
 
 def parse_room(name: str) -> tuple[str, int]:
     parts = (name or "").split("-")
@@ -143,15 +128,7 @@ async def entrypoint(ctx: agents.JobContext):
     session = AgentSession(
         stt=stt_lib.StreamAdapter(stt=FasterWhisperSTT(model=os.getenv("WHISPER_MODEL", "small.en")),
                                   vad=silero.VAD.load()),
-        llm=openai.LLM(
-            model=os.getenv("OLLAMA_MODEL", "qwen3:14b"),
-            api_key="ollama",
-            base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1"),
-            # think=False turns off qwen3 reasoning; keep_alive=-1 keeps the
-            # model pinned in memory. Both sent in the request body via the
-            # OpenAI-compatible endpoint.
-            extra_body={"think": False, "keep_alive": -1},
-            timeout=httpx.Timeout(120.0)),
+        llm=inference.LLM(model=os.getenv("LLM_MODEL", "google/gemini-2.5-flash")),
         tts=inference.TTS(model=os.getenv("TTS_MODEL", "cartesia/sonic-2"), language="en"),
         turn_detection="manual",
     )
@@ -218,7 +195,6 @@ async def entrypoint(ctx: agents.JobContext):
         await session.commit_user_turn(transcript_timeout=10.0)
         return "ok"
 
-    await warm_ollama()
     await session.start(agent=agent, room=ctx.room)
     session.input.set_audio_enabled(False)
     await session.generate_reply(instructions=greeting)

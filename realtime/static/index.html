@@ -308,6 +308,18 @@
       ></iframe>
     </section>
 
+    <section id="screen-survey_b" class="screen form-screen">
+      <div class="formbar">
+        <p class="eyebrow">After the conversation</p>
+        <p>Please tell us how that conversation felt</p>
+      </div>
+      <iframe
+        id="surveyBFrame"
+        title="Post-conversation survey"
+        allow="fullscreen"
+      ></iframe>
+    </section>
+
     <section id="screen-thanks" class="screen centered">
       <p class="eyebrow">All done</p>
       <p class="lead">Thank you</p>
@@ -329,10 +341,12 @@
         demographic: document.getElementById("screen-demographic"),
         session: document.getElementById("screen-session"),
         survey: document.getElementById("screen-survey"),
+        survey_b: document.getElementById("screen-survey_b"),
         thanks: document.getElementById("screen-thanks"),
       };
       const demoFrame = document.getElementById("demoFrame");
       const surveyFrame = document.getElementById("surveyFrame");
+      const surveyBFrame = document.getElementById("surveyBFrame");
 
       function showScreen(page) {
         for (const [name, el] of Object.entries(screens))
@@ -560,6 +574,7 @@
         state = s;
         if (s.page === "demographic") setFrame(demoFrame, s.demographic_url);
         if (s.page === "survey") setFrame(surveyFrame, s.survey_url);
+        if (s.page === "survey_b") setFrame(surveyBFrame, s.survey_b_url);
         if (s.page === "session") {
           if (s.room !== voice.roomName) {
             teardownVoice().then(() => {

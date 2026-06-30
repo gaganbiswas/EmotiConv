@@ -56,7 +56,8 @@ HELP = """
     d  | demographic    show the demographic questionnaire
     a  | session a      start a session with condition A (empathetic + emotion classifier)
     b  | session b      start a session with condition B (plain control agent)
-    s  | survey         show the post-session survey
+    s  | survey         show the post-session survey (form A)
+    bs | survey b       show the second post-session survey (form B)
     t  | thanks         show the closing thank-you screen
     state               print the current experiment state
     h  | help           show this help
@@ -71,6 +72,8 @@ def console():
         print("  ⚠  demographic_url not set in realtime/study_config.json")
     if "REPLACE_WITH" in (state.get("survey_url") or "") or not state.get("survey_url"):
         print("  ⚠  survey_url not set in realtime/study_config.json")
+    if "REPLACE_WITH" in (state.get("survey_b_url") or "") or not state.get("survey_b_url"):
+        print("  ⚠  survey_b_url not set in realtime/study_config.json")
     print("  Type 'help' for commands, 'quit' to stop.")
     print("=" * 60)
     _show(state)
@@ -101,6 +104,8 @@ def console():
                 _show(_post("/control/session", {"condition": "control"}))
             elif cmd in ("s", "survey"):
                 _show(_post("/control/page", {"page": "survey"}))
+            elif cmd in ("bs", "survey b"):
+                _show(_post("/control/page", {"page": "survey_b"}))
             elif cmd in ("t", "thanks", "thankyou"):
                 _show(_post("/control/page", {"page": "thanks"}))
             else:

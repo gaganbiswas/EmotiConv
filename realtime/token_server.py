@@ -18,7 +18,7 @@ HERE = Path(__file__).resolve().parent
 CONFIG_PATH = HERE / "study_config.json"
 
 COND_CODE = {"empathetic": "emp", "control": "ctl"}
-PAGES = {"welcome", "demographic", "session", "survey", "thanks"}
+PAGES = {"welcome", "demographic", "session", "survey", "survey_b", "thanks"}
 
 def _load_config() -> dict:
     if CONFIG_PATH.exists():
@@ -26,7 +26,7 @@ def _load_config() -> dict:
             return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
         except Exception:
             pass
-    return {"demographic_url": "", "survey_url": ""}
+    return {"demographic_url": "", "survey_url": "", "survey_b_url": ""}
 
 def _embed(url: str) -> str:
     if not url or "embed" in url:
@@ -39,6 +39,7 @@ class Study:
         cfg = _load_config()
         self.demographic_url = _embed(cfg.get("demographic_url", ""))
         self.survey_url = _embed(cfg.get("survey_url", ""))
+        self.survey_b_url = _embed(cfg.get("survey_b_url", ""))
         self.page = "welcome"
         self.condition: str | None = None
         self.session_no = 0
@@ -54,6 +55,7 @@ class Study:
             "room": self.room,
             "demographic_url": self.demographic_url,
             "survey_url": self.survey_url,
+            "survey_b_url": self.survey_b_url,
             "rev": self.rev,
         }
 

@@ -62,14 +62,14 @@ def _frames_to_16k(frames):
         data = librosa.resample(data, orig_sr=combined.sample_rate, target_sr=16000)
     return data.astype(np.float32)
 
-def _fmt_scores(scores):
-    return " ".join(f"{emo}={p:.2f}" for emo, p in scores.items())
+def _top_emotion(scores):
+    return max(scores, key=scores.get)
 
 def _write_log(condition, session_no, turn, user_text, scores, response):
     ts = datetime.datetime.now().isoformat(timespec="seconds")
-    emo = _fmt_scores(scores) if scores else "n/a"
+    emo = _top_emotion(scores) if scores else "n/a"
     line = (f"[{ts}] session {session_no} ({condition}) | turn {turn} | "
-            f"user: {user_text!r} | emotions: {emo} | assistant: {response!r}\n")
+            f"user: {user_text!r} | emotion: {emo} | assistant: {response!r}\n")
     with LOG_PATH.open("a", encoding="utf-8") as f:
         f.write(line)
 
@@ -104,7 +104,7 @@ class StudyAgent(Agent):
         scores = None
         if self.engine is not None:
             scores = self.engine.add_user_turn(text, wav)
-            new_message.content = [f"[emotions {_fmt_scores(scores)}] {text}"]
+            new_message.content = [f"[emotion={_top_emotion(scores)}] {text}"]
         self.user_turns += 1
         self._pending = {"turn": self.user_turns, "user": text, "scores": scores}
 

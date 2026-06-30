@@ -3,6 +3,7 @@ from __future__ import annotations
 import asyncio
 import datetime
 import os
+import re
 from pathlib import Path
 
 import numpy as np
@@ -62,14 +63,37 @@ def _frames_to_16k(frames):
         data = librosa.resample(data, orig_sr=combined.sample_rate, target_sr=16000)
     return data.astype(np.float32)
 
-def _top_emotion(scores):
-    return max(scores, key=scores.get)
+def _emotion_tag(scores):
+    emo = max(scores, key=scores.get)
+    return f"emotion={emo} confidence={scores[emo]:.2f}"
+
+# Matches an emotion tag the model may have echoed back, e.g. "[emotion=sad confidence=0.70]".
+_TAG_RE = re.compile(r"\[\s*emotion=[^\]]*\]\s*", re.IGNORECASE)
+
+def _strip_tag(text):
+    return _TAG_RE.sub("", text or "").strip()
+
+async def _strip_tag_stream(text):
+    """Remove any echoed emotion tag from the LLM text stream before it reaches TTS,
+    holding back only an unclosed '[...]' so a tag split across chunks is caught."""
+    buf = ""
+    async for chunk in text:
+        buf += chunk
+        idx = buf.rfind("[")
+        if idx != -1 and "]" not in buf[idx:]:
+            out, buf = buf[:idx], buf[idx:]  # keep the open bracket until it closes
+        else:
+            out, buf = buf, ""
+        if out:
+            yield _TAG_RE.sub("", out)
+    if buf:
+        yield _TAG_RE.sub("", buf)
 
 def _write_log(condition, session_no, turn, user_text, scores, response):
     ts = datetime.datetime.now().isoformat(timespec="seconds")
-    emo = _top_emotion(scores) if scores else "n/a"
+    emo = _emotion_tag(scores) if scores else "n/a"
     line = (f"[{ts}] session {session_no} ({condition}) | turn {turn} | "
-            f"user: {user_text!r} | emotion: {emo} | assistant: {response!r}\n")
+            f"user: {user_text!r} | {emo} | assistant: {_strip_tag(response)!r}\n")
     with LOG_PATH.open("a", encoding="utf-8") as f:
         f.write(line)
 
@@ -93,6 +117,10 @@ class StudyAgent(Agent):
         async for ev in Agent.default.stt_node(self, tee(), model_settings):
             yield ev
 
+    async def tts_node(self, text, model_settings):
+        async for frame in Agent.default.tts_node(self, _strip_tag_stream(text), model_settings):
+            yield frame
+
     async def on_user_turn_completed(self, turn_ctx, new_message):
         text = (new_message.text_content or "").strip()
         wav = _frames_to_16k(self._turn_audio)
@@ -104,7 +132,7 @@ class StudyAgent(Agent):
         scores = None
         if self.engine is not None:
             scores = self.engine.add_user_turn(text, wav)
-            new_message.content = [f"[emotion={_top_emotion(scores)}] {text}"]
+            new_message.content = [f"[{_emotion_tag(scores)}] {text}"]
         self.user_turns += 1
         self._pending = {"turn": self.user_turns, "user": text, "scores": scores}
 

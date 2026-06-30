@@ -131,7 +131,9 @@ class StudyAgent(Agent):
             raise StopResponse()
         scores = None
         if self.engine is not None:
-            scores = self.engine.add_user_turn(text, wav)
+            # BERT + GAT inference is CPU-bound; keep it off the event loop so the
+            # LiveKit RTC transport (data channels) isn't starved mid-turn.
+            scores = await asyncio.to_thread(self.engine.add_user_turn, text, wav)
             new_message.content = [f"[{_emotion_tag(scores)}] {text}"]
         self.user_turns += 1
         self._pending = {"turn": self.user_turns, "user": text, "scores": scores}

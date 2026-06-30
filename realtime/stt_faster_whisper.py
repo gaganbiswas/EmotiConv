@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import asyncio
+
 import numpy as np
 import librosa
 from livekit import rtc
@@ -23,11 +25,16 @@ class FasterWhisperSTT(stt.STT):
 
     async def _recognize_impl(self, buffer, *, language=None, conn_options=None, **kwargs):
         audio = _buffer_to_16k(buffer)
-        text = ""
-        if audio.size:
-            segments, _ = self._model.transcribe(audio, language=language or self._language, beam_size=1)
-            text = " ".join(s.text for s in segments).strip()
+        lang = language or self._language
+
+        def _transcribe():
+            # Runs in a worker thread; the generator must be consumed here so the
+            # actual (blocking) inference does not run on the event loop.
+            segments, _ = self._model.transcribe(audio, language=lang, beam_size=1)
+            return " ".join(s.text for s in segments).strip()
+
+        text = await asyncio.to_thread(_transcribe) if audio.size else ""
         return stt.SpeechEvent(
             type=stt.SpeechEventType.FINAL_TRANSCRIPT,
-            alternatives=[stt.SpeechData(language=language or self._language, text=text)],
+            alternatives=[stt.SpeechData(language=lang, text=text)],
         )

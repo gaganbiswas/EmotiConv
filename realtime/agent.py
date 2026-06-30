@@ -157,7 +157,7 @@ async def entrypoint(ctx: agents.JobContext):
         stt=stt_lib.StreamAdapter(stt=FasterWhisperSTT(model=os.getenv("WHISPER_MODEL", "small.en")),
                                   vad=silero.VAD.load()),
         llm=inference.LLM(model=os.getenv("LLM_MODEL", "google/gemini-2.5-flash")),
-        tts=inference.TTS(model=os.getenv("TTS_MODEL", "cartesia/sonic-2"), language="en"),
+        tts=inference.TTS(model=os.getenv("TTS_MODEL", "cartesia/sonic-3"), language="en", voice="9626c31c-bec5-4cca-baa8-f8ba9e84c8bc"),
         turn_detection="manual",
     )
 

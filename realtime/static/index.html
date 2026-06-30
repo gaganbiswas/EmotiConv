@@ -16,7 +16,6 @@
         --green-soft: rgba(34, 197, 94, 0.3);
         --grey: #d3d8df;
         --grey-ink: rgba(0, 0, 0, 0.42);
-        --wave: #3a4150;
         --accent: #2f6fed;
       }
       * {
@@ -124,47 +123,6 @@
         align-items: center;
         gap: 34px;
       }
-      .wave {
-        width: min(360px, 76vw);
-        height: 66px;
-        overflow: visible;
-        display: block;
-      }
-      .wave path {
-        fill: none;
-        stroke: var(--wave);
-        stroke-width: 2.5;
-        stroke-linecap: round;
-        opacity: 0.92;
-      }
-      .wave .amp {
-        transform: scaleY(0);
-        transform-box: fill-box;
-        transform-origin: center;
-        transition: transform 0.45s ease;
-      }
-      .wave .flow {
-        animation: none;
-      }
-      .stage[data-state="speaking"] .wave .amp {
-        transform: scaleY(1);
-      }
-      .stage[data-state="speaking"] .wave .flow {
-        animation: flow 2.6s linear infinite;
-      }
-      @keyframes flow {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-120px);
-        }
-      }
-      .stage[data-state="ended"] .wave path {
-        stroke: var(--grey);
-        opacity: 0.5;
-      }
-
       #ptt {
         width: 92px;
         height: 92px;
@@ -316,20 +274,6 @@
 
     <section id="screen-session" class="screen">
       <div class="stage" id="stage" data-state="idle">
-        <svg
-          class="wave"
-          viewBox="0 0 240 60"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <g class="amp">
-            <g class="flow">
-              <path
-                d="M0 30 q 30 -22 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0"
-              />
-            </g>
-          </g>
-        </svg>
         <button id="ptt" hidden aria-label="Hold to speak">
           <svg class="mic" viewBox="0 0 24 24" aria-hidden="true">
             <rect x="9" y="2.5" width="6" height="11" rx="3" />

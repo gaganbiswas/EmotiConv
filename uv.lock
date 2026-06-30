@@ -681,7 +681,7 @@ dependencies = [
     { name = "fastapi" },
     { name = "faster-whisper" },
     { name = "librosa" },
-    { name = "livekit-agents", extra = ["openai"] },
+    { name = "livekit-agents" },
     { name = "livekit-api" },
     { name = "livekit-plugins-silero" },
     { name = "noisereduce" },
@@ -701,7 +701,7 @@ requires-dist = [
     { name = "fastapi", specifier = ">=0.110" },
     { name = "faster-whisper", specifier = ">=1.0" },
     { name = "librosa", specifier = ">=0.11.0" },
-    { name = "livekit-agents", extras = ["openai"], specifier = "~=1.5" },
+    { name = "livekit-agents", specifier = "~=1.5" },
     { name = "livekit-api", specifier = "~=1.0" },
     { name = "livekit-plugins-silero", specifier = "~=1.5" },
     { name = "noisereduce", specifier = ">=3.0" },
@@ -1543,17 +1543,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/e4/bb/c50992829fadd273fed66ae761f87ed4296fdd37eba0d0bc8c79cdddd896/livekit_agents-1.6.4-py3-none-any.whl", hash = "sha256:5341849645f768ed8bd1d276688f2b6ea0e72574e2aab7206d4e18c5628a97cd", size = 2669501, upload-time = "2026-06-24T20:49:22.119Z" },
 ]
 
-[package.optional-dependencies]
-codecs = [
-    { name = "numpy" },
-]
-images = [
-    { name = "pillow" },
-]
-openai = [
-    { name = "livekit-plugins-openai" },
-]
-
 [[package]]
 name = "livekit-api"
 version = "1.1.1"
@@ -1627,19 +1616,6 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/ba/9a/7cdf1a77d5fd80e06533d4f2584c45d2c978f1249338969f814502db45ad/livekit_local_inference-0.2.6-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:80dc582413d816c86a0620410c2bfc3234e782a49d2b07b4bed0ff6285bdf4a1", size = 34824215, upload-time = "2026-06-24T16:55:45.02Z" },
     { url = "https://files.pythonhosted.org/packages/86/f2/0207071f236f639cf9515838ce98cfc3a8c1b19db8e6f46350e7231f2200/livekit_local_inference-0.2.6-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:9c148ec2735e903dc00e37dc2580e0417f67ec7ee4be119dca7844b104afbfe9", size = 34868380, upload-time = "2026-06-24T16:55:48.119Z" },
     { url = "https://files.pythonhosted.org/packages/1e/91/c194db20c8e9272cadf0913d42392cda5eec5e78a14820a3fa678e42e4b6/livekit_local_inference-0.2.6-cp314-cp314-win_amd64.whl", hash = "sha256:4140e4fd60dd7b7d69a55e1d454d5d893f8ffe026c30e0d7cd31fa42b10d5621", size = 34914243, upload-time = "2026-06-24T16:55:51.322Z" },
-]
-
-[[package]]
-name = "livekit-plugins-openai"
-version = "1.6.4"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "livekit-agents", extra = ["codecs", "images"] },
-    { name = "openai", extra = ["realtime"] },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/e9/63/d27b63ccf068c2a0cbfdede4e2173e3295ae8b795b36c150baf35c7ca97c/livekit_plugins_openai-1.6.4.tar.gz", hash = "sha256:d9e3f537f38e61fa36a44061d87fc4c7ad3e2a89cf2c7bb9d1d7fed0042bb068", size = 45310, upload-time = "2026-06-24T20:50:48.173Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/db/a0/2ac8471ee3a09d297a34fb2a7cb10581bfdb1454f84020be16634193f91c/livekit_plugins_openai-1.6.4-py3-none-any.whl", hash = "sha256:5667a52e5158e9594c3b71a7da37961a0daf5bd2648f0055854bc1837372a47b", size = 52120, upload-time = "2026-06-24T20:50:46.93Z" },
 ]
 
 [[package]]
@@ -2415,11 +2391,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/49/f5/7c7cb955305cb41f7f3c5fd7e0e38bf6bbf2658468863d4b7b868a5cb8df/openai-2.44.0.tar.gz", hash = "sha256:68a5a5ffad82b8ff7d451c437529fb64f7c3b8123aaf0c021966a882d9e3947d", size = 988753, upload-time = "2026-06-24T20:56:02.293Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ae/f4/561ed79fd94876160018a5e75254cfcb9b0e62d4dded9dcb20072e86d623/openai-2.44.0-py3-none-any.whl", hash = "sha256:0a2a3ab2e29aeda368700f662ff9ba0f9df17ba4c54577a64e08b8115a3cc0ad", size = 1366216, upload-time = "2026-06-24T20:55:58.882Z" },
-]
-
-[package.optional-dependencies]
-realtime = [
-    { name = "websockets" },
 ]
 
 [[package]]

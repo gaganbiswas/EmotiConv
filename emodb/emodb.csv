@@ -1,0 +1,817 @@
+dialog_id,uttr_id,actor,session,gender,audio_path,transcript,emotion,start_time,end_time
+03a01Fa,03a01Fa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a01Fa.wav,The rag is on the fridge.,happy,0.0,1.89825
+03a01Nc,03a01Nc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a01Nc.wav,The bottle cap is on the fridge.,neutral,0.0,1.61125
+03a01Wa,03a01Wa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a01Wa.wav,The rag is on the fridge!,angry,0.0,1.877812
+03a02Fc,03a02Fc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a02Fc.wav,She wants to give it away on Wednesday!,happy,0.0,2.00625
+03a02Nc,03a02Nc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a02Nc.wav,She wants to give it away on Wednesday.,neutral,0.0,1.4398119999999999
+03a02Ta,03a02Ta,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a02Ta.wav,She wants to give it away on Wednesday.,sad,0.0,1.735687
+03a02Wb,03a02Wb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a02Wb.wav,She wants to give it away on Wednesday!,angry,0.0,2.123625
+03a02Wc,03a02Wc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a02Wc.wav,She wants to give it away on Wednesday!,angry,0.0,1.498062
+03a04Ad,03a04Ad,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Ad.wav,I could tell him tonight!,fear,0.0,1.504874
+03a04Fd,03a04Fd,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Fd.wav,I could tell him tonight.,happy,0.0,1.696812
+03a04Lc,03a04Lc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Lc.wav,I could tell him tonight.,boredom,0.0,1.931
+03a04Nc,03a04Nc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Nc.wav,I could tell him tonight.,neutral,0.0,1.561312
+03a04Ta,03a04Ta,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Ta.wav,I could tell him tonight.,sad,0.0,2.063562
+03a04Wc,03a04Wc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Wc.wav,I could tell him tonight!,angry,0.0,2.044125
+03a05Aa,03a05Aa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05Aa.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,3.087625
+03a05Fc,03a05Fc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05Fc.wav,The black sheet of paper is up there next to the piece of wood.,happy,0.0,3.196187
+03a05Nd,03a05Nd,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05Nd.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.168
+03a05Tc,03a05Tc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05Tc.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,3.497812
+03a05Wa,03a05Wa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05Wa.wav,The black sheet of paper is up there next to the piece of wood.,angry,0.0,3.44075
+03a05Wb,03a05Wb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05Wb.wav,The black sheet of paper is up there next to the piece of wood.,angry,0.0,2.96225
+03a07Fa,03a07Fa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a07Fa.wav,It will be ready in 7 hours!,happy,0.0,2.133812
+03a07Fb,03a07Fb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a07Fb.wav,It will be ready in 7 hours!,happy,0.0,2.449875
+03a07La,03a07La,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a07La.wav,In seven hours it will be ready.,boredom,0.0,2.401562
+03a07Nc,03a07Nc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a07Nc.wav,It will be ready in 7 hours.,neutral,0.0,1.788125
+03a07Wc,03a07Wc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a07Wc.wav,It will be done in 7 hours!,angry,0.0,2.087562
+03b01Fa,03b01Fa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Fa.wav,What kind of bags are under the table?,happy,0.0,2.362187
+03b01Lb,03b01Lb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Lb.wav,What are those bags under the table?,boredom,0.0,2.878937
+03b01Nb,03b01Nb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Nb.wav,What kind of bags are under the table?,neutral,0.0,2.389187
+03b01Td,03b01Td,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Td.wav,What are those bags under the table?,sad,0.0,3.390687
+03b01Wa,03b01Wa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Wa.wav,What kind of bags are under the table?,angry,0.0,2.179812
+03b01Wc,03b01Wc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Wc.wav,What kind of bags are under the table?,angry,0.0,2.92925
+03b02Aa,03b02Aa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b02Aa.wav,They just carried it up and now they're going down again!,fear,0.0,3.084812
+03b02La,03b02La,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b02La.wav,They just carried it up and now they're going down again.,boredom,0.0,3.4648120000000002
+03b02Na,03b02Na,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b02Na.wav,You just carried it up and now you go down again.,neutral,0.0,2.945312
+03b02Tb,03b02Tb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b02Tb.wav,They have just carried it up and now they are going down again.,sad,0.0,5.126874
+03b02Wb,03b02Wb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b02Wb.wav,They just carried it up and now they're going down again.,angry,0.0,3.184062
+03b03Nb,03b03Nb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03Nb.wav,At the weekends I always went home and visited Agnes.,neutral,0.0,3.6445
+03b03Tc,03b03Tc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03Tc.wav,At the weekends I always went home and visited Agnes.,sad,0.0,5.2993120000000005
+03b03Wc,03b03Wc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03Wc.wav,On the weekends I always went home and visited Agnes.,angry,0.0,3.847437
+03b09La,03b09La,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b09La.wav,I just want to take it away and go for a drink with Karl.,boredom,0.0,3.112687
+03b09Nc,03b09Nc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b09Nc.wav,I just want to take it away and then go for a drink with Karl.,neutral,0.0,2.588562
+03b09Tc,03b09Tc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b09Tc.wav,I just want to take it away and then go for a drink with Karl.,sad,0.0,3.9471249999999998
+03b09Wa,03b09Wa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b09Wa.wav,I just want to get rid of it and then go for a drink with Karl!,angry,0.0,2.89375
+03b10Ab,03b10Ab,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Ab.wav,She will be on the place where we always put her!,fear,0.0,2.82825
+03b10Ec,03b10Ec,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Ec.wav,It will be on the place where we always put it.,disgust,0.0,3.202
+03b10Na,03b10Na,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Na.wav,It will be on the place where we always put it.,neutral,0.0,2.256437
+03b10Nc,03b10Nc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Nc.wav,It will be on the place where we always put it.,neutral,0.0,2.217687
+03b10Wb,03b10Wb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Wb.wav,She will be on the spot where we always put her!,angry,0.0,2.166437
+03b10Wc,03b10Wc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Wc.wav,It will be on the spot where we always put it!,angry,0.0,2.442
+08a01Ab,08a01Ab,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Ab.wav,The rag is on the fridge.,fear,0.0,1.8540619999999999
+08a01Fd,08a01Fd,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Fd.wav,The pacifier is on the fridge.,happy,0.0,2.29975
+08a01Lc,08a01Lc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Lc.wav,The lamp is lying on the icebox.,boredom,0.0,2.017062
+08a01Na,08a01Na,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Na.wav,The rag is on the fridge.,neutral,0.0,1.7645
+08a01Wa,08a01Wa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Wa.wav,The rag is on the fridge!,angry,0.0,1.612812
+08a01Wc,08a01Wc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Wc.wav,The rag is on the fridge!,angry,0.0,1.6909999999999998
+08a02Ab,08a02Ab,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02Ab.wav,That's what she wants to give away at lunch!,fear,0.0,1.584
+08a02Ac,08a02Ac,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02Ac.wav,I want to give it away on Wednesday!,fear,0.0,1.686312
+08a02Fe,08a02Fe,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02Fe.wav,that we will give them away on Wednesday.,happy,0.0,1.6195
+08a02La,08a02La,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02La.wav,She wants to give it away on Wednesday.,boredom,0.0,1.7337500000000001
+08a02Na,08a02Na,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02Na.wav,She wants to give it away on Wednesday.,neutral,0.0,1.790625
+08a02Tb,08a02Tb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02Tb.wav,that we give it away on Wednesday.,sad,0.0,3.046562
+08a02Wc,08a02Wc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02Wc.wav,that we'll give them away on Wednesday!,angry,0.0,1.867187
+08a04Ff,08a04Ff,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a04Ff.wav,I could tell him tonight.,happy,0.0,1.8006250000000001
+08a04La,08a04La,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a04La.wav,Tonight I could tell him.,boredom,0.0,2.085875
+08a04Nc,08a04Nc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a04Nc.wav,Tonight I could tell him.,neutral,0.0,2.03325
+08a04Tb,08a04Tb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a04Tb.wav,I could tell him tonight.,sad,0.0,3.837187
+08a04Wc,08a04Wc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a04Wc.wav,I could tell him tonight!,angry,0.0,1.804937
+08a05Fe,08a05Fe,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a05Fe.wav,The black sheet of paper is up there next to the piece of wood.,happy,0.0,3.098687
+08a05Lc,08a05Lc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a05Lc.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,4.188375
+08a05Nb,08a05Nb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a05Nb.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.252812
+08a05Ta,08a05Ta,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a05Ta.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,5.621437
+08a05Wa,08a05Wa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a05Wa.wav,The black sheet of paper is up there next to the piece of wood.,angry,0.0,2.9291869999999998
+08a07Fd,08a07Fd,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a07Fd.wav,It will be ready in 7 hours.,happy,0.0,1.9630619999999999
+08a07La,08a07La,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a07La.wav,In seven hours it will be time.,boredom,0.0,2.523812
+08a07Na,08a07Na,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a07Na.wav,It will be ready in 7 hours.,neutral,0.0,2.083937
+08a07Ta,08a07Ta,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a07Ta.wav,In seven hours it will be time.,sad,0.0,3.4627499999999998
+08a07Tb,08a07Tb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a07Tb.wav,In seven hours it will be time.,sad,0.0,4.023562
+08a07Wc,08a07Wc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a07Wc.wav,It will be done in 7 hours!,angry,0.0,2.219312
+08b01Aa,08b01Aa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b01Aa.wav,What are those bags under the table?,fear,0.0,2.676875
+08b01Fd,08b01Fd,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b01Fd.wav,What kind of bags are under the table?,happy,0.0,2.481937
+08b01Fe,08b01Fe,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b01Fe.wav,What are those bags under the table?,happy,0.0,2.51575
+08b01Lb,08b01Lb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b01Lb.wav,What are those bags under the table?,boredom,0.0,3.487375
+08b01Na,08b01Na,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b01Na.wav,What are those bags under the table?,neutral,0.0,2.354
+08b01Wa,08b01Wa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b01Wa.wav,What are those bags under the table?,angry,0.0,3.3085
+08b02Ff,08b02Ff,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b02Ff.wav,You just carried it up and now you go down again.,happy,0.0,2.771125
+08b02La,08b02La,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b02La.wav,You just carried it up and now you go down again.,boredom,0.0,3.45775
+08b02Nb,08b02Nb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b02Nb.wav,You have just carried it up and now you go down again.,neutral,0.0,3.0555
+08b02Tc,08b02Tc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b02Tc.wav,They have just carried it up and now they are going down again.,sad,0.0,7.679437
+08b02Wd,08b02Wd,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b02Wd.wav,You just carried it up and now you're going down again!,angry,0.0,3.584
+08b03Fe,08b03Fe,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b03Fe.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.616062
+08b03Lc,08b03Lc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b03Lc.wav,At the weekends I always went home and visited Agnes.,boredom,0.0,4.525812
+08b03Nb,08b03Nb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b03Nb.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.721687
+08b03Tc,08b03Tc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b03Tc.wav,At the weekends I always went home and visited Agnes.,sad,0.0,8.97825
+08b03Wd,08b03Wd,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b03Wd.wav,On the weekends I always went home and visited Agnes.,angry,0.0,4.08125
+08b09Ab,08b09Ab,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b09Ab.wav,I just want to take this away and then go have a drink with Karl.,fear,0.0,3.18125
+08b09Fd,08b09Fd,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b09Fd.wav,I just want to take it away and go for a drink with Karl.,happy,0.0,2.766812
+08b09Lc,08b09Lc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b09Lc.wav,I just want to take it away and then go for a drink with Karl.,boredom,0.0,3.890687
+08b09Nb,08b09Nb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b09Nb.wav,I just want to take it away and go for a drink with Karl.,neutral,0.0,2.85375
+08b09Tb,08b09Tb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b09Tb.wav,I just want to take it away and then go for a drink with Karl.,sad,0.0,6.751437
+08b09Wa,08b09Wa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b09Wa.wav,I just want to take it away and then go for a drink with Karl!,angry,0.0,3.165562
+08b09Wc,08b09Wc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b09Wc.wav,I just want to take it away and go for a drink with Karl!,angry,0.0,3.311437
+08b10Aa,08b10Aa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b10Aa.wav,"She will be on the spot, where we always put her.",fear,0.0,2.6551869999999997
+08b10Fd,08b10Fd,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b10Fd.wav,"She will be on the spot, where we always put her.",happy,0.0,2.463562
+08b10La,08b10La,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b10La.wav,It will be on the spot where we always put it.,boredom,0.0,2.79675
+08b10Nc,08b10Nc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b10Nc.wav,It will be on the spot where we always put it.,neutral,0.0,2.378062
+08b10Tc,08b10Tc,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b10Tc.wav,It will be on the place where we always put it.,sad,0.0,4.662812
+08b10Wa,08b10Wa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b10Wa.wav,It will be on the spot where we always put it.,angry,0.0,3.135375
+09a01Ea,09a01Ea,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a01Ea.wav,The lamp is lying on the attic.,disgust,0.0,2.62125
+09a01Fa,09a01Fa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a01Fa.wav,The rag is on the fridge!,happy,0.0,1.8311250000000001
+09a01Nb,09a01Nb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a01Nb.wav,The rag is on the fridge.,neutral,0.0,1.682562
+09a01Wb,09a01Wb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a01Wb.wav,The rag is on the fridge!,angry,0.0,1.7015
+09a02Ea,09a02Ea,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02Ea.wav,She wants to give it away on Wednesday.,disgust,0.0,2.434687
+09a02Eb,09a02Eb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02Eb.wav,That's what she wants to give away.,disgust,0.0,1.523812
+09a02La,09a02La,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02La.wav,I'll give it to her on Wednesday.,boredom,0.0,1.520062
+09a02Wb,09a02Wb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02Wb.wav,She wants to give it away on Wednesday!,angry,0.0,1.655312
+09a04Fd,09a04Fd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a04Fd.wav,I could tell him tonight!,happy,0.0,1.4813749999999999
+09a04La,09a04La,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a04La.wav,I could tell him tonight.,boredom,0.0,1.527937
+09a04Nb,09a04Nb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a04Nb.wav,I could tell him tonight.,neutral,0.0,1.7675619999999999
+09a04Wa,09a04Wa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a04Wa.wav,I could have told him tonight!,angry,0.0,1.8368120000000001
+09a05Ed,09a05Ed,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a05Ed.wav,The black sheet of paper is up there next to the piece of hay.,disgust,0.0,5.157437
+09a05Lc,09a05Lc,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a05Lc.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,3.367375
+09a05Nb,09a05Nb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a05Nb.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.0775
+09a05Tb,09a05Tb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a05Tb.wav,The black sheet of paper is up there next to the piece of wood.,sad,0.0,3.908625
+09a05Wb,09a05Wb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a05Wb.wav,The black sheet of paper is up there next to the piece of wood!,angry,0.0,3.400187
+09a05Wc,09a05Wc,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a05Wc.wav,The black sheet of paper is up there next to the piece of wood!,angry,0.0,3.184625
+09a07Eb,09a07Eb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a07Eb.wav,In seven hours it will be time.,disgust,0.0,3.345812
+09a07Na,09a07Na,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a07Na.wav,It will be ready in 7 hours.,neutral,0.0,1.835937
+09a07Ta,09a07Ta,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a07Ta.wav,In 7 hours it will be ready.,sad,0.0,1.99425
+09a07Wb,09a07Wb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a07Wb.wav,It will be done in 7 hours!,angry,0.0,1.987625
+09a07Wd,09a07Wd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a07Wd.wav,It will be ready in 7 hours!,angry,0.0,2.319312
+09b01Ea,09b01Ea,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b01Ea.wav,What are those bags under the table?,disgust,0.0,3.731625
+09b01Na,09b01Na,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b01Na.wav,What kind of bags are under the table?,neutral,0.0,2.465562
+09b01Wb,09b01Wb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b01Wb.wav,What are those bags under the table?,angry,0.0,2.157437
+09b02Na,09b02Na,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b02Na.wav,You just carried it up and now you go down again.,neutral,0.0,2.70025
+09b02Tb,09b02Tb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b02Tb.wav,You just carried it up and now you're going down again.,sad,0.0,3.654687
+09b02Wc,09b02Wc,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b02Wc.wav,You just carried it up and now you're going down again.,angry,0.0,2.7245
+09b02Wd,09b02Wd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b02Wd.wav,You just carried it up and now you're going down again.,angry,0.0,2.621312
+09b03Ed,09b03Ed,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b03Ed.wav,At the weekends I always went home and visited Agnes.,disgust,0.0,5.065125
+09b03Fa,09b03Fa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b03Fa.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.141687
+09b03Fd,09b03Fd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b03Fd.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.3125
+09b03Lb,09b03Lb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b03Lb.wav,On the weekends I always went home and visited Agnes.,boredom,0.0,3.918
+09b03Nb,09b03Nb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b03Nb.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.8190619999999997
+09b03Ta,09b03Ta,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b03Ta.wav,On the weekends I always went home and visited Agnes.,sad,0.0,4.09325
+09b03Wb,09b03Wb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b03Wb.wav,On the weekends I always went home and visited Agnes.,angry,0.0,3.695062
+09b09Ea,09b09Ea,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Ea.wav,I just want to take it away and then go for a drink with Carl.,disgust,0.0,3.794375
+09b09Nd,09b09Nd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Nd.wav,I just want to take it away and go out for a drink with Kai.,neutral,0.0,2.714062
+09b09Wa,09b09Wa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Wa.wav,I just want to take it away and go for a drink with Karl.,angry,0.0,2.622312
+09b10Aa,09b10Aa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b10Aa.wav,She will be on the place where we always put her.,fear,0.0,1.656062
+09b10Nd,09b10Nd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b10Nd.wav,It will be on the spot where we always put it.,neutral,0.0,2.2355
+09b10Wa,09b10Wa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b10Wa.wav,"She will be on the spot, where we always put her!",angry,0.0,2.206625
+10a01Ac,10a01Ac,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Ac.wav,The rag is on the fridge!,fear,0.0,1.6795
+10a01Nb,10a01Nb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Nb.wav,The rag is on the fridge.,neutral,0.0,1.8071869999999999
+10a01Wa,10a01Wa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Wa.wav,The slat is on the icebox!,angry,0.0,2.170312
+10a02Ab,10a02Ab,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a02Ab.wav,She wants to give it away on Wednesday.,fear,0.0,1.607937
+10a02Fa,10a02Fa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a02Fa.wav,I want to give it away on Wednesday!,happy,0.0,1.524
+10a02Lb,10a02Lb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a02Lb.wav,She wants to give it away on Wednesday.,boredom,0.0,1.5925
+10a02Na,10a02Na,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a02Na.wav,She wants to give it away on Wednesday.,neutral,0.0,1.658625
+10a02Wa,10a02Wa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a02Wa.wav,She wants to give it away on Wednesday!,angry,0.0,2.102687
+10a04Fd,10a04Fd,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a04Fd.wav,I could tell him tonight.,happy,0.0,1.5371869999999999
+10a04Nb,10a04Nb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a04Nb.wav,I could tell him tonight.,neutral,0.0,2.049937
+10a04Wa,10a04Wa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a04Wa.wav,Tonight I could tell him!,angry,0.0,2.8533749999999998
+10a04Wb,10a04Wb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a04Wb.wav,Tonight I can tell you something!,angry,0.0,1.811375
+10a05Aa,10a05Aa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a05Aa.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,2.604125
+10a05Ld,10a05Ld,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a05Ld.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,3.29575
+10a05Tb,10a05Tb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a05Tb.wav,The black sheet of paper is up there next to the piece of wood.,sad,0.0,3.333937
+10a05Wb,10a05Wb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a05Wb.wav,"The black sheet of paper is up there, next to the piece of wood!",angry,0.0,3.752062
+10a07Aa,10a07Aa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a07Aa.wav,In seven hours it will be time.,fear,0.0,1.5960619999999999
+10a07Ad,10a07Ad,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a07Ad.wav,In seven hours it will be ready.,fear,0.0,1.603375
+10a07La,10a07La,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a07La.wav,In 7 hours it will be ready.,boredom,0.0,1.9901870000000002
+10a07Ta,10a07Ta,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a07Ta.wav,It will be done in 7 hours.,sad,0.0,1.9558119999999999
+10a07Wb,10a07Wb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a07Wb.wav,In seven hours it will be!,angry,0.0,1.973437
+10b01Aa,10b01Aa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Aa.wav,What are those bags under the table?,fear,0.0,2.087562
+10b01Ea,10b01Ea,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Ea.wav,What kind of bags are under the table?,disgust,0.0,2.390125
+10b01Fa,10b01Fa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Fa.wav,What kind of bags are under the table?,happy,0.0,2.433062
+10b01Lb,10b01Lb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Lb.wav,What are those bags under the table?,boredom,0.0,2.056937
+10b02Aa,10b02Aa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b02Aa.wav,You just carried it up and now you're going down again.,fear,0.0,2.462312
+10b02La,10b02La,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b02La.wav,They just carried it up and now they're going down again.,boredom,0.0,2.690562
+10b02Na,10b02Na,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b02Na.wav,You just carried it up and now you go down again.,neutral,0.0,2.722
+10b02Wb,10b02Wb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b02Wb.wav,They just carried it up and now they're going down again!,angry,0.0,2.868062
+10b03La,10b03La,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03La.wav,On the weekends I always drove home and visited Agnes,boredom,0.0,3.829125
+10b03Tb,10b03Tb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03Tb.wav,At the weekends I always went home and visited Agnes.,sad,0.0,3.7563750000000002
+10b03Wb,10b03Wb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03Wb.wav,On the weekends I always went home and visited Agnes!,angry,0.0,4.4855
+10b09Ad,10b09Ad,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b09Ad.wav,I just want to take it away so that Karl can go for a drink.,fear,0.0,1.976812
+10b09Lb,10b09Lb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b09Lb.wav,I just want to take it away so that Carl can go for a drink.,boredom,0.0,2.949062
+10b09Wb,10b09Wb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b09Wb.wav,I just want to get rid of it and then go for a drink with Karl!,angry,0.0,3.2135
+10b10Fc,10b10Fc,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b10Fc.wav,It will be on the spot where we always put it.,happy,0.0,2.21175
+10b10Lc,10b10Lc,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b10Lc.wav,will be on the spot where we always put them.,boredom,0.0,2.269937
+10b10Wa,10b10Wa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b10Wa.wav,"She will be on the spot, where we always put her!",angry,0.0,2.646187
+11a01Aa,11a01Aa,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a01Aa.wav,The bottle is on the fridge.,fear,0.0,1.557312
+11a01Ab,11a01Ab,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a01Ab.wav,The rag is on the fridge.,fear,0.0,1.5042499999999999
+11a01Ld,11a01Ld,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a01Ld.wav,The rag is on the fridge.,boredom,0.0,2.082187
+11a01Nd,11a01Nd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a01Nd.wav,The rag is on the fridge.,neutral,0.0,1.6363750000000001
+11a01Wc,11a01Wc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a01Wc.wav,The Lappen is on the fridge!,angry,0.0,1.91975
+11a02Ec,11a02Ec,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a02Ec.wav,She wants to give it away on Wednesday.,disgust,0.0,1.9100000000000001
+11a02Fb,11a02Fb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a02Fb.wav,She wants to give it away on Wednesday!,happy,0.0,1.785312
+11a02Ld,11a02Ld,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a02Ld.wav,I want to give it to you on Wednesday.,boredom,0.0,1.6055000000000001
+11a02Nc,11a02Nc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a02Nc.wav,She wants to give it away on Wednesday.,neutral,0.0,1.534062
+11a02Tc,11a02Tc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a02Tc.wav,She wants to give it away on Wednesday.,sad,0.0,2.0645
+11a02Wc,11a02Wc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a02Wc.wav,She wants to give it away on Wednesday!,angry,0.0,2.4259370000000002
+11a04Ac,11a04Ac,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Ac.wav,I could tell him tonight.,fear,0.0,1.535562
+11a04Fd,11a04Fd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Fd.wav,I could tell him tonight!,happy,0.0,1.8860000000000001
+11a04Nd,11a04Nd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Nd.wav,I could tell him tonight.,neutral,0.0,1.6840000000000002
+11a04Wc,11a04Wc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Wc.wav,"Tonight, I could tell him!",angry,0.0,2.678937
+11a05Ad,11a05Ad,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a05Ad.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,2.916437
+11a05Fb,11a05Fb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a05Fb.wav,The black sheet of paper is up there next to the piece of wood.,happy,0.0,3.5435
+11a05Fc,11a05Fc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a05Fc.wav,"The black sheet of paper is up there, next to the piece of wood!",happy,0.0,3.926437
+11a05Lc,11a05Lc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a05Lc.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,4.06575
+11a05Na,11a05Na,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a05Na.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.3205
+11a05Td,11a05Td,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a05Td.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,5.673312
+11a05Wd,11a05Wd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a05Wd.wav,The black sheet of paper is up there next to the piece of wood.,angry,0.0,4.03825
+11a07Ac,11a07Ac,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a07Ac.wav,In seven hours it will be time!,fear,0.0,1.902437
+11a07Ld,11a07Ld,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a07Ld.wav,In 7 hours it will be ready.,boredom,0.0,1.795312
+11a07Ta,11a07Ta,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a07Ta.wav,It will be done in seven hours.,sad,0.0,2.167375
+11a07Wc,11a07Wc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a07Wc.wav,In seven hours! Will it be that soon?,angry,0.0,2.238375
+11b01Ab,11b01Ab,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b01Ab.wav,What kind of bags are under the table?,fear,0.0,2.02425
+11b01Eb,11b01Eb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b01Eb.wav,What kind of bags are these that are under the table?,disgust,0.0,3.054375
+11b01Fc,11b01Fc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b01Fc.wav,What kind of bags are under the table?,happy,0.0,2.554937
+11b01Lb,11b01Lb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b01Lb.wav,What are those bags under the table?,boredom,0.0,2.79375
+11b01Nc,11b01Nc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b01Nc.wav,What kind of bags are under the table?,neutral,0.0,2.220187
+11b01Wd,11b01Wd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b01Wd.wav,What kind of bags are those under the table?,angry,0.0,2.814687
+11b02Ab,11b02Ab,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b02Ab.wav,You just carried it up and now you're going down again.,fear,0.0,2.489875
+11b02Fd,11b02Fd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b02Fd.wav,They just carried it up and now they're going down again.,happy,0.0,3.114937
+11b02Na,11b02Na,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b02Na.wav,You just carried it up and now you're going down again.,neutral,0.0,2.698812
+11b02Td,11b02Td,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b02Td.wav,They just carried it up and now they're going down again.,sad,0.0,3.60425
+11b02Wb,11b02Wb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b02Wb.wav,You just carried it up and now you're going down again!,angry,0.0,3.248625
+11b03Fc,11b03Fc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b03Fc.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.829812
+11b03Lc,11b03Lc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b03Lc.wav,On the weekends I always went home and visited Agnes.,boredom,0.0,4.452875
+11b03Nb,11b03Nb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b03Nb.wav,At the weekends I always drove home and visited Agnes.,neutral,0.0,3.620937
+11b03Td,11b03Td,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b03Td.wav,At the weekends I always went home and visited Agnes.,sad,0.0,5.905
+11b03Wa,11b03Wa,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b03Wa.wav,At the weekends I always went home and visited Agnes.,angry,0.0,4.064812
+11b03Wb,11b03Wb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b03Wb.wav,At the weekends I always went home and visited Agnes.,angry,0.0,5.2135
+11b09Ad,11b09Ad,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b09Ad.wav,I just want to take it away and then go for a drink with Karl.,fear,0.0,2.763812
+11b09Fd,11b09Fd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b09Fd.wav,I just want to take it away and then go for a drink with Karl.,happy,0.0,3.036562
+11b09Ld,11b09Ld,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b09Ld.wav,I just want to take it away and then go for a drink with Calvas.,boredom,0.0,3.377375
+11b09Na,11b09Na,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b09Na.wav,I just want to take it away and then go for a drink with Karl.,neutral,0.0,2.41925
+11b09Td,11b09Td,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b09Td.wav,I just want to get rid of it and then Karl will go for a drink.,sad,0.0,4.899312
+11b09Wa,11b09Wa,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b09Wa.wav,I just want to take it away and then go for a drink with Karl.,angry,0.0,3.81
+11b10Ad,11b10Ad,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Ad.wav,"She will be on the spot, where we always put her.",fear,0.0,2.445562
+11b10Ae,11b10Ae,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Ae.wav,"It will be on the square, where we always put it.",fear,0.0,2.942562
+11b10Ld,11b10Ld,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Ld.wav,It will be on the spot where we always put it.,boredom,0.0,3.323437
+11b10Nc,11b10Nc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Nc.wav,It will be on the spot where we always put it.,neutral,0.0,2.132562
+11b10Td,11b10Td,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Td.wav,"It will be on the spot, where we always put it.",sad,0.0,3.8895619999999997
+11b10Wa,11b10Wa,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Wa.wav,"Die wird auf dem Platz sein, wo wir sie immer hinlegen.",angry,0.0,2.885812
+12a01Fb,12a01Fb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a01Fb.wav,The rag is on the fridge.,happy,0.0,1.8636249999999999
+12a01Lb,12a01Lb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a01Lb.wav,The lamp is on the alchemy cabinet.,boredom,0.0,1.886562
+12a01Nb,12a01Nb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a01Nb.wav,The bottle cap is on the fridge.,neutral,0.0,1.721937
+12a01Wc,12a01Wc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a01Wc.wav,The rag is on the fridge!,angry,0.0,2.358812
+12a02Ac,12a02Ac,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Ac.wav,She wants to give it away on Wednesday.,fear,0.0,1.2255
+12a02Ec,12a02Ec,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Ec.wav,She wants to give it away on Wednesday.,disgust,0.0,3.294625
+12a02Nb,12a02Nb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Nb.wav,She wants to give it away on Wednesday.,neutral,0.0,1.7319369999999998
+12a02Wa,12a02Wa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Wa.wav,She wants to give it away on Wednesday!,angry,0.0,1.507437
+12a02Wc,12a02Wc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Wc.wav,She wants to give it away on Wednesday.,angry,0.0,1.4658120000000001
+12a04Wc,12a04Wc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a04Wc.wav,I could tell him tonight!,angry,0.0,1.577625
+12a05Ab,12a05Ab,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a05Ab.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,3.234125
+12a05Lb,12a05Lb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a05Lb.wav,"The black sheet of paper is up there, next to the piece of wood.",boredom,0.0,3.827687
+12a05Nd,12a05Nd,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a05Nd.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.1858750000000002
+12a05Ta,12a05Ta,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a05Ta.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,5.36025
+12a05Wb,12a05Wb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a05Wb.wav,"The black sheet of paper is up there, next to the piece of wood!",angry,0.0,3.48525
+12a07Ac,12a07Ac,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a07Ac.wav,It will be done in 7 hours.,fear,0.0,1.48
+12a07La,12a07La,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a07La.wav,It will be done in seven hours.,boredom,0.0,2.35125
+12a07Wa,12a07Wa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a07Wa.wav,It will be there in seven hours.,angry,0.0,2.33275
+12b01Ta,12b01Ta,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b01Ta.wav,What are those bags under the table?,sad,0.0,3.995437
+12b01Wa,12b01Wa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b01Wa.wav,What are those bags under the table?,angry,0.0,2.23725
+12b02Ad,12b02Ad,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02Ad.wav,They just carried it up and now they're going down again.,fear,0.0,2.231312
+12b02Ea,12b02Ea,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02Ea.wav,They just carried it up and now they're going down again.,disgust,0.0,5.567
+12b02Fb,12b02Fb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02Fb.wav,They just carried it up and now they're going down again.,happy,0.0,3.304
+12b02Na,12b02Na,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02Na.wav,You just carried it up and now you go down again.,neutral,0.0,2.982062
+12b02Wa,12b02Wa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02Wa.wav,You just carried it up and now you're going down again!,angry,0.0,2.78375
+12b02Wb,12b02Wb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02Wb.wav,You just carried it up and now you're going down again.,angry,0.0,2.804125
+12b02Wd,12b02Wd,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02Wd.wav,You just carried it up and now you're going down again!,angry,0.0,2.6498749999999998
+12b03La,12b03La,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b03La.wav,On the weekends I always went home and visited Agnes.,boredom,0.0,3.94475
+12b03Ta,12b03Ta,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b03Ta.wav,At the weekends I always went home and visited Agnes.,sad,0.0,5.996312
+12b09Ac,12b09Ac,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Ac.wav,I just want to get rid of it and then go for a drink with Karl.,fear,0.0,2.471937
+12b09Td,12b09Td,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Td.wav,I just want to get rid of it and then go for a drink with Karl.,sad,0.0,5.413875
+12b09Wc,12b09Wc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Wc.wav,I just want to get rid of it and then go for a drink with Carl!,angry,0.0,2.438187
+12b10Ac,12b10Ac,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b10Ac.wav,"It will be on the square, where we always put it.",fear,0.0,2.0305
+12b10Ld,12b10Ld,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b10Ld.wav,"It will be on the square, where we always put it.",boredom,0.0,3.02
+12b10Wa,12b10Wa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b10Wa.wav,"She will be on the spot, wherever we put her!",angry,0.0,2.549312
+13a01Ac,13a01Ac,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a01Ac.wav,The rag is on the fridge!,fear,0.0,1.561
+13a01Ea,13a01Ea,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a01Ea.wav,The rag is on the fridge.,disgust,0.0,1.826875
+13a01Ec,13a01Ec,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a01Ec.wav,The slat is on the fridge.,disgust,0.0,2.327687
+13a01Fd,13a01Fd,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a01Fd.wav,The rag is on the fridge!,happy,0.0,1.8809369999999999
+13a01Lb,13a01Lb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a01Lb.wav,Mr. Lappen is lying on the fridge.,boredom,0.0,2.005062
+13a01Nb,13a01Nb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a01Nb.wav,The rag is on the fridge.,neutral,0.0,1.515625
+13a01Wb,13a01Wb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a01Wb.wav,The rag is on the fridge!,angry,0.0,2.36225
+13a02Ad,13a02Ad,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a02Ad.wav,She wants to give it away on Wednesday.,fear,0.0,1.463375
+13a02Ec,13a02Ec,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a02Ec.wav,She wants to give it away on Wednesday.,disgust,0.0,2.13625
+13a02Fa,13a02Fa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a02Fa.wav,She wants to give that away on Wednesday!,happy,0.0,2.074687
+13a02Lc,13a02Lc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a02Lc.wav,She wants to give it away on Wednesday.,boredom,0.0,1.784187
+13a02Nc,13a02Nc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a02Nc.wav,that we will give them away on Wednesday.,neutral,0.0,1.558312
+13a02Ta,13a02Ta,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a02Ta.wav,She wants to give it away on Wednesday.,sad,0.0,1.86375
+13a02Wa,13a02Wa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a02Wa.wav,That's what she wants to give away on Wednesday!,angry,0.0,1.669
+13a04Ac,13a04Ac,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Ac.wav,I could tell him tonight.,fear,0.0,1.5313750000000002
+13a04Fc,13a04Fc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Fc.wav,I could tell him tonight.,happy,0.0,1.783312
+13a04Lb,13a04Lb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Lb.wav,I could tell him tonight.,boredom,0.0,2.246812
+13a04Ta,13a04Ta,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Ta.wav,I could tell him tonight.,sad,0.0,2.8525
+13a04Wc,13a04Wc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Wc.wav,I could tell him tonight!,angry,0.0,1.995437
+13a05Aa,13a05Aa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Aa.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,2.7915
+13a05Ea,13a05Ea,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Ea.wav,"The black sheet of paper is up there, next to the piece of wood.",disgust,0.0,4.195937
+13a05Lc,13a05Lc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Lc.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,3.352812
+13a05Nb,13a05Nb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Nb.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.18775
+13a05Tc,13a05Tc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Tc.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,4.451375
+13a05Wa,13a05Wa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Wa.wav,"The black sheet of paper is up there, next to the piece of wood.",angry,0.0,2.884562
+13a05Wc,13a05Wc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Wc.wav,"The black sheet of paper is up there, next to the piece of wood!",angry,0.0,3.3899369999999998
+13a07Fd,13a07Fd,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a07Fd.wav,It will be ready in 7 hours!,happy,0.0,2.012437
+13a07Lb,13a07Lb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a07Lb.wav,In seven hours it will be time.,boredom,0.0,2.264187
+13a07Na,13a07Na,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a07Na.wav,It will be ready in 7 hours.,neutral,0.0,1.9116870000000001
+13a07Tc,13a07Tc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a07Tc.wav,In seven hours it will be time.,sad,0.0,2.341687
+13a07Wb,13a07Wb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a07Wb.wav,In seven hours it will be!,angry,0.0,2.257625
+13b01Ab,13b01Ab,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b01Ab.wav,What are those bags under the table?,fear,0.0,2.223312
+13b01Ec,13b01Ec,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b01Ec.wav,What are those bags under the table?,disgust,0.0,3.091875
+13b01Fc,13b01Fc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b01Fc.wav,What are those bags under the table?,happy,0.0,2.633
+13b01Ld,13b01Ld,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b01Ld.wav,What are those bags under the table?,boredom,0.0,2.673812
+13b01Nc,13b01Nc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b01Nc.wav,What kind of bags are under the table?,neutral,0.0,2.431
+13b01Wa,13b01Wa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b01Wa.wav,What kind of bags are under the table?,angry,0.0,2.252187
+13b02Fb,13b02Fb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b02Fb.wav,You just carried it up and now you go down again.,happy,0.0,3.4419370000000002
+13b02Lc,13b02Lc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b02Lc.wav,You just carried it up and now you're going down again.,boredom,0.0,3.8040000000000003
+13b02Nb,13b02Nb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b02Nb.wav,You just carried it up and now you're going down again.,neutral,0.0,2.78625
+13b02Wa,13b02Wa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b02Wa.wav,You just carried us up and now you're going down again.,angry,0.0,2.411062
+13b03Ac,13b03Ac,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b03Ac.wav,On the weekends I always went home and visited Agnes.,fear,0.0,3.308312
+13b03Ed,13b03Ed,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b03Ed.wav,On the weekends I always went home and visited Agnes.,disgust,0.0,4.518124
+13b03Fd,13b03Fd,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b03Fd.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.930937
+13b03Lb,13b03Lb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b03Lb.wav,On the weekends I always went home and visited Agnes.,boredom,0.0,3.885312
+13b03Na,13b03Na,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b03Na.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.567
+13b03Td,13b03Td,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b03Td.wav,At the weekends I always went home and visited Agnes.,sad,0.0,4.97625
+13b03Wc,13b03Wc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b03Wc.wav,On the weekends I always went home and visited Agnes!,angry,0.0,3.611875
+13b09Ab,13b09Ab,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Ab.wav,I just want to take it away and then go for a drink with Karl.,fear,0.0,2.71175
+13b09Ec,13b09Ec,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Ec.wav,I just want to take it away and then go for a drink with Karl.,disgust,0.0,2.68975
+13b09Fb,13b09Fb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Fb.wav,I just want to take it away and then go for a drink with Karl!,happy,0.0,2.873812
+13b09Fc,13b09Fc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Fc.wav,I just want to take it away and then go for a drink with Karl.,happy,0.0,2.96225
+13b09La,13b09La,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09La.wav,I just want to take it away and then go for a drink with Karas.,boredom,0.0,2.5901870000000002
+13b09Na,13b09Na,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Na.wav,I just want to take it away and then go for a drink with Karl.,neutral,0.0,2.672875
+13b09Wa,13b09Wa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Wa.wav,I just want to get rid of it and then go for a drink with Karl!,angry,0.0,2.399625
+13b10Ec,13b10Ec,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10Ec.wav,It will be on the spot where we always put it.,disgust,0.0,2.84775
+13b10Fa,13b10Fa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10Fa.wav,It will be on the spot where we always put it.,happy,0.0,2.158562
+13b10La,13b10La,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10La.wav,It will be on the spot where we always put it.,boredom,0.0,2.348437
+13b10Nc,13b10Nc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10Nc.wav,It will be on the spot where we always put it.,neutral,0.0,2.367812
+13b10Wa,13b10Wa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10Wa.wav,It will be on the spot where we always put it!,angry,0.0,2.200562
+13b10Wc,13b10Wc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10Wc.wav,It will be on the spot where we always put it!,angry,0.0,2.683312
+14a01Aa,14a01Aa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Aa.wav,The rag is on the fridge.,fear,0.0,1.533749
+14a01Ac,14a01Ac,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Ac.wav,The rag is on the fridge.,fear,0.0,1.542312
+14a01Ea,14a01Ea,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Ea.wav,The rag is lying on the fridge.,disgust,0.0,3.1425
+14a01Na,14a01Na,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Na.wav,The rag is on the fridge.,neutral,0.0,1.6153119999999999
+14a01Wa,14a01Wa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Wa.wav,The rag is on the fridge.,angry,0.0,1.637812
+14a01Wc,14a01Wc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Wc.wav,The rag is on the fridge.,angry,0.0,1.972437
+14a02Ab,14a02Ab,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a02Ab.wav,She wants to give it away on Wednesday.,fear,0.0,1.369562
+14a02Ea,14a02Ea,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a02Ea.wav,She wants to give it away on Wednesday.,disgust,0.0,2.554875
+14a02Fd,14a02Fd,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a02Fd.wav,I want to give it to you on Wednesday!,happy,0.0,1.6816870000000002
+14a02La,14a02La,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a02La.wav,I will give it to you on Wednesday.,boredom,0.0,1.9506869999999998
+14a02Nc,14a02Nc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a02Nc.wav,She wants to give it away on Wednesday.,neutral,0.0,1.430812
+14a02Tb,14a02Tb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a02Tb.wav,She wants to give that away on Wednesday.,sad,0.0,2.137375
+14a02Wa,14a02Wa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a02Wa.wav,They want to cancel that on Wednesday!,angry,0.0,2.01275
+14a02Wc,14a02Wc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a02Wc.wav,She wants to give it away on Wednesday!,angry,0.0,2.092625
+14a04Aa,14a04Aa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Aa.wav,I could tell him tonight.,fear,0.0,1.4769999999999999
+14a04Ed,14a04Ed,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Ed.wav,Tonight I could tell him.,disgust,0.0,2.916187
+14a04Lb,14a04Lb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Lb.wav,Tonight I could tell him.,boredom,0.0,1.9429370000000001
+14a04Tb,14a04Tb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Tb.wav,I could tell him tonight.,sad,0.0,2.225562
+14a04Tc,14a04Tc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Tc.wav,I could tell him tonight.,sad,0.0,2.93475
+14a04Wb,14a04Wb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Wb.wav,I could tell him tonight!,angry,0.0,1.736812
+14a04Wc,14a04Wc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Wc.wav,I could tell him tonight!,angry,0.0,2.510062
+14a05Aa,14a05Aa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Aa.wav,The black sheet of paper is up there next to the piece of wood.,fear,0.0,2.587625
+14a05Ac,14a05Ac,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Ac.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,4.101375
+14a05Fa,14a05Fa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Fa.wav,"The black sheet of paper is up there, next to the piece of wood.",happy,0.0,3.246187
+14a05Fb,14a05Fb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Fb.wav,"The black sheet of paper is up there, next to the piece of wood.",happy,0.0,3.128687
+14a05Lb,14a05Lb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Lb.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,3.51925
+14a05Na,14a05Na,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Na.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.063312
+14a05Ta,14a05Ta,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Ta.wav,The black sheet of paper is up there next to the piece of wood.,sad,0.0,3.7375
+14a05Tc,14a05Tc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Tc.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,5.028875
+14a05Wa,14a05Wa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Wa.wav,"The black sheet of paper is up there, next to the piece of wood.",angry,0.0,4.006812
+14a05Wb,14a05Wb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Wb.wav,The black sheet of paper is up there next to the piece of wood.,angry,0.0,3.054062
+14a07Aa,14a07Aa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a07Aa.wav,In seven hours it will be time.,fear,0.0,2.059687
+14a07Eb,14a07Eb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a07Eb.wav,In seven hours it will be time.,disgust,0.0,3.436625
+14a07Fd,14a07Fd,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a07Fd.wav,It will be ready in 7 hours!,happy,0.0,2.080687
+14a07Lc,14a07Lc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a07Lc.wav,In seven hours it will be time.,boredom,0.0,2.99475
+14a07Ld,14a07Ld,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a07Ld.wav,In 7 hours it will be ready.,boredom,0.0,2.292125
+14a07Na,14a07Na,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a07Na.wav,It will be ready in seven hours.,neutral,0.0,2.096062
+14a07Tc,14a07Tc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a07Tc.wav,In seven hours it will be time.,sad,0.0,3.2635
+14a07Wc,14a07Wc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a07Wc.wav,In seven hours it will be time!,angry,0.0,2.0635
+14b01Ac,14b01Ac,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b01Ac.wav,What are those bags under the table?,fear,0.0,2.344375
+14b01Eb,14b01Eb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b01Eb.wav,What kind of dead people are standing under the table?,disgust,0.0,3.29175
+14b01Fa,14b01Fa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b01Fa.wav,What kind of bags are under the table?,happy,0.0,2.56025
+14b01Fc,14b01Fc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b01Fc.wav,What kind of bags are under the table?,happy,0.0,2.5408749999999998
+14b01Na,14b01Na,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b01Na.wav,What are those bags under the table?,neutral,0.0,2.572625
+14b01Wc,14b01Wc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b01Wc.wav,What are those bags under the table?,angry,0.0,2.9583120000000003
+14b02Aa,14b02Aa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b02Aa.wav,You just carried it up and now you're going down again!,fear,0.0,2.84025
+14b02Fb,14b02Fb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b02Fb.wav,You just carried it up and now you go down again.,happy,0.0,2.837187
+14b02Na,14b02Na,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b02Na.wav,You just carried it up and now you go down again.,neutral,0.0,2.899437
+14b02Tc,14b02Tc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b02Tc.wav,"You just carried it up, and now you're going down again.",sad,0.0,6.215437
+14b02Wb,14b02Wb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b02Wb.wav,You just carried it up and now you're going down again.,angry,0.0,2.748125
+14b02Wd,14b02Wd,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b02Wd.wav,You just carried it up and now you're going down again.,angry,0.0,2.292312
+14b03Ad,14b03Ad,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b03Ad.wav,On the weekends I always went home and visited Agnes.,fear,0.0,3.502812
+14b03Ed,14b03Ed,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b03Ed.wav,On the weekends I always went home and visited Agnes.,disgust,0.0,5.050062
+14b03Lb,14b03Lb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b03Lb.wav,At the weekend I always went home and visited Agnes.,boredom,0.0,3.580125
+14b03Ta,14b03Ta,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b03Ta.wav,At the weekends I always went home and visited Agnes.,sad,0.0,5.497312
+14b03Wb,14b03Wb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b03Wb.wav,On the weekends I always went home and visited Agnes.,angry,0.0,3.886187
+14b09Ac,14b09Ac,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Ac.wav,I just want to take it away and then go for a drink with Karl.,fear,0.0,2.287687
+14b09Ea,14b09Ea,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Ea.wav,I just want to get rid of it and then go for a drink with Karl.,disgust,0.0,4.243625
+14b09Fc,14b09Fc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Fc.wav,I just want to take it away and then go for a drink with Karl.,happy,0.0,2.5295
+14b09Lb,14b09Lb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Lb.wav,I just want to take it away and then go for a drink with Karl.,boredom,0.0,3.050312
+14b09Td,14b09Td,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Td.wav,I just want to take it away and then go for a drink with Carl.,sad,0.0,3.765187
+14b09Wa,14b09Wa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Wa.wav,I just want to take it away and then go for a drink with Karl!,angry,0.0,3.545312
+14b09Wc,14b09Wc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Wc.wav,I just want to get rid of it and then go for a drink with Carl!,angry,0.0,2.770687
+14b10Ad,14b10Ad,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b10Ad.wav,She will be on the spot where we always put her.,fear,0.0,1.965562
+14b10Eb,14b10Eb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b10Eb.wav,It will be on the place where we always put it.,disgust,0.0,3.6788119999999997
+14b10Lb,14b10Lb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b10Lb.wav,How will it be on the place where we always put them?,boredom,0.0,2.1375
+14b10Nb,14b10Nb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b10Nb.wav,It will be on the spot where we always put it.,neutral,0.0,2.057937
+14b10Tc,14b10Tc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b10Tc.wav,It will be on the place where we always put it.,sad,0.0,3.411437
+14b10Wc,14b10Wc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b10Wc.wav,It will be on the spot where we always put it.,angry,0.0,2.655312
+15a01Ea,15a01Ea,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a01Ea.wav,The rag is lying on the fridge.,disgust,0.0,2.552187
+15a01Fb,15a01Fb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a01Fb.wav,The pacifier is on the fridge!,happy,0.0,1.626625
+15a01La,15a01La,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a01La.wav,The lamp is on the fridge.,boredom,0.0,1.5626250000000002
+15a01Nb,15a01Nb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a01Nb.wav,The bottle cap is on the fridge.,neutral,0.0,1.62825
+15a01Wa,15a01Wa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a01Wa.wav,The rag is on the fridge!,angry,0.0,1.831312
+15a02Ac,15a02Ac,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02Ac.wav,She wants to give it away on Wednesday!,fear,0.0,1.89275
+15a02Ea,15a02Ea,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02Ea.wav,She wants to give it away on Wednesday.,disgust,0.0,2.449812
+15a02La,15a02La,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02La.wav,I want to give it away on Wednesday.,boredom,0.0,1.696875
+15a02Na,15a02Na,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02Na.wav,She wants to give it away on Wednesday.,neutral,0.0,1.613875
+15a02Ta,15a02Ta,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02Ta.wav,She wants to give it away on Wednesday.,sad,0.0,2.266687
+15a02Wb,15a02Wb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02Wb.wav,She wants to give it away on Wednesday!,angry,0.0,1.8071869999999999
+15a02Wd,15a02Wd,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02Wd.wav,She wants to give it away on Wednesday!,angry,0.0,1.820687
+15a04Ab,15a04Ab,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Ab.wav,I could tell him tonight.,fear,0.0,1.8296869999999998
+15a04Ac,15a04Ac,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Ac.wav,I could have told him tonight!,fear,0.0,1.844187
+15a04Fd,15a04Fd,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Fd.wav,I could tell him tonight.,happy,0.0,1.7911869999999999
+15a04Nc,15a04Nc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Nc.wav,I could tell him tonight.,neutral,0.0,1.698125
+15a04Wa,15a04Wa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Wa.wav,Tonight I could tell him!,angry,0.0,1.9453749999999999
+15a04Wb,15a04Wb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Wb.wav,I could tell him tonight!,angry,0.0,1.8111869999999999
+15a05Eb,15a05Eb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a05Eb.wav,"The black sheet of paper is up there, next to the piece of wood.",disgust,0.0,3.993562
+15a05Fb,15a05Fb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a05Fb.wav,The black sheet of paper is up there next to the piece of wood.,happy,0.0,2.696187
+15a05Lb,15a05Lb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a05Lb.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,3.320062
+15a05Na,15a05Na,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a05Na.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.120937
+15a05Wa,15a05Wa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a05Wa.wav,"The black sheet of paper is up there, next to the piece of wood!",angry,0.0,3.0985
+15a07Ac,15a07Ac,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a07Ac.wav,It will be done in 7 hours!,fear,0.0,1.810875
+15a07Eb,15a07Eb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a07Eb.wav,It will be ready in 7 hours.,disgust,0.0,2.397125
+15a07Fa,15a07Fa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a07Fa.wav,It will be ready in 7 hours!,happy,0.0,1.964187
+15a07Fb,15a07Fb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a07Fb.wav,It will be ready in 7 hours!,happy,0.0,1.93525
+15a07Ld,15a07Ld,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a07Ld.wav,It will be ready in 7 hours.,boredom,0.0,1.801812
+15a07Nc,15a07Nc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a07Nc.wav,It will be ready in 7 hours.,neutral,0.0,1.8811870000000002
+15b01Ec,15b01Ec,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b01Ec.wav,What kind of bags are under the table?,disgust,0.0,2.970937
+15b01Lb,15b01Lb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b01Lb.wav,What are those bags under the table?,boredom,0.0,2.326625
+15b01Na,15b01Na,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b01Na.wav,What are those bags under the table?,neutral,0.0,2.35725
+15b01Wc,15b01Wc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b01Wc.wav,What are those bags under the table?,angry,0.0,2.6313750000000002
+15b02Aa,15b02Aa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b02Aa.wav,They just carried it up and now they're going down again.,fear,0.0,2.9655620000000003
+15b02Lb,15b02Lb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b02Lb.wav,They just carried it up and now they go down again.,boredom,0.0,2.955625
+15b02Nd,15b02Nd,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b02Nd.wav,You just carried it up and now you go down again.,neutral,0.0,2.79025
+15b02Tc,15b02Tc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b02Tc.wav,You just carried it up and now you're going down again.,sad,0.0,3.892
+15b02Wa,15b02Wa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b02Wa.wav,You just carried it up and now you're going down again.,angry,0.0,2.765062
+15b02Wc,15b02Wc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b02Wc.wav,You just carried it up and now you're going down again.,angry,0.0,2.623312
+15b03Aa,15b03Aa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Aa.wav,On the weekends I always went home and visited Agnes.,fear,0.0,2.627437
+15b03Lc,15b03Lc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Lc.wav,On the weekends I went home and visited Agnes.,boredom,0.0,3.666375
+15b03Nb,15b03Nb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Nb.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.200437
+15b03Tc,15b03Tc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Tc.wav,On the weekends I always went home and visited Agnes.,sad,0.0,5.341062
+15b03Wa,15b03Wa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Wa.wav,On the weekends I always went home and visited Agnes.,angry,0.0,3.362937
+15b03Wb,15b03Wb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Wb.wav,On the weekends I always went home and visited Agnes.,angry,0.0,3.021625
+15b09Ac,15b09Ac,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b09Ac.wav,I just want to get rid of it and then go for a drink with Karl.,fear,0.0,2.41875
+15b09Fa,15b09Fa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b09Fa.wav,I just want to get rid of it and then go for a drink with Karl.,happy,0.0,2.450937
+15b09La,15b09La,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b09La.wav,I just want to take it away and then go for a drink with Carlos.,boredom,0.0,3.21775
+15b09Nb,15b09Nb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b09Nb.wav,I want to take it away and then go for a drink with Karl.,neutral,0.0,2.452375
+15b09Ta,15b09Ta,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b09Ta.wav,I just want to take it away and then go for a drink with Karl.,sad,0.0,4.01575
+15b09Wb,15b09Wb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b09Wb.wav,I just want to get rid of it and then go for a drink with Karl!,angry,0.0,2.655875
+15b10Ac,15b10Ac,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Ac.wav,It will be on the place where we always put it.,fear,0.0,2.022062
+15b10Lc,15b10Lc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Lc.wav,It will be on the spot where you always put it.,boredom,0.0,2.467625
+15b10Nb,15b10Nb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Nb.wav,It will be on the spot where we put it.,neutral,0.0,2.21325
+15b10Nc,15b10Nc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Nc.wav,It will be on the spot where we always put it.,neutral,0.0,2.20275
+15b10Wa,15b10Wa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Wa.wav,It will be on the spot where we always put it!,angry,0.0,2.63375
+16a01Ec,16a01Ec,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a01Ec.wav,Der Lappen liegt auf dem Eisschrank.,disgust,0.0,2.430437
+16a01Fc,16a01Fc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a01Fc.wav,The rag is on the fridge!,happy,0.0,2.096375
+16a01Lb,16a01Lb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a01Lb.wav,The rag is on the fridge.,boredom,0.0,2.033562
+16a01Nc,16a01Nc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a01Nc.wav,The rag is on the fridge.,neutral,0.0,1.7719369999999999
+16a01Tb,16a01Tb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a01Tb.wav,The bottle is on the fridge.,sad,0.0,2.607562
+16a01Wb,16a01Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a01Wb.wav,The rag is on the fridge!,angry,0.0,2.199875
+16a02Ea,16a02Ea,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a02Ea.wav,She wants to give that away on Wednesday.,disgust,0.0,2.9485
+16a02Ec,16a02Ec,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a02Ec.wav,She wants to give that away on Wednesday.,disgust,0.0,2.4875
+16a02Lb,16a02Lb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a02Lb.wav,She wants to give it away on Wednesday.,boredom,0.0,2.081125
+16a02Nb,16a02Nb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a02Nb.wav,She wants to give it away on Wednesday.,neutral,0.0,1.660437
+16a02Tc,16a02Tc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a02Tc.wav,She wants to give it away on Wednesday.,sad,0.0,2.191937
+16a02Wb,16a02Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a02Wb.wav,I want to give it away on Wednesday!,angry,0.0,1.770062
+16a04Ab,16a04Ab,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04Ab.wav,I could tell him tonight.,fear,0.0,1.48
+16a04Ea,16a04Ea,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04Ea.wav,I could tell him tonight.,disgust,0.0,2.65
+16a04Fa,16a04Fa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04Fa.wav,I could tell him tonight!,happy,0.0,2.043875
+16a04La,16a04La,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04La.wav,I could tell him tonight.,boredom,0.0,2.028937
+16a04Lc,16a04Lc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04Lc.wav,I could tell him tonight.,boredom,0.0,2.65375
+16a04Nc,16a04Nc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04Nc.wav,Tonight I could tell him.,neutral,0.0,1.8259370000000001
+16a04Tc,16a04Tc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04Tc.wav,Tonight I could tell him.,sad,0.0,3.165687
+16a04Wb,16a04Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04Wb.wav,Tonight I could tell him!,angry,0.0,2.561937
+16a04Wc,16a04Wc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a04Wc.wav,I could tell him tonight!,angry,0.0,1.944062
+16a05Ab,16a05Ab,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a05Ab.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,2.901312
+16a05Ea,16a05Ea,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a05Ea.wav,The black sheet of paper is up there next to the piece of wood.,disgust,0.0,5.48875
+16a05Fc,16a05Fc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a05Fc.wav,The black sheet of paper is up there next to the piece of wood.,happy,0.0,3.612375
+16a05La,16a05La,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a05La.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,4.050937
+16a05Tb,16a05Tb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a05Tb.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,6.788
+16a05Wb,16a05Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a05Wb.wav,The black sheet of paper is up there next to the piece of wood.,angry,0.0,3.741062
+16a05Wc,16a05Wc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a05Wc.wav,The black sheet of paper is up there next to the piece of wood.,angry,0.0,3.80075
+16a07Ea,16a07Ea,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07Ea.wav,It will be there in seven hours.,disgust,0.0,2.9964370000000002
+16a07Fa,16a07Fa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07Fa.wav,It will be ready in 7 hours!,happy,0.0,2.37125
+16a07Fb,16a07Fb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07Fb.wav,It will be done in 7 hours!,happy,0.0,2.426812
+16a07La,16a07La,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07La.wav,In seven hours it will be time.,boredom,0.0,2.074687
+16a07Lb,16a07Lb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07Lb.wav,In seven hours it will be ready.,boredom,0.0,2.167312
+16a07Nb,16a07Nb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07Nb.wav,It will be ready in 7 hours.,neutral,0.0,2.007062
+16a07Td,16a07Td,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07Td.wav,In 7 hours it will be ready.,sad,0.0,3.7295
+16a07Wa,16a07Wa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07Wa.wav,It will be done in 7 hours!,angry,0.0,2.381812
+16b01Aa,16b01Aa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01Aa.wav,What are those bags under the table?,fear,0.0,2.081312
+16b01Eb,16b01Eb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01Eb.wav,What kind of bags are under the table?,disgust,0.0,3.421625
+16b01Fa,16b01Fa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01Fa.wav,What are those bags under the table?,happy,0.0,2.64975
+16b01La,16b01La,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01La.wav,What kind of bags are under the table?,boredom,0.0,2.943937
+16b01Lc,16b01Lc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01Lc.wav,What are those bags under the table?,boredom,0.0,2.465687
+16b01Tb,16b01Tb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01Tb.wav,What kind of bags are under the table?,sad,0.0,4.37775
+16b01Wa,16b01Wa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01Wa.wav,What kind of bags are under the table?,angry,0.0,2.6098749999999997
+16b01Wb,16b01Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01Wb.wav,What kind of bags are under the table?,angry,0.0,2.661687
+16b02Aa,16b02Aa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b02Aa.wav,You just carried it up and now you're going down again.,fear,0.0,3.003562
+16b02Eb,16b02Eb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b02Eb.wav,Sie haben es gerade hochgetragen und jetzt gehen Sie wieder runter.,disgust,0.0,4.188562
+16b02Fd,16b02Fd,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b02Fd.wav,You just carried it up and now you're going down again.,happy,0.0,3.533562
+16b02Lb,16b02Lb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b02Lb.wav,You have just carried it up and now you go down again.,boredom,0.0,3.39875
+16b02Wb,16b02Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b02Wb.wav,You just carried it up and now you're going down again!,angry,0.0,3.184375
+16b03Ad,16b03Ad,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b03Ad.wav,On the weekends I always went home and visited Agnes.,fear,0.0,3.216187
+16b03Ea,16b03Ea,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b03Ea.wav,At the weekends I always went home and visited Agnes.,disgust,0.0,5.963812
+16b03Fa,16b03Fa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b03Fa.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.8655
+16b03Fd,16b03Fd,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b03Fd.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.657437
+16b03La,16b03La,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b03La.wav,On the weekends I always went home and visited Agnes.,boredom,0.0,4.035625
+16b03Nb,16b03Nb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b03Nb.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.899187
+16b03Ta,16b03Ta,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b03Ta.wav,On the weekends I always went home and visited Agnes.,sad,0.0,5.975625
+16b03Wb,16b03Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b03Wb.wav,On the weekends I always went home and visited Agnes.,angry,0.0,3.924562
+16b09Ab,16b09Ab,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b09Ab.wav,I just want to take it away and go for a drink with Karl.,fear,0.0,2.051562
+16b09Eb,16b09Eb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b09Eb.wav,I just want to take it away and then go for a drink with Karl.,disgust,0.0,5.025687
+16b09Fb,16b09Fb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b09Fb.wav,I just want to take it away and then go for a drink with Karl!,happy,0.0,3.501812
+16b09La,16b09La,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b09La.wav,I just want to take it away and go for a drink with Carl.,boredom,0.0,3.066187
+16b09Lb,16b09Lb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b09Lb.wav,I just want to get rid of it and go have a drink with Karl.,boredom,0.0,3.185937
+16b09Wb,16b09Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b09Wb.wav,I just want to take it away and then go for a drink with Karl!,angry,0.0,3.69
+16b10Aa,16b10Aa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Aa.wav,"She will be on the spot, where we always put her.",fear,0.0,2.582687
+16b10Eb,16b10Eb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Eb.wav,"Die wird auf dem Platz sein, wo wir sie immer hinlegen.",disgust,0.0,3.2245
+16b10Fb,16b10Fb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Fb.wav,It will be on the place where we always put it!,happy,0.0,2.5835
+16b10Lb,16b10Lb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Lb.wav,It will be on the spot where we always put it.,boredom,0.0,3.442687
+16b10Tb,16b10Tb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Tb.wav,It will be on the place where we always put it.,sad,0.0,3.500625
+16b10Td,16b10Td,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Td.wav,It will be on the spot where we always put it.,sad,0.0,3.934187
+16b10Wa,16b10Wa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Wa.wav,"She will be on the spot, where we always put her!",angry,0.0,2.414125
+16b10Wb,16b10Wb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Wb.wav,It will be on the spot where we always put it!,angry,0.0,2.522499
+09b01Ad,09b01Ad,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b01Ad.wav,What kind of bags are under the table?,fear,0.0,1.96025
+16b01Nc,16b01Nc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b01Nc.wav,What kind of bags are under the table?,neutral,0.0,2.6295
+08a02Ec,08a02Ec,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02Ec.wav,That's what she wants to give away on Wednesday.,disgust,0.0,3.368812
+14b09Nb,14b09Nb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Nb.wav,I just want to take it away and then go for a drink with Karl.,neutral,0.0,2.506812
+12b09Fb,12b09Fb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Fb.wav,I just want to take it away and go for a drink with Karl.,happy,0.0,2.691125
+09b02Fb,09b02Fb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b02Fb.wav,You just carried it up and now you're going down again.,happy,0.0,2.67125
+11b01Td,11b01Td,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b01Td.wav,What are those bags under the table?,sad,0.0,3.73025
+11b01Fb,11b01Fb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b01Fb.wav,What are those bags under the table?,happy,0.0,2.430437
+10b01Nb,10b01Nb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Nb.wav,What are those bags under the table?,neutral,0.0,2.605187
+15a01Tc,15a01Tc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a01Tc.wav,The rag is on the fridge.,sad,0.0,2.192
+14a04Fd,14a04Fd,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Fd.wav,I could tell him tonight.,happy,0.0,1.832625
+08a05Ea,08a05Ea,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a05Ea.wav,"The black sheet of paper is up there, next to the piece of wood.",disgust,0.0,4.661187
+11a04Tc,11a04Tc,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Tc.wav,I could tell him tonight.,sad,0.0,3.797437
+03a02Ab,03a02Ab,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a02Ab.wav,She wants to give it away on Wednesday!,fear,0.0,1.39425
+08a01Td,08a01Td,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Td.wav,The rag is lying on the fridge.,sad,0.0,2.311062
+12b01Fd,12b01Fd,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b01Fd.wav,What kind of bags are under the table?,happy,0.0,2.666437
+10a05Fa,10a05Fa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a05Fa.wav,The black sheet of paper is up there next to the piece of wood.,happy,0.0,2.82775
+12a07Wc,12a07Wc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a07Wc.wav,It will be done in 7 hours!,angry,0.0,1.865125
+11b09Ea,11b09Ea,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b09Ea.wav,I just want to take it away and then go for a drink with Karl.,disgust,0.0,3.23925
+14a01Td,14a01Td,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Td.wav,The note is lying on the fridge.,sad,0.0,2.963875
+12a07Fd,12a07Fd,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a07Fd.wav,It will be ready in 7 hours.,happy,0.0,2.079625
+12b09Aa,12b09Aa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Aa.wav,I just want to take it away and go for a drink with Karl.,fear,0.0,2.364937
+10a01Td,10a01Td,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Td.wav,The rag is on the fridge,sad,0.0,1.7325620000000002
+16b09Tc,16b09Tc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b09Tc.wav,I just want to take it away and then go for a drink with Karl.,sad,0.0,4.37
+16b09Nb,16b09Nb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b09Nb.wav,I just want to take it away and then go for a drink with Karl.,neutral,0.0,3.1325
+12a02Lc,12a02Lc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Lc.wav,She wants to give it away on Wednesday.,boredom,0.0,1.79075
+12b03Nc,12b03Nc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b03Nc.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.729062
+14a01La,14a01La,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01La.wav,The lamp is on the fridge.,boredom,0.0,1.713375
+08a05Aa,08a05Aa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a05Aa.wav,The black sheet of paper is up there next to the piece of wood.,fear,0.0,3.140625
+12b10Td,12b10Td,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b10Td.wav,It will be on the place where we always put it.,sad,0.0,4.522
+10b09Ta,10b09Ta,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b09Ta.wav,I just want to take it away and go for a drink with Karl.,sad,0.0,2.835375
+15b03Eb,15b03Eb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Eb.wav,On the weekends I always went home and visited Agnes.,disgust,0.0,4.07375
+03a07Ad,03a07Ad,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a07Ad.wav,It will be seven o'clock.,fear,0.0,1.603375
+14b09Tb,14b09Tb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b09Tb.wav,I just want to put it away and then go for a drink with Carl.,sad,0.0,3.085687
+03b02Tc,03b02Tc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b02Tc.wav,They have just carried it up and now they are going down again.,sad,0.0,5.058687
+09b10La,09b10La,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b10La.wav,She will be on the spot where we always put her.,boredom,0.0,2.135812
+09b10Ta,09b10Ta,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b10Ta.wav,It will be on the spot where we always put it.,sad,0.0,2.49675
+11a01Td,11a01Td,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a01Td.wav,The rag is on the fridge.,sad,0.0,2.184812
+09b09Tb,09b09Tb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Tb.wav,I just want to take it away and then go for a drink with Carves.,sad,0.0,2.972125
+10a07Eb,10a07Eb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a07Eb.wav,It would be seven o'clock.,disgust,0.0,2.193625
+03b10La,03b10La,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10La.wav,It will be on the place where we always put it.,boredom,0.0,2.870687
+10b09Nb,10b09Nb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b09Nb.wav,I just want to take it away and then go for a drink with Karl.,neutral,0.0,2.905687
+10b01Ta,10b01Ta,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Ta.wav,What are those bags under the table?,sad,0.0,2.738125
+11a04Eb,11a04Eb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Eb.wav,I could tell him tonight.,disgust,0.0,2.1603120000000002
+12b03Wd,12b03Wd,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b03Wd.wav,"At the weekends, I always went home and visited Agnes.",angry,0.0,4.27725
+12b03Fd,12b03Fd,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b03Fd.wav,On the weekends I always went home and visited Agnes.,happy,0.0,4.380812
+13b02Aa,13b02Aa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b02Aa.wav,You just carried it up and now you're going down again.,fear,0.0,2.522312
+15b10Ta,15b10Ta,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Ta.wav,"It will be on the spot, where we always put it.",sad,0.0,3.657375
+10b02Ea,10b02Ea,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b02Ea.wav,You just carried it up and now you're going down again.,disgust,0.0,2.829687
+10a04Eb,10a04Eb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a04Eb.wav,Even tonight I could tell him...,disgust,0.0,1.775687
+16a07Ac,16a07Ac,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a07Ac.wav,It will be ready in seven hours.,fear,0.0,1.608
+15b02Eb,15b02Eb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b02Eb.wav,They just carried it up and now they're going down again.,disgust,0.0,3.070437
+09b02Ed,09b02Ed,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b02Ed.wav,They just carried it up and now they're going down again.,disgust,0.0,2.706875
+15a05Tb,15a05Tb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a05Tb.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,6.047562
+14b01Ta,14b01Ta,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b01Ta.wav,What are those bags under the table?,sad,0.0,3.521499
+09a02Ta,09a02Ta,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02Ta.wav,We'll give it to you on Wednesday.,sad,0.0,1.9278119999999999
+10a02Ed,10a02Ed,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a02Ed.wav,She wants to give it away on Wednesday.,disgust,0.0,2.2720000000000002
+10b02Tb,10b02Tb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b02Tb.wav,They just carried it up and now they're going down again.,sad,0.0,2.7575
+10b03Aa,10b03Aa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03Aa.wav,At the weekend I always went home and visited Agnes.,fear,0.0,2.7615
+14a01Fa,14a01Fa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Fa.wav,The,happy,0.0,1.67225
+16a01Ab,16a01Ab,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a01Ab.wav,The rag is on the fridge!,fear,0.0,1.435312
+12b10Ed,12b10Ed,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b10Ed.wav,It will be on the place where we always put it.,disgust,0.0,5.061812
+15a01Ad,15a01Ad,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a01Ad.wav,and the rag is on the fridge,fear,0.0,1.574125
+13b10Ac,13b10Ac,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10Ac.wav,It will be on the place where we always put it.,fear,0.0,2.415125
+03a05La,03a05La,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05La.wav,The black sheet of paper is up there next to the piece of wood.,boredom,0.0,3.901812
+10b10Aa,10b10Aa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b10Aa.wav,It will be on the place where we always put it.,fear,0.0,1.7665
+12b10Nc,12b10Nc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b10Nc.wav,"It will be on the spot, where we always put it.",neutral,0.0,2.543625
+11a05Ea,11a05Ea,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a05Ea.wav,The black sheet of paper is up there next to the piece of wood.,disgust,0.0,3.754375
+15b01Aa,15b01Aa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b01Aa.wav,What are those bags under the table?,fear,0.0,2.349312
+12a04Aa,12a04Aa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a04Aa.wav,I could tell him tonight.,fear,0.0,1.52875
+15a04Tb,15a04Tb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Tb.wav,I could tell him tonight.,sad,0.0,2.785812
+15a01Tb,15a01Tb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a01Tb.wav,The rag is on the fridge.,sad,0.0,2.823125
+08a02Aa,08a02Aa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a02Aa.wav,She wants to give it away on Wednesday.,fear,0.0,1.7514370000000001
+03a04Wa,03a04Wa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Wa.wav,Heute Abend könnte ich es ihm sagen.,angry,0.0,2.232812
+03a04Eb,03a04Eb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Eb.wav,I could tell him tonight.,disgust,0.0,1.735375
+09b01Lb,09b01Lb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b01Lb.wav,What kind of bags are under the table?,boredom,0.0,2.774437
+12b09Lb,12b09Lb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Lb.wav,I just want to take it away and then go for a drink with Karl.,boredom,0.0,3.342
+12b09Ea,12b09Ea,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Ea.wav,I just want to take it away and then go for a drink with Karl.,disgust,0.0,4.900875
+12a04Eb,12a04Eb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a04Eb.wav,Tonight I could tell him...,disgust,0.0,3.4755
+15b03Ab,15b03Ab,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Ab.wav,On the weekends I always went home and visited Agnes.,fear,0.0,2.881687
+03b02Ed,03b02Ed,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b02Ed.wav,You just carried it up and now you're going down again.,disgust,0.0,3.464937
+11a01Fa,11a01Fa,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a01Fa.wav,The rag is on the fridge!,happy,0.0,1.8984999999999999
+11a07Ec,11a07Ec,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a07Ec.wav,In seven hours it will be time.,disgust,0.0,2.541125
+12b02La,12b02La,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02La.wav,You just carried it up and now you go down again.,boredom,0.0,2.769875
+10b03Fd,10b03Fd,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03Fd.wav,"On the weekends, when I always went home, I visited Agnes.",happy,0.0,3.364375
+15a07Wb,15a07Wb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a07Wb.wav,It will be done in 7 hours!,angry,0.0,2.105562
+16a05Na,16a05Na,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a05Na.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.2956250000000002
+10b01Na,10b01Na,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Na.wav,What kind of bags are under the table?,neutral,0.0,2.24125
+14b03Fb,14b03Fb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b03Fb.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.89075
+09a02Nc,09a02Nc,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02Nc.wav,She wants to give it away on Wednesday.,neutral,0.0,1.391312
+10a05Eb,10a05Eb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a05Eb.wav,The black sheet of paper is up there next to the piece of wood.,disgust,0.0,3.627562
+13b02Ea,13b02Ea,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b02Ea.wav,You just carried it up and now you're going down again.,disgust,0.0,3.764875
+09b02Ad,09b02Ad,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b02Ad.wav,They just carried it up and now they're going down again.,fear,0.0,2.23725
+08b02Ed,08b02Ed,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b02Ed.wav,You just carried it up and now you're going down again.,disgust,0.0,4.37475
+09a07Aa,09a07Aa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a07Aa.wav,It will be ready in 7 hours.,fear,0.0,1.346625
+11b10Eb,11b10Eb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Eb.wav,It will be on the spot where we always put it.,disgust,0.0,3.014937
+03b10Td,03b10Td,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Td.wav,It will be on the place where we always put it.,sad,0.0,2.4595000000000002
+12a05Ec,12a05Ec,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a05Ec.wav,"The black sheet of paper is up there, next to the piece of wood.",disgust,0.0,6.156312
+15a02Fa,15a02Fa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02Fa.wav,She wants to give it away on Wednesday!,happy,0.0,2.013687
+10b01Tb,10b01Tb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Tb.wav,What are those bags under the table?,sad,0.0,2.317
+12b03Ab,12b03Ab,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b03Ab.wav,On the weekends I always went home and visited Agnes.,fear,0.0,3.031062
+10a07Fb,10a07Fb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a07Fb.wav,In 7 hours it will be ready!,happy,0.0,1.87775
+10b10Eb,10b10Eb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b10Eb.wav,"She will be on the spot, where we always put her.",disgust,0.0,2.374
+08a04Ec,08a04Ec,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a04Ec.wav,I could tell him tonight.,disgust,0.0,2.724
+13b02Tb,13b02Tb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b02Tb.wav,They just carried us up and now they're going down again.,sad,0.0,3.229187
+09b01Aa,09b01Aa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b01Aa.wav,What are those bags under the table?,fear,0.0,1.78325
+13a04Tb,13a04Tb,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Tb.wav,I could tell him tonight.,sad,0.0,2.01625
+10b02Fa,10b02Fa,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b02Fa.wav,You just carried it up and now you're going down again.,happy,0.0,2.598125
+15b10Eb,15b10Eb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Eb.wav,It will be on the place where we always put it.,disgust,0.0,2.935187
+10a02Ta,10a02Ta,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a02Ta.wav,She wants to give it away on Wednesday.,sad,0.0,1.555312
+13a04Tc,13a04Tc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Tc.wav,I could tell him tonight.,sad,0.0,2.017875
+09a01Aa,09a01Aa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a01Aa.wav,Lappen is lying on the wall cabinet.,fear,0.0,1.403437
+03b03Ta,03b03Ta,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03Ta.wav,At the weekends I always went home and visited Agnes.,sad,0.0,3.736125
+10b10Nb,10b10Nb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b10Nb.wav,It will be on the spot where we always put it.,neutral,0.0,2.222625
+13a05Fa,13a05Fa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Fa.wav,The black sheet of paper is up there next to the piece of wood.,happy,0.0,2.8834999999999997
+11a04Ec,11a04Ec,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Ec.wav,I could tell him tonight.,disgust,0.0,2.081375
+08b01Ta,08b01Ta,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b01Ta.wav,What kind of bags are under the table?,sad,0.0,3.80775
+03a01Eb,03a01Eb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a01Eb.wav,The rag is on the fridge.,disgust,0.0,2.188937
+03a02Lc,03a02Lc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a02Lc.wav,She wants to give it away on Wednesday.,boredom,0.0,1.9986869999999999
+08b02Ac,08b02Ac,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b02Ac.wav,They just carried it up and now they're going down again.,fear,0.0,3.298375
+08a07Ed,08a07Ed,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a07Ed.wav,In seven hours it will be time.,disgust,0.0,3.129124
+13a04Nc,13a04Nc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Nc.wav,Tonight I could tell him.,neutral,0.0,1.511625
+13a07Ea,13a07Ea,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a07Ea.wav,In seven hours it will be time.,disgust,0.0,1.887062
+12a04Fc,12a04Fc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a04Fc.wav,I could tell him tonight.,happy,0.0,1.93125
+08b03Eb,08b03Eb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b03Eb.wav,On the weekends I always went home and visited Agnes.,disgust,0.0,4.575687
+09b10Ea,09b10Ea,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b10Ea.wav,It will be on the place where we always put it.,disgust,0.0,2.742
+14b01Lb,14b01Lb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b01Lb.wav,What kind of bags are under the table?,boredom,0.0,2.511312
+11b02Ld,11b02Ld,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b02Ld.wav,They just carried it up and now they're going down again.,boredom,0.0,2.7175000000000002
+15a04Lb,15a04Lb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Lb.wav,I could tell him tonight.,boredom,0.0,1.447062
+03b10Fa,03b10Fa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Fa.wav,It will be on the spot where we always put it.,happy,0.0,2.46675
+15a02Lc,15a02Lc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a02Lc.wav,I want to give it to her on Wednesday.,boredom,0.0,1.608437
+03a07Tc,03a07Tc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a07Tc.wav,In seven hours it will be time.,sad,0.0,2.401312
+03b09Ec,03b09Ec,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b09Ec.wav,I just want to get rid of it and then go drinking with Carvers.,disgust,0.0,2.740875
+15a05Ta,15a05Ta,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a05Ta.wav,"The black sheet of paper is up there, next to the piece of wood.",sad,0.0,4.144125
+15a05Ab,15a05Ab,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a05Ab.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,2.792875
+12b01Nb,12b01Nb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b01Nb.wav,What are those bags under the table?,neutral,0.0,2.497062
+09a05Fa,09a05Fa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a05Fa.wav,"The black sheet of paper is up there, next to the piece of wood.",happy,0.0,2.784375
+12a04Nc,12a04Nc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a04Nc.wav,Tonight I could tell him.,neutral,0.0,1.896
+15b09Eb,15b09Eb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b09Eb.wav,I just want to take it away and then go for a drink with Karl.,disgust,0.0,3.45925
+10b03Wd,10b03Wd,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03Wd.wav,On the weekends I went to someone's house and visited Agnes!,angry,0.0,3.90075
+10b03Ea,10b03Ea,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03Ea.wav,On the weekends I always went home and visited Agnes.,disgust,0.0,3.626437
+03b03La,03b03La,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03La.wav,At the weekends I always went home and visited Agnes.,boredom,0.0,4.717375
+10b03Ab,10b03Ab,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03Ab.wav,At the weekend I always went home and visited Agnes.,fear,0.0,2.676937
+12a02Fa,12a02Fa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Fa.wav,I want to give it away on Wednesday.,happy,0.0,1.623937
+12b09Lc,12b09Lc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Lc.wav,I just want to take it away and go for a drink with Karl.,boredom,0.0,2.86725
+16b02Nc,16b02Nc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b02Nc.wav,You have just carried it up and now you go down again.,neutral,0.0,2.9459999999999997
+14a01Tb,14a01Tb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Tb.wav,Lappen is lying on the fridge.,sad,0.0,2.044187
+11a07Nb,11a07Nb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a07Nb.wav,It will be ready in 7 hours.,neutral,0.0,1.745062
+08b10Eb,08b10Eb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b10Eb.wav,It will be on the spot where we always put it.,disgust,0.0,3.032312
+10a04Ld,10a04Ld,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a04Ld.wav,I could tell him that tonight.,boredom,0.0,1.754687
+10b01Wb,10b01Wb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b01Wb.wav,What are those bags under the table?,angry,0.0,2.4905
+09b09Ad,09b09Ad,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Ad.wav,I just want to take it away and go for a coffee.,fear,0.0,2.061062
+12a04Tb,12a04Tb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a04Tb.wav,Tonight I could tell him.,sad,0.0,3.646812
+13b09Wc,13b09Wc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Wc.wav,I just want to take it away and then go for a drink with Karl.,angry,0.0,3.307437
+03a07Ea,03a07Ea,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a07Ea.wav,It will be done in 7 hours.,disgust,0.0,2.097812
+10a02Tb,10a02Tb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a02Tb.wav,She wants to give it away on Wednesday.,sad,0.0,1.476187
+12a05Fc,12a05Fc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a05Fc.wav,The black sheet of paper is up there next to the piece of wood.,happy,0.0,3.336312
+11b02Wd,11b02Wd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b02Wd.wav,You just carried it up and now you're going down again!,angry,0.0,3.6959999999999997
+09a07Lc,09a07Lc,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a07Lc.wav,In 7 hours it will be ready.,boredom,0.0,2.016
+08a07Aa,08a07Aa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a07Aa.wav,In seven hours it will be time!,fear,0.0,2.13675
+11a04Wa,11a04Wa,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Wa.wav,I could tell him tonight.,angry,0.0,2.098375
+08a01Aa,08a01Aa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Aa.wav,The rag is on the fridge.,fear,0.0,1.881812
+10a07Nb,10a07Nb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a07Nb.wav,In seven hours it will be done.,neutral,0.0,1.9489999999999998
+14b03Na,14b03Na,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b03Na.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.915437
+13a01Ta,13a01Ta,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a01Ta.wav,The rag is on the fridge.,sad,0.0,1.545625
+03b03Aa,03b03Aa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03Aa.wav,At the weekends I always went home and visited Agnes!,fear,0.0,3.533375
+10b10Tc,10b10Tc,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b10Tc.wav,She will be on the spot where we always put her.,sad,0.0,2.101687
+11a07Fd,11a07Fd,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a07Fd.wav,In 7 hours it will be like that!,happy,0.0,2.203187
+03b09Fa,03b09Fa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b09Fa.wav,I just want to take it away and then go for a drink with Karl.,happy,0.0,2.98075
+09b02La,09b02La,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b02La.wav,You just carried it up and now you go down again.,boredom,0.0,3.1695
+03a02Ea,03a02Ea,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a02Ea.wav,She wants to give it away on Wednesday.,disgust,0.0,2.673062
+13b10Ta,13b10Ta,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10Ta.wav,It will be on the place where we always put it.,sad,0.0,3.018062
+14b03Nb,14b03Nb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b03Nb.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.494562
+12b09Nc,12b09Nc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b09Nc.wav,I just want to take it away and then go for a drink with Karl.,neutral,0.0,3.310625
+03a01Tc,03a01Tc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a01Tc.wav,The rag is on the fridge.,sad,0.0,2.02275
+15b02Fb,15b02Fb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b02Fb.wav,You just carried it up and now you're going down again.,happy,0.0,2.701062
+15b10Ab,15b10Ab,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Ab.wav,She will be on the spot where we always put her.,fear,0.0,2.305125
+14b02Eb,14b02Eb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b02Eb.wav,They just carried it up and now they're going down again.,disgust,0.0,4.176625
+09b09Fb,09b09Fb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Fb.wav,I want to take it away from him and then go for a drink with Carlos!,happy,0.0,2.43225
+12b01Lb,12b01Lb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b01Lb.wav,What are those bags under the table?,boredom,0.0,2.5221869999999997
+09b01Td,09b01Td,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b01Td.wav,What are those bags under the table?,sad,0.0,2.82225
+09b09Lb,09b09Lb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Lb.wav,I just want to take it away and go have a drink with Kai.,boredom,0.0,2.521875
+10b02Ta,10b02Ta,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b02Ta.wav,They just carried it up and now they're going down again.,sad,0.0,3.258
+12b10Fd,12b10Fd,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b10Fd.wav,"She will be on the spot, where we always put her.",happy,0.0,2.616625
+11a02La,11a02La,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a02La.wav,I'll give it to her on Wednesday.,boredom,0.0,1.770312
+15b01Fa,15b01Fa,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b01Fa.wav,What kind of bags are under the table?,happy,0.0,2.310125
+09b03Aa,09b03Aa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b03Aa.wav,On the weekends I always went home and visited Agnes.,fear,0.0,2.467875
+12a07Nb,12a07Nb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a07Nb.wav,It will be ready in 7 hours.,neutral,0.0,2.026687
+03b10Ea,03b10Ea,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b10Ea.wav,It will be on the spot where we always put it.,disgust,0.0,2.4485
+10a04Tb,10a04Tb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a04Tb.wav,I could tell him tonight.,sad,0.0,1.901125
+09a02Fa,09a02Fa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02Fa.wav,She wants to give it away on Wednesday!,happy,0.0,1.6985000000000001
+12a02La,12a02La,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02La.wav,She wants to give it away on Wednesday.,boredom,0.0,1.715562
+14a04Fc,14a04Fc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Fc.wav,I could tell him tonight.,happy,0.0,1.835812
+10a01Lb,10a01Lb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Lb.wav,The rag is on the fridge,boredom,0.0,1.393187
+14b10Fa,14b10Fa,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b10Fa.wav,It will be on the spot where we always put it.,happy,0.0,2.013562
+03b01Te,03b01Te,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Te.wav,What are those bags under the table?,sad,0.0,2.548562
+08b03Ab,08b03Ab,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b03Ab.wav,On the weekends I always went home and visited Agnes.,fear,0.0,4.12725
+13a04Ea,13a04Ea,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a04Ea.wav,Tonight I could tell him.,disgust,0.0,1.8868749999999999
+14a05Ea,14a05Ea,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a05Ea.wav,"The black sheet of paper is up there, next to the piece of wood.",disgust,0.0,7.27625
+12a02Fb,12a02Fb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Fb.wav,We will give it away on Wednesday.,happy,0.0,1.6538119999999998
+10a01Tb,10a01Tb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Tb.wav,The rag is on the fridge.,sad,0.0,1.866187
+14a01Ld,14a01Ld,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a01Ld.wav,"The cap is on the ice, Frank.",boredom,0.0,1.553625
+16b10Nb,16b10Nb,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b10Nb.wav,It will be on the spot where we always put it.,neutral,0.0,2.484125
+09a07Fd,09a07Fd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a07Fd.wav,It will be ready in 7 hours!,happy,0.0,1.75575
+12a04Fa,12a04Fa,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a04Fa.wav,I could tell him tonight.,happy,0.0,1.70625
+13a07Aa,13a07Aa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a07Aa.wav,It will be ready in 7 hours.,fear,0.0,1.538312
+10a05Na,10a05Na,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a05Na.wav,The black sheet of paper is up there next to the piece of wood.,neutral,0.0,3.5196870000000002
+03b01Ed,03b01Ed,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Ed.wav,What are those bags under the table?,disgust,0.0,3.22925
+09b09Ab,09b09Ab,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Ab.wav,I just want to take it away and go out for a drink with Carl.,fear,0.0,1.982625
+16b02Td,16b02Td,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16b02Td.wav,You just carried it up and now you're going down again.,sad,0.0,4.318
+09a05Aa,09a05Aa,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a05Aa.wav,"The black sheet of paper is up there, next to the piece of wood.",fear,0.0,2.659437
+10b09Ae,10b09Ae,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b09Ae.wav,I just want to take it away so that Karl can go for a drink.,fear,0.0,2.125687
+09b01Fd,09b01Fd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b01Fd.wav,What are those bags under the table?,happy,0.0,2.1985
+08b03Aa,08b03Aa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b03Aa.wav,On the weekends I always went home and visited Agnes.,fear,0.0,3.993187
+08b01Eb,08b01Eb,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b01Eb.wav,What kind of bags are under the table?,disgust,0.0,4.545
+11b02Eb,11b02Eb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b02Eb.wav,They just carried it up. And now they're going down again.,disgust,0.0,3.848062
+13b09Ta,13b09Ta,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Ta.wav,I just want to take it away and go for a drink with Karl.,sad,0.0,2.949
+13b02Tc,13b02Tc,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b02Tc.wav,You just carried it up and now you're going down again.,sad,0.0,3.7563750000000002
+10b03Na,10b03Na,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b03Na.wav,On the weekends I always went home and visited Agnes.,neutral,0.0,3.60075
+03a01Lb,03a01Lb,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a01Lb.wav,The bottle cap is on the fridge.,boredom,0.0,2.278062
+03b03Fc,03b03Fc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03Fc.wav,On the weekends I always went home and visited Agnes.,happy,0.0,4.141875
+11a04Ld,11a04Ld,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a04Ld.wav,I could tell him tonight.,boredom,0.0,1.432
+03b02Fc,03b02Fc,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b02Fc.wav,You just carried it up and now you're going down again!,happy,0.0,3.30875
+15b03La,15b03La,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03La.wav,During the weeks I went home and visited Agnes.,boredom,0.0,2.968312
+10a04Ab,10a04Ab,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a04Ab.wav,Tonight I could tell him...,fear,0.0,1.52575
+12a07Ec,12a07Ec,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a07Ec.wav,In seven hours it will be so.,disgust,0.0,4.139875
+03a05Ta,03a05Ta,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05Ta.wav,The black sheet of paper is up there next to the piece of wood.,sad,0.0,3.6006869999999997
+12b03Ea,12b03Ea,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b03Ea.wav,At the weekends I always went home and visited Agnes.,disgust,0.0,7.798812
+03a04Ac,03a04Ac,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a04Ac.wav,I could tell him tonight!,fear,0.0,1.826375
+15b01Ta,15b01Ta,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b01Ta.wav,What are those bags under the table?,sad,0.0,3.388687
+03b03Ed,03b03Ed,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03Ed.wav,On the weekends I always went home and visited Agnes.,disgust,0.0,4.167312
+09a04Ta,09a04Ta,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a04Ta.wav,I could tell him tonight.,sad,0.0,2.03675
+10b09Fe,10b09Fe,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b09Fe.wav,I just want to take it away and then go for a drink with Karl.,happy,0.0,2.7801869999999997
+14b02Lc,14b02Lc,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14b02Lc.wav,You just carried it up and now you go down again.,boredom,0.0,2.661125
+10a01Fb,10a01Fb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Fb.wav,The lathe is on the fridge!,happy,0.0,1.777812
+03a01Ab,03a01Ab,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a01Ab.wav,The rag is on the fridge!,fear,0.0,1.9565000000000001
+11b03Eb,11b03Eb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b03Eb.wav,At the weekends I always went home and visited Agnes.,disgust,0.0,4.734437
+09a04Ea,09a04Ea,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a04Ea.wav,I could tell him tonight.,disgust,0.0,3.627187
+15a04Eb,15a04Eb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a04Eb.wav,I could have told him tonight.,disgust,0.0,2.425437
+12b01Ad,12b01Ad,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b01Ad.wav,What are those bags under the table?,fear,0.0,1.941062
+16a02Fc,16a02Fc,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a02Fc.wav,She wants to give it away on Wednesday!,happy,0.0,2.016562
+10a01Eb,10a01Eb,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Eb.wav,The rag is on the fridge.,disgust,0.0,2.028625
+13b10Aa,13b10Aa,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b10Aa.wav,It will be on the spot where we always put it.,fear,0.0,2.154687
+16a02Aa,16a02Aa,spk16,16,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\16a02Aa.wav,That we'll give it away on Wednesday.,fear,0.0,1.498375
+15a07Tc,15a07Tc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15a07Tc.wav,In seven hours it will be.,sad,0.0,2.431937
+09a04Ab,09a04Ab,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a04Ab.wav,I could have told him tonight!,fear,0.0,1.213375
+08a01Ec,08a01Ec,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a01Ec.wav,The rag is lying on the fridge.,disgust,0.0,2.244062
+09b09Td,09b09Td,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Td.wav,I just want to get rid of it and go for a drink with Karl.,sad,0.0,2.9307499999999997
+09a01Tc,09a01Tc,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a01Tc.wav,The rag is on the fridge.,sad,0.0,2.40375
+08a04Aa,08a04Aa,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08a04Aa.wav,I could tell him tonight!,fear,0.0,1.7302499999999998
+13b09Ac,13b09Ac,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b09Ac.wav,I just want to take it away and then go for a drink with Karl.,fear,0.0,2.41875
+10b09Ea,10b09Ea,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10b09Ea.wav,I just want to get rid of it and go for a drink with Karl.,disgust,0.0,3.452875
+03b03Ab,03b03Ab,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b03Ab.wav,At the weekends I always went home and visited Agnes!,fear,0.0,3.419437
+03b09Aa,03b09Aa,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b09Aa.wav,I just want to take it away and go out for a drink with Karl.,fear,0.0,2.564937
+11b10Fa,11b10Fa,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Fa.wav,It will be on the spot where we always put it.,happy,0.0,2.377625
+09a02Tb,09a02Tb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02Tb.wav,She wants to give it away on Wednesday.,sad,0.0,2.1225
+09b10Fb,09b10Fb,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b10Fb.wav,It will be on the place where we always put it.,happy,0.0,2.2540620000000002
+08b09Ea,08b09Ea,spk08,8,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\08b09Ea.wav,I just want to take it away and go for a drink with Karl.,disgust,0.0,3.260375
+12b01Ea,12b01Ea,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b01Ea.wav,What are those bags under the table?,disgust,0.0,4.725
+09a02Ac,09a02Ac,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a02Ac.wav,She wants to give it away on Wednesday!,fear,0.0,1.385687
+15b10Fb,15b10Fb,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b10Fb.wav,It will be on the spot where we always put it.,happy,0.0,2.200562
+12a01Eb,12a01Eb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a01Eb.wav,The rag is lying on the fridge.,disgust,0.0,2.392187
+10a01Lc,10a01Lc,spk10,10,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\10a01Lc.wav,The rag is on the fridge.,boredom,0.0,1.591812
+11b10Wb,11b10Wb,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b10Wb.wav,It will be on the pitch! Wherever we want to put it!,angry,0.0,3.88
+12a02Ta,12a02Ta,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a02Ta.wav,She wants to give it away on Wednesday.,sad,0.0,2.079812
+13a05Ac,13a05Ac,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13a05Ac.wav,The black sheet of paper is up there next to the piece of wood.,fear,0.0,2.7565619999999997
+13b01Td,13b01Td,spk13,13,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\13b01Td.wav,What are those bags under the table?,sad,0.0,2.7525
+11a01Ea,11a01Ea,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a01Ea.wav,Der Lappen liegt auf dem Eisschrank.,disgust,0.0,1.681562
+12b02Tb,12b02Tb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12b02Tb.wav,"They just carried it up, and now they're going down again.",sad,0.0,5.239625
+09b09Fd,09b09Fd,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09b09Fd.wav,I want to get rid of it and then go and drink my coffee!,happy,0.0,2.262812
+12a04Lb,12a04Lb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a04Lb.wav,I could tell him tonight.,boredom,0.0,1.740875
+12a01Ab,12a01Ab,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a01Ab.wav,The rag is on the fridge.,fear,0.0,1.28175
+11a02Ab,11a02Ab,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11a02Ab.wav,She wants to give it away on Wednesday.,fear,0.0,1.650687
+15b03Fc,15b03Fc,spk15,15,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\15b03Fc.wav,On the weekends I always went home and visited Agnes.,happy,0.0,3.109937
+09a01Lc,09a01Lc,spk09,9,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\09a01Lc.wav,The laptop is on the drawer.,boredom,0.0,1.5575
+14a04Nb,14a04Nb,spk14,14,female,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\14a04Nb.wav,Tonight I could tell him.,neutral,0.0,1.7065000000000001
+03b01Ad,03b01Ad,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03b01Ad.wav,What are those bags under the table?,fear,0.0,2.598812
+11b03Ab,11b03Ab,spk11,11,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\11b03Ab.wav,On the weekends I always went home and visited Agnes.,fear,0.0,3.475937
+12a07Tc,12a07Tc,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a07Tc.wav,In seven hours it will be time.,sad,0.0,2.9045
+03a05Ea,03a05Ea,spk03,3,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\03a05Ea.wav,The black sheet of paper is up there next to the piece of wood.,disgust,0.0,3.594375
+12a01Tb,12a01Tb,spk12,12,male,C:\Users\gagan\Documents\Dissertation\emotion-aware-ca\data\emodb_2.0\wav\12a01Tb.wav,The rag is on the fridge.,sad,0.0,3.303625

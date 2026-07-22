@@ -1,0 +1,381 @@
+Emotion-Aware Conversational Agent
+byGaganendra NathBiswas
+Masters Dissertation
+Submitted in partial fulfilment for the degree of
+MSc. in Artificial Intelligence
+Supervised byDr. DavidRobb
+Heriot-W att University
+School of Mathematical and Computer Sciences
+21st July 2026
+The copyright in this dissertation is owned by the author. Any quotation
+from the dissertation or use of any of the information contained in it must
+acknowledge it as the source of the quotation or information.
+Authorship Declaration
+Course code and name F21MP - Masters Project and Dissertation
+Type of assessment Individual
+Coursework title Emotion-Aware Conversational Agent
+Student name Gaganendra NathBiswas
+Student ID H00510018
+By signing this form:
+• I declare that the work I have submitted for individual assessment or the work I
+have contributed to a group assessment is entirely my own. I have not taken the
+ideas, writings or inventions of another person and used them as if they were
+my own. My submission or my contribution to a group submission is expressed
+in my own words. Any uses made within this work of the ideas, writings or
+inventions of others, or of any existing sources of information (books, journals,
+websites, etc.) are properly acknowledged and listed in the references and/or
+acknowledgements sections.
+• I confirm that I have read, understood and followed the University’s Regulations
+on academic misconduct as published on the University’s website, and that I
+am aware of the penalties that I will face should I not adhere to the University
+Regulations.
+• I confirm that I have read, understood and avoided the different types of plagiarism
+explained in the University guidance on Academic Integrity and Plagiarism.
+Student signature: Gaganendra NathBiswas
+Date: 21st July 2026
+Your work will not be marked if a signed copy of this form is not included with
+your submission.
+i
+Acknowledgements
+I would like to express my deepest gratitude to my supervisor, Dr. David Robb, for his
+invaluable guidance, insightful feedback, and unwavering support throughout this re-
+search. I would also like to thank all my professors for their teaching, and guidance, which
+have greatly contributed to my academic development. I am also deeply grateful to my
+grandfather, whose constant encouragement and support have made my academic journey
+possible.
+ii
+Abstract
+In recent years, conversational agents (CAs) have been widely used across various sectors,
+including healthcare, education, virtual assistance, and customer service. As CAs become in-
+creasingly important in daily life, it is essential for them to evolve and adapt their responses
+based on users’ emotional states. Despite this importance, many existing conversational
+agents primarily focus on task completion and lack emotional awareness. Although sig-
+nificant progress has been made in Speech Emotion Recognition (SER), the integration of
+emotion recognition systems with conversational agents to generate emotionally aware re-
+sponses remains an under-explored area. Furthermore, most emotion-aware conversational
+agents have not been evaluated through human evaluation in live conversational settings.
+This study proposes a multi-modal causal emotion classifier developed using a Graph
+Attention Network (GAT) that utilizes both audio and text modalities to detect users’
+emotions during live conversations. The proposed classifier achieved a weighted F1-score
+of 61.26% on MELD and 65.42%/76.51% on the IEMOCAP 6-class/4-class tasks, respectively.
+For cross-linguistic comparison, the classifier trained on the IEMOCAP 4-class task was
+evaluated on the Berlin EmoDB dataset and achieved a weighted F1-score of 45.6%. The
+proposed model has 0.3M trainable parameters and is ˜95% smaller in size than some of
+the recently published models while maintaining comparable performance. For human
+evaluation, the classifier was coupled with the gemini-2.5-flash model to create an emotion-
+aware conversational agent (ECA) capable of generating empathetic responses. A non-
+emotion-aware conversational agent (NECA) was also implemented using the same gemini-
+2.5-flash model, with emotional awareness disabled through prompt engineering, to enable
+a fair comparison. Compared with the NECA, the proposed ECA achieved significantly
+higher user satisfaction on the PARADISE scale and tended to receive higher empathy
+ratings on the PETS scale. The human evaluation methodology used in this study can be
+applied in future research to compare conversational agents in terms of user satisfaction
+and perceived empathy.
+iii
+Table of Contents
+Authorship Declaration i
+Acknowledgements ii
+Abstract iii
+Table of Contents iv
+1 Introduction 1
+1.1 Background and motivation . . . . . . . . . . . . . . . . . . . . 1
+1.2 Aims and objectives . . . . . . . . . . . . . . . . . . . . . . . 1
+1.3 Research questions . . . . . . . . . . . . . . . . . . . . . . . 2
+1.4 Organisation . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 Literature review 3
+2.1 Importance of emotions in conversational agents . . . . . . . . . . . 3
+2.2 The psychological models of emotions . . . . . . . . . . . . . . . . 3
+2.3 Graph neural networks . . . . . . . . . . . . . . . . . . . . . . 4
+2.4 Multimodal emotion recognition . . . . . . . . . . . . . . . . . . 5
+2.5 Emotion recognition in conversation . . . . . . . . . . . . . . . . 5
+3 Methodology 5
+4 Experimental results & analysis 5
+5 Conclusion & future work 5
+References 6
+A Project Management 8
+A.1 Gantt Chart . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+B Generative AI 8
+iv
+Emotion-Aware Conversational Agent•1
+1 Introduction
+Emotionally driven conversations not only enhance user satisfaction and engagement
+(Loveys et al. 2022, Lutfi et al. 2013) but also play a crucial role in shaping human decision-
+making processes (Younis et al. 2024). Therefore, it is essential for CAs to recognise emotions
+and generate empathetic responses to improve user experience and increase satisfaction.
+(Melo et al. 2010, Peng et al. 2026, Saffaryazdi et al. 2026)
+1.1 Background and motivation
+Emotionally attuned conversational agents are often used in mental health applications,
+hate-speech detection, opinion mining, social media, customer services and others (Ma-
+jumder et al. 2019, Pan et al. 2026, Tiwari et al. 2025). In recent years, the Emotion Detection
+and Recognition (EDR) market has expanded significantly and is projected to reach USD
+52.86 million by 2026 (Geetha et al. 2024). This rapid growth has been accompanied by
+increased research efforts aimed at improving the recognition of user’s emotions in hu-
+man–computer interaction. However, despite recent advancements in this field, relatively
+little attention has been given to the modalities most widely used by conversational agents,
+namely speech and text, which account for only 4% of the total research conducted on
+multi-modal emotion recognition (MER) systems (Geetha et al. 2024).
+Emotions are expressed not only through words but also via vocal features and facial
+expressions which contains important emotional cues. In the past, emotion recognition in
+conversation approaches relied mainly on textual data (Pan et al. 2026). Furthermore, many
+existing emotion recognition classifiers focus mainly on detecting the emotional state of the
+user and doesn’t explore the possibilities of using this information to generate appropriate
+or empathetic responses. As a result, the integration of emotion recognition with response
+generation remains an under-explored area of research (Wang et al. 2024). In addition, there
+has been no known research of cross-generalisation of speech emotion classifiers. This is
+a critical challenge in practical application of deep learning methods, where a network
+struggles to predict on an unknown dataset (Zhang, Huang, Zhang, Zhuang, Han, Lai &
+Liu 2024). Therefore, this study introduces an emotionally intelligent conversational agent
+that uses the combined information of textual and audio data to detect the emotional state
+of the user and generate empathetic responses. Furthermore, this study also evaluates the
+cross-generalisation ability of the proposed emotion classifier by training it on one dataset
+and testing it on a different dataset including dataset in different language. This study also
+focuses on the development of deployable and responsible AI, exploring techniques to
+make the system lightweight and ethical.
+1.2 Aims and objectives
+The aim of this study is to develop and evaluate an ECA that can adapt its responses based on
+the perceived emotional state (PES) of the user during live conversation. It also contributes
+to the broader field of affective computing by analysing the impact of emotionally intelligent
+CAs on user satisfaction. Furthermore, the proposed classifier is evaluated to determine its
+cross-linguistic generalisability.
+2•Gaganendra NathBiswas
+The objectives of this study were as follows:
+(1) To develop a fully streaming (causal) emotion classifier capable of recognising the
+perceived emotional state (PES) of the user in real time.
+(2) To perform an automatic evaluation of the proposed emotion classifier using standard
+classification metrics.
+(3) To evaluate the cross-linguistic generalisability of the emotion classifier by training
+it on the IEMOCAP (English) dataset and evaluating it on the EmoDB (German)
+dataset.
+(4) To integrate the emotion classifier with the Gemini 2.5 Flash large language model
+(LLM) to develop an emotion-aware conversational agent capable of generating
+empathetic responses based on the user’s perceived emotional state.
+(5) To conduct a human evaluation of the emotion-aware conversational agent to assess
+user satisfaction and perceived empathy.
+1.3 Research questions
+This study is guided by the following research questions:
+RQ1: Can emotion-aware conversational agents improve user satisfaction during live
+conversation?
+RQ2: Can emotion-aware conversational agents support users’ in coping with an
+emotional situation?
+RQ3: Can a Speech Emotion Recognition (SER) model train on a dataset containing
+only one language effectively recognise emotions in a dataset from a different
+language?
+Based on the research questions presented above, this study proposes the following
+hypotheses. These hypotheses aim to evaluate whether an emotion-aware conversational
+agent (ECA) improves user satisfaction and whether a emotion classifier trained on an
+English dataset can generalise to a dataset in a different language (German).
+(1)Hypothesis for RQ1:
+•H 0:ECA does not significantly improves user satisfaction than NECA.
+•H 1:ECA significantly improves user satisfaction than NECA.
+(2)Hypothesis for RQ2:
+• H10:ECA does not provide significantly higher levels of emotional support to
+users compared to NECA.
+• H11:ECA provides significantly higher levels of emotional support to users
+compared to NECA.
+(3)Hypothesis for RQ3:
+• H0:An emotion classifier trained on an English dataset performs significantly
+worse than the baseline 1 when tested on a different language dataset.
+• H1:An emotion classifier trained on an English dataset does not perform
+significantly worse than the baseline when tested on a different language dataset.
+1Here, the baseline refers to the classifier trained and tested on the same dataset.
+Emotion-Aware Conversational Agent•3
+1.4 Organisation
+Following the introduction, this study is further structured into four more sections:
+Literature review: Review of existing research in the field of emotional conversa-
+tional agents, psychological emotional models, and emotional classifiers. It also
+identifies current research gaps that are relevant to the problem domain of this
+study.
+Methodology: Provides information related to model development and implementa-
+tion, and data sources used in this study.
+Experimental results & analysis: Outlines the experimental procedure, reports quan-
+titive and qualitative results, and critically analyses the findings.
+Conclusion & future work: Summarises the key findings of the study and discusses
+potential directions for future research.
+2 Literature review
+2.1 Importance of emotions in conversational agents
+According to Martınez-Miranda & Aldea (2005), emotion is an important component
+that makes intelligent systems more human. They further stated that human behaviour,
+performance and decision-making are largely influenced by emotions. Bilquise et al. (2022)
+in their work found that users often anthropomorphise conversational agents and get
+frustrated over apathetic or irrelevant responses from the agent. Thus, developing an
+emotion-aware conversational agent is crucial for improved user satisfaction. Their study
+further reveals several research gaps such as understanding the user’s emotional state
+from past utterances and encourage further conversation, lack of gold-standard emotional
+datasets and development of task-oriented emotion-aware conversational agents which can
+support the user in accomplishing a task. This study addresses two of the aforementioned
+research gaps. It proposes a emotion classifier that takes into account the past utterances of
+the user while predicting the current emotional state of the user. This study also develops
+an emotion-aware conversational agent using the proposed classifier and evaluates the
+final system in a live conversation setting involving human participants.
+2.2 The psychological models of emotions
+The existing models of emotions are commonly divided into two distinct categories: cate-
+gorical models and dimensional models (Chutia & Baruah 2024). Categorical models use
+discrete labels to classify emotions into categories whereas dimensional models represent
+each emotion as vector in a multi-dimensional space (Deng & Ren 2021). Among these
+broad categories of emotion models the most commonly used are Ekman’s basic emotion
+model (Ekman 1992), Russell’s circumplex model of emotions (Russell 1980) and Plutchik’s
+wheel of emotions (Plutchik 1980), displayed in figure 1. Ekman’s basic emotion model cat-
+egorises emotions into six distinct labels which are anger, disgust, fear, happiness, sadness,
+and surprise (Ekman et al. 1999). The circumplex model of emotions is a two-dimensional
+emotional spatial model that uses valence and arousal as perpendicular axes dividing the
+4•Gaganendra NathBiswas
+emotions into four sections. Plutchik, in his work Plutchik (2001), found that the primary
+emotions can be structured like a color wheel where the similar emotions are placed
+together and opposites are placed far apart. He further introduces a third dimension to
+represent the intensity of each emotions which resulted in a conical structured emotion
+model.
+Fig. 1. Emotion models. A: Ekman’s six basic emotions (Ekman et al. 1999, Shen et al. 2020), B:
+Russell’s circumplex model of emotion (Russell 1980) and C: Plutchik’s wheel of emotions (Plutchik
+2001)
+Many researchers in psychology argue to use dimensional models over categorical to
+measure burnout and productivity and to properly explore the cognitive mental states
+(Atmaja & Akagi 2020). However, according to Poria et al. (2019), most existing datasets for
+emotion recognition in conversations uses categorical labels which are modified versions
+of Ekman’s six basic emotions. Consequently, in machine learning, most research has been
+conducted using categorical labels due to the lack of datasets that carries dimensional
+labels (Vonikakis et al. 2021). In this study, the categorical model of emotions is being
+used to facilitate comparison and benchmarking with existing emotion recognition models.
+Furthermore, the datasets used in this research primarily contains categorical labels for
+emotions and lack dimensional labels. The only exception is the Interactive Emotional
+Dyadic Motion Capture (IEMOCAP) described in Busso et al. (2008), which contains both
+categorical and dimensional labels.
+2.3 Graph neural networks
+In many real-world applications data is represented as graphs to effectively capture re-
+lationship among entities (Li et al. 2023). Consequently, graph based models are often
+used in emotion recognition for their ability to correlate multiple modalities and learn
+rich emotional features (Fu et al. 2024). According to Zhou et al. (2020), graph neural net-
+works (GNNs) are neural networks that operate on graph-structured data by propagating
+information between the nodes. Furthermore, various types of GNNs such as graph convo-
+lutional network (GCN), graph attention network (GAT), graph recurrent network (GRN)
+have achieved significant performance across a variety of deep learning tasks (Zhou et al.
+Emotion-Aware Conversational Agent•5
+2020). In recent years, GCNs have been widely used in domains such as natural language
+processing, computer vision and recommendation systems (Wang et al. 2023). GCNs has
+the ability to perform convolution operations on graph-structured data using the learned
+representation of neighbouring nodes to iteratively update each node (Yang et al. 2025).
+GCN can be divided into spectral and non-spectral approaches (Hu, Liu, Zhao & Jin 2021,
+Veličković et al. 2017). Spectral approaches uses graph Fourier transform based on Laplace
+spectral decomposition theory whereas the non-spectral approaches directly performs
+convolutions on the graph by aggregating information from neighbouring nodes.
+Veličković et al. (2017) in their work proposes GAT, a graph-based self-attention network
+which addresses many issues of spectral based approaches while achieving or matching
+state-of-the-art performances across various benchmarks.
+This work leverages GAT as the backbone of its emotion classification model.
+2.4 Multimodal emotion recognition
+Human emotions are expressed through a variety of verbal and non-verbal channels,
+including speech, visuals, text, and other forms of communication (Zhang, Yang, Chen,
+Zhang, Leng & Zhao 2024). In previous researches, the emotional intelligence (EI) of CAs
+have been enhanced using text-based sentiment analysis and emotion-adaptive response
+generation but vocal cues containing rich emotional contexts have been largely overlooked
+(Hu, Huang, Hu & Xu 2021). In machine learning, a multimodal approach is used to combine
+information from different modalities and has become an active research area across many
+domains (Li et al. 2023). A multimodal emotion classifier fuses data from different modalities
+to attain greater accuracy and more robust performance (Al-Azani & El-Alfy 2025). As
+discussed in Section 1.1, although speech and text are the most widely used modalities by
+conversational agents, they have received relatively little research attention. Therefore, the
+proposed classifier in this study takes a multimodal approach combining speech and text
+modalities for emotion recognition.
+2.5 Emotion recognition in conversation
+According to Pan et al. (2026), during a conversation each utterance depends on the previous
+utterances, the responses to those utterances and the overall context of the conversation.
+Therefore, emotion recognition in conversation (ERC) not only focuses on individual
+utterances but also takes into account the overall conversational context and the prior
+emotional state of the user to classify the current emotional state (Pan et al. 2026). As a
+result, many existing emotion recognition systems leverages contextual information for
+emotion classification.
+3 Methodology
+4 Experimental results & analysis
+5 Conclusion & future work
+6•Gaganendra NathBiswas
+References
+Al-Azani, S. & El-Alfy, E.-S. M. (2025), ‘A review and critical analysis of multimodal datasets for emotional ai’,
+Artificial Intelligence Review58(10), 334.
+Atmaja, B. T. & Akagi, M. (2020), ‘Dimensional speech emotion recognition from speech features and word
+embeddings by using multitask learning’,APSIPA Transactions on Signal and Information Processing9, e17.
+Bilquise, G., Ibrahim, S. & Shaalan, K. (2022), ‘Emotionally intelligent chatbots: A systematic literature review’,
+Human Behavior and Emerging Technologies2022(1), 9601630.
+Busso, C., Bulut, M., Lee, C.-C., Kazemzadeh, A., Mower, E., Kim, S., Chang, J. N., Lee, S. & Narayanan, S. S.
+(2008), ‘Iemocap: Interactive emotional dyadic motion capture database’,Language resources and evaluation
+42(4), 335–359.
+Chutia, T. & Baruah, N. (2024), ‘A review on emotion detection by using deep learning techniques’,Artificial
+Intelligence Review57(8), 203.
+Deng, J. & Ren, F. (2021), ‘A survey of textual emotion recognition and its challenges’,IEEE Transactions on
+Affective Computing14(1), 49–67.
+Ekman, P. (1992), ‘Are there basic emotions?’.
+Ekman, P., Dalgleish, T. & Power, M. (1999), ‘Basic emotions’,San Francisco, USA1.
+Fu, R., Gai, X., Al-Absi, A. A., Al-Absi, M. A., Alam, M., Li, Y., Jiang, M. & Wang, X. (2024), ‘Mm dialoguegat—a
+fusion graph attention network for emotion recognition using multi-model system’,IEEE Access12, 150941–
+150952.
+Geetha, A. V., Mala, T., Priyanka, D. & Uma, E. (2024), ‘Multimodal emotion recognition with deep learning:
+Advancements, challenges, and future directions’,Information Fusion105, 102218.
+URL:https://www.sciencedirect.com/science/article/pii/S1566253523005341
+Hu, J., Huang, Y., Hu, X. & Xu, Y. (2021), Enhancing the perceived emotional intelligence of conversational
+agents through acoustic cues,in‘Extended Abstracts of the 2021 CHI Conference on Human Factors in
+Computing Systems’, pp. 1–7.
+Hu, J., Liu, Y., Zhao, J. & Jin, Q. (2021), Mmgcn: Multimodal fusion via deep graph convolution network for
+emotion recognition in conversation,in‘Proceedings of the 59th Annual Meeting of the Association for
+Computational Linguistics and the 11th International Joint Conference on Natural Language Processing
+(Volume 1: Long Papers)’, pp. 5666–5675.
+Li, J., Wang, X., Lv, G. & Zeng, Z. (2023), ‘Graphmft: A graph network based multimodal fusion technique for
+emotion recognition in conversation’,Neurocomputing550, 126427.
+Loveys, K., Sagar, M., Billinghurst, M., Saffaryazdi, N. & Broadbent, E. (2022), Exploring empathy with digital
+humans,in‘2022 IEEE conference on virtual reality and 3D user interfaces abstracts and workshops
+(VRW)’, IEEE, pp. 233–237.
+Lutfi, S. L., Fernández-Martínez, F., Lorenzo-Trueba, J., Barra-Chicote, R. & Montero, J. M. (2013), ‘I feel you:
+the design and evaluation of a domotic affect-sensitive spoken conversational agent’,Sensors13(8), 10519–
+10538.
+Majumder, N., Poria, S., Hazarika, D., Mihalcea, R., Gelbukh, A. & Cambria, E. (2019), Dialoguernn: An
+attentive rnn for emotion detection in conversations,in‘Proceedings of the AAAI conference on artificial
+intelligence’, Vol. 33, pp. 6818–6825.
+Martınez-Miranda, J. & Aldea, A. (2005), ‘Emotions in human and artificial intelligence’,Computers in human
+behavior21(2), 323–341.
+Melo, C. M. D., Carnevale, P. & Gratch, J. (2010), ‘The influence of emotions in embodied agents on human
+decision-making’,Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelli-
+gence and Lecture Notes in Bioinformatics)6356 LNAI, 357–370.
+URL:https://link.springer.com/chapter/10.1007/978-3-642-15892-6 38
+Pan, R., García-Díaz, J. A. & Valencia-García, R. (2026), ‘A dynamic multimodal causal graph framework for
+standardized emotion recognition in conversations’,Computer Standards & Interfacesp. 104130.
+Emotion-Aware Conversational Agent•7
+Peng, X., Qian, Y. & He, Y. (2026), ‘When ai chatbots understand emotions: exploring the mechanisms of
+self-disclosure from emotional arousal to psychological acceptance—a hybrid sem–ann–nca analysis across
+multiple interaction configurations’,Frontiers in Psychology16, 1724313.
+Plutchik, R. (1980), A general psychoevolutionary theory of emotion,in‘Theories of emotion’, Elsevier,
+pp. 3–33.
+Plutchik, R. (2001), ‘The nature of emotions: Human emotions have deep evolutionary roots, a fact that may
+explain their complexity and provide tools for clinical practice’,American scientist89(4), 344–350.
+Poria, S., Majumder, N., Mihalcea, R. & Hovy, E. (2019), ‘Emotion recognition in conversation: Research
+challenges, datasets, and recent advances’,IEEE access7, 100943–100953.
+Russell, J. A. (1980), ‘A circumplex model of affect. ’,Journal of personality and social psychology39(6), 1161.
+Saffaryazdi, N., Gunasekaran, T. S., Loveys, K., Broadbent, E. & Billinghurst, M. (2026), ‘Empathetic conversa-
+tional agents: Utilizing neural and physiological signals for enhanced empathetic interactions’,International
+Journal of Human–Computer Interaction42(6), 4555–4579.
+Shen, G., Wang, X., Duan, X., Li, H. & Zhu, W. (2020), Memor: A dataset for multimodal emotion reasoning in
+videos,in‘Proceedings of the 28th ACM international conference on multimedia’, pp. 493–502.
+Tiwari, A., Panicker, M. D., Singh, Y. K. & Kaliyar, R. K. (2025), Emotionally intelligent chatbots: Enhancing
+human-machine interaction using bert transformer,in‘2025 6th International Conference on Control,
+Communication and Computing (ICCC)’, IEEE, pp. 1–6.
+Veličković, P., Cucurull, G., Casanova, A., Romero, A., Lio, P. & Bengio, Y. (2017), ‘Graph attention networks’,
+arXiv preprint arXiv:1710.10903.
+Vonikakis, V., Dexter, N. Y. R. & Winkler, S. (2021), Morphset: Augmenting categorical emotion datasets
+with dimensional affect labels using face morphing,in‘2021 IEEE International Conference on Image
+Processing (ICIP)’, IEEE, pp. 2713–2717.
+Wang, B., Dong, G., Zhao, Y., Li, R., Cao, Q., Hu, K. & Jiang, D. (2023), ‘Hierarchically stacked graph convolution
+for emotion recognition in conversation’,Knowledge-Based Systems263, 110285.
+Wang, X., Liu, T., Liu, Z. & Fang, Z. (2024), ‘Empci: Empathetic response generation with common sense and
+empathetic intent’,Cognitive Systems Research88, 101267.
+Yang, J., Wei, P., Du, X. & Shen, J. (2025), ‘Graph attention based on contextual reasoning and emotion-shift
+awareness for emotion recognition in conversations’,Complex & Intelligent Systems11(7), 287.
+Younis, E. M., Mohsen, S., Houssein, E. H. & Ibrahim, O. A. S. (2024), ‘Machine learning for human emotion
+recognition: a comprehensive review’,Springer36, 8901–8947.
+URL:https://link.springer.com/article/10.1007/s00521-024-09426-2
+Zhang, S., Yang, Y., Chen, C., Zhang, X., Leng, Q. & Zhao, X. (2024), ‘Deep learning-based multimodal emotion
+recognition from audio, visual, and text modalities: A systematic review of recent advancements and
+future prospects’,Expert Systems with Applications237, 121692.
+Zhang, X., Huang, H., Zhang, D., Zhuang, S., Han, S., Lai, P. & Liu, H. (2024), ‘Cross-dataset generalization in
+deep learning’,arXiv preprint arXiv:2410.11207.
+Zhou, J., Cui, G., Hu, S., Zhang, Z., Yang, C., Liu, Z., Wang, L., Li, C. & Sun, M. (2020), ‘Graph neural networks:
+A review of methods and applications’,AI open1, 57–81.
+8•Gaganendra NathBiswas
+A Project Management
+A.1 Gantt Chart
+B Generative AI

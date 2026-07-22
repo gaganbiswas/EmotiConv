@@ -47,7 +47,7 @@ GREETING_EMPATHETIC = (
 
 INSTRUCTIONS_CONTROL = (
     """
-    You are conversing with a human through a voice interface.
+    You are conversing with a human.
 
     Respond to the literal content of what the user says. Keep replies relevant,
     clear, and on topic. Do not label, validate, or respond to the user's feelings,

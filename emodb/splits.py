@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 TEST_SPK = {"13", "14"}
 VAL_SPK = {"15", "16"}
 

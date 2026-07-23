@@ -18,8 +18,8 @@ load_dotenv(REALTIME / ".env")
 
 sys.path.insert(0, str(REALTIME))
 
-import uvicorn  # noqa: E402
-from token_server import app  # noqa: E402
+import uvicorn
+from token_server import app
 
 BASE = "http://127.0.0.1:8000"
 

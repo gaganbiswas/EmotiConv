@@ -28,8 +28,6 @@ class FasterWhisperSTT(stt.STT):
         lang = language or self._language
 
         def _transcribe():
-            # Runs in a worker thread; the generator must be consumed here so the
-            # actual (blocking) inference does not run on the event loop.
             segments, _ = self._model.transcribe(audio, language=lang, beam_size=1)
             return " ".join(s.text for s in segments).strip()
 

@@ -1,20 +1,3 @@
-"""Cross-corpus evaluation: run the trained IEMOCAP model on EmoDB.
-
-The model has never seen EmoDB (nor German speech). It is scored only on the EmoDB
-emotions that coincide with its own label set, mapping the two vocabularies onto shared
-categories:
-
-    IEMOCAP (4)  neutral, happy, angry, sad
-        -> EmoDB overlap: neutral, happy, angry, sad            (4 classes)
-
-The prediction is taken as the arg-max over *only* the overlapping logits, so the model
-is never penalised for classes that do not exist in EmoDB. EmoDB features use the same
-raw BERT [CLS] + log-mel(+delta) pipeline the model was trained on; German transcripts
-were machine-translated to English in generate_csv.py.
-
-Usage:
-    python inference.py
-"""
 from __future__ import annotations
 
 import argparse
@@ -36,7 +19,6 @@ from splits import EMO7_NAMES
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent
 
-# name (in the source model's own label order) -> canonical EmoDB name.
 SOURCES = {
     "iemocap": {
         "ckpt": REPO / "iemocap" / "model_4class" / "best.pt",
@@ -67,7 +49,6 @@ def _audio_feat(wav_path, sr=16000, n_mels=64):
 
 
 def extract_emodb(device):
-    """Return list of (emodb_emotion, text_emb, audio_feat) for every EmoDB utterance."""
     import pandas as pd
     csv_path = HERE / "emodb.csv"
     if not csv_path.exists():
@@ -117,10 +98,8 @@ def evaluate_source(key, items, device, out_dir):
         return None
 
     names, to_emodb = src["names"], src["to_emodb"]
-    # Source logit indices that map onto an EmoDB class, and the EmoDB class each yields.
     keep_idx = [i for i, nm in enumerate(names) if nm in to_emodb]
     idx_to_emodb = {i: to_emodb[names[i]] for i in keep_idx}
-    # Fixed ordering of the overlapping EmoDB classes (canonical EMO7 order).
     overlap = [e for e in EMO7_NAMES if e in set(idx_to_emodb.values())]
     eval_id = {e: k for k, e in enumerate(overlap)}
     keep_t = torch.tensor(keep_idx, device=device)
@@ -129,7 +108,7 @@ def evaluate_source(key, items, device, out_dir):
 
     gts, preds = [], []
     for emo, text_emb, audio in items:
-        if emo not in eval_id:  # EmoDB class the source model cannot represent
+        if emo not in eval_id:
             continue
         text = torch.from_numpy(text_emb)[None, None].to(device)
         aud = torch.from_numpy(audio)[None, None].to(device)
@@ -137,7 +116,6 @@ def evaluate_source(key, items, device, out_dir):
         pad = torch.ones(1, 1, dtype=torch.bool, device=device)
         logits, *_ = model(text, aud, spk, pad)
         logit = logits[0, 0]
-        # arg-max restricted to the overlapping source classes
         best = keep_t[logit[keep_t].argmax()].item()
         preds.append(eval_id[idx_to_emodb[best]])
         gts.append(eval_id[emo])

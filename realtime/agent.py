@@ -67,21 +67,18 @@ def _emotion_tag(scores):
     emo = max(scores, key=scores.get)
     return f"emotion={emo} confidence={scores[emo]:.2f}"
 
-# Matches an emotion tag the model may have echoed back, e.g. "[emotion=sad confidence=0.70]".
 _TAG_RE = re.compile(r"\[\s*emotion=[^\]]*\]\s*", re.IGNORECASE)
 
 def _strip_tag(text):
     return _TAG_RE.sub("", text or "").strip()
 
 async def _strip_tag_stream(text):
-    """Remove any echoed emotion tag from the LLM text stream before it reaches TTS,
-    holding back only an unclosed '[...]' so a tag split across chunks is caught."""
     buf = ""
     async for chunk in text:
         buf += chunk
         idx = buf.rfind("[")
         if idx != -1 and "]" not in buf[idx:]:
-            out, buf = buf[:idx], buf[idx:]  # keep the open bracket until it closes
+            out, buf = buf[:idx], buf[idx:]
         else:
             out, buf = buf, ""
         if out:
@@ -131,8 +128,6 @@ class StudyAgent(Agent):
             raise StopResponse()
         scores = None
         if self.engine is not None:
-            # BERT + GAT inference is CPU-bound; keep it off the event loop so the
-            # LiveKit RTC transport (data channels) isn't starved mid-turn.
             scores = await asyncio.to_thread(self.engine.add_user_turn, text, wav)
             new_message.content = [f"[{_emotion_tag(scores)}] {text}"]
         self.user_turns += 1

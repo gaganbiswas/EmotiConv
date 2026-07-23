@@ -1,15 +1,3 @@
-"""Train and test the EmotionGAT entirely on EmoDB (in-corpus baseline).
-
-Fully self-contained (no imports from the IEMOCAP/MELD training scripts): the training
-helpers below are the same ones used across the project, inlined here so EmoDB mirrors
-the iemocap/ravdess package layout. Trains on EmoDB's own speaker-independent train
-split and evaluates on its held-out test speakers, for either the 4-class subset or the
-full 7-class taxonomy.
-
-Usage:
-    python train_incorpus.py --classes 4
-    python train_incorpus.py --classes 7
-"""
 from __future__ import annotations
 
 import argparse
@@ -254,7 +242,7 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--classes", type=int, choices=[4, 7], required=True)
     args = p.parse_args()
-    _ = names_for(args.classes)  # validate
+    _ = names_for(args.classes)
     run(args.classes)
 
 

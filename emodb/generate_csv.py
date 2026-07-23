@@ -1,12 +1,3 @@
-"""Build emodb.csv with English (machine-translated) transcripts and canonical
-7-class EmoDB emotion labels.
-
-The single CSV holds all seven EmoDB emotions; the in-corpus 4-class experiment is a
-filtered subset (neutral/happy/angry/sad) selected downstream in prepare_features.py,
-and the cross-corpus inference (inference.py) filters to whatever classes overlap with
-the source model. Transcripts are produced with Whisper in German->English translation
-mode so the (English) BERT text encoder can be reused unchanged.
-"""
 from __future__ import annotations
 
 import argparse
@@ -34,7 +25,6 @@ def build_dataframe(emodb_dir: Path) -> pd.DataFrame:
 
     df = emo.merge(files, on="file").merge(speakers, on="speaker", how="left")
 
-    # Keep all seven EmoDB emotions and map to the canonical short names.
     df = df[df["emotion"].isin(RAW_TO_EMO7)].reset_index(drop=True)
 
     df["uttr_id"] = df["file"].map(lambda p: Path(p).stem)

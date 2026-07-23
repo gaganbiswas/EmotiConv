@@ -1,14 +1,3 @@
-"""Extract in-corpus EmoDB features for the 4-class or 7-class experiment.
-
-Uses the identical (raw, un-normalised) BERT [CLS] + log-mel(+delta) pipeline as
-IEMOCAP, MELD and RAVDESS, inlined here so EmoDB is fully self-contained. EmoDB has no
-conversational structure, so each utterance is written as a single-node graph
-(speaker_idx = 0). The strict speaker-independent split from splits.py is applied.
-
-Usage:
-    python prepare_features.py --classes 4
-    python prepare_features.py --classes 7
-"""
 from __future__ import annotations
 
 import argparse

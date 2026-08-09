@@ -3,7 +3,7 @@ import asyncio
 import numpy as np
 import librosa
 from livekit import rtc
-from livekit.agents import stt, APIConnectOptions
+from livekit.agents import stt
 from faster_whisper import WhisperModel
 
 def _buffer_to_16k(buffer):

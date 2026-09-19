@@ -3,596 +3,609 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Conversation study</title>
+    <title>Emotion-aware conversation</title>
     <style>
       :root {
         color-scheme: light;
-        --bg: #ffffff;
-        --line: rgba(0, 0, 0, 0.1);
-        --ink: #16181d;
-        --muted: #5b6470;
-        --green: #22c55e;
-        --green-deep: #16a34a;
-        --green-soft: rgba(34, 197, 94, 0.3);
-        --grey: #d3d8df;
-        --grey-ink: rgba(0, 0, 0, 0.42);
-        --accent: #2f6fed;
+        --ink: #18201d;
+        --muted: #69746f;
+        --paper: #f4f0e8;
+        --panel: #fffdf8;
+        --line: #d8ddd4;
+        --teal: #0f766e;
+        --teal-dark: #115e59;
+        --coral: #df755e;
       }
       * {
         box-sizing: border-box;
       }
-      html,
       body {
-        height: 100%;
         margin: 0;
-      }
-      body {
-        font-family:
-          ui-sans-serif,
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          Roboto,
-          sans-serif;
+        height: 100vh;
+        overflow: hidden;
         color: var(--ink);
-        background: var(--bg);
-        -webkit-font-smoothing: antialiased;
+        background:
+          radial-gradient(circle at 8% 8%, #e5eee5 0 18%, transparent 42%),
+          var(--paper);
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
       }
-      :focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 4px;
-        border-radius: 8px;
+      main {
+        width: min(1180px, calc(100% - 40px));
+        height: 100vh;
+        margin: auto;
+        padding: 42px 0 56px;
+        overflow: hidden;
       }
-
-      .screen {
-        display: none;
-        position: fixed;
-        inset: 0;
-      }
-      .screen.active {
+      header {
         display: flex;
-      }
-      .centered {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 26px;
-        text-align: center;
-        padding: 32px;
-      }
-
-      .lead {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        font-weight: 650;
-        margin: 0;
-        letter-spacing: -0.01em;
-      }
-      .sub {
-        font-size: 1rem;
-        line-height: 1.55;
-        color: var(--muted);
-        margin: 0;
-        max-width: 34ch;
+        align-items: end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 28px;
       }
       .eyebrow {
-        font-size: 0.72rem;
-        font-weight: 600;
+        margin: 0 0 8px;
+        color: var(--coral);
+        font:
+          700 0.72rem/1 "Courier New",
+          monospace;
         letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--accent);
+      }
+      h1 {
         margin: 0;
+        font:
+          500 clamp(2.2rem, 5vw, 4.5rem)/0.98 Georgia,
+          serif;
       }
-
-      .form-screen {
-        flex-direction: column;
+      .status {
+        color: var(--muted);
+        font-size: 0.9rem;
       }
-      .formbar {
-        flex: 0 0 auto;
-        padding: 18px 24px;
-        text-align: center;
-        border-bottom: 1px solid var(--line);
-        background: #f6f7f9;
+      .workspace {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        height: calc(100% - 104px);
+        min-height: 0;
+        gap: 18px;
       }
-      .formbar .eyebrow {
-        margin-bottom: 4px;
+      .panel {
+        background: color-mix(in srgb, var(--panel) 92%, transparent);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 18px 50px #24433a18;
       }
-      .formbar p {
-        margin: 0;
-        font-size: 1.02rem;
-        font-weight: 550;
+      .controls {
+        padding: 22px;
+        align-self: start;
       }
-      .form-screen iframe {
-        flex: 1 1 auto;
+      h2 {
+        margin: 0 0 20px;
+        font:
+          600 1.15rem Georgia,
+          serif;
+      }
+      label {
+        display: block;
+        margin: 17px 0 7px;
+        color: var(--muted);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      select,
+      input {
         width: 100%;
-        border: 0;
+        border: 1px solid var(--line);
+        border-radius: 5px;
         background: #fff;
+        color: var(--ink);
+        padding: 11px 12px;
+        font: inherit;
       }
-
-      #screen-session {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        padding: 32px;
+      select:disabled {
+        color: var(--muted);
+        background: #f0f2ed;
+      }
+      .choice {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+      }
+      .choice input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .choice label {
+        margin: 0;
+        padding: 11px 8px;
+        border: 1px solid var(--line);
+        border-radius: 5px;
         text-align: center;
+        cursor: pointer;
+        text-transform: none;
+        letter-spacing: 0;
       }
-
-      .stage {
+      .choice input:checked + label {
+        border-color: var(--teal);
+        color: var(--teal-dark);
+        background: #e2efeb;
+      }
+      .choice input:disabled + label {
+        cursor: default;
+        opacity: 0.6;
+      }
+      .conversation {
+        min-height: 0;
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto auto;
+        overflow: hidden;
+      }
+      .conversation-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 22px;
+        border-bottom: 1px solid var(--line);
+      }
+      .conversation-head h2 {
+        margin: 0;
+      }
+      #messages {
+        min-height: 0;
+        overflow: auto;
+        padding: 24px;
         display: flex;
         flex-direction: column;
+        gap: 12px;
+      }
+      .message {
+        max-width: min(78%, 620px);
+        padding: 12px 15px;
+        border-radius: 8px;
+        line-height: 1.45;
+        white-space: pre-wrap;
+      }
+      .message.user {
+        align-self: flex-end;
+        color: #fff;
+        background: var(--teal);
+        border-bottom-right-radius: 2px;
+      }
+      .message.assistant {
+        align-self: flex-start;
+        background: #e8eee6;
+        border-bottom-left-radius: 2px;
+      }
+      .emotion-message {
+        align-self: flex-start;
+        margin-left: 15px;
+        color: #7b827e;
+        font-size: 0.78rem;
+        font-style: italic;
+      }
+      .empty {
+        margin: auto;
+        max-width: 28ch;
+        color: var(--muted);
+        text-align: center;
+        line-height: 1.5;
+      }
+      #chat-form {
+        display: flex;
+        gap: 10px;
+        padding: 16px 18px;
+        border-top: 1px solid var(--line);
+        background: #fbfaf5;
+      }
+      #chat-input {
+        flex: 1;
+      }
+      #send {
+        padding: 0 18px;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        background: var(--coral);
+        cursor: pointer;
+      }
+      #send:disabled {
+        cursor: default;
+        opacity: 0.5;
+      }
+      #save {
+        width: 100%;
+        margin-top: 24px;
+        padding: 12px;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        background: var(--teal);
+        cursor: pointer;
+      }
+      #save:disabled {
+        cursor: default;
+        opacity: 0.5;
+      }
+      .talk-row {
+        display: flex;
         align-items: center;
-        gap: 34px;
+        justify-content: center;
+        gap: 14px;
+        padding: 14px 20px 20px;
+        border-top: 1px solid var(--line);
       }
       #ptt {
-        width: 92px;
-        height: 92px;
+        width: 52px;
+        height: 52px;
+        border: 0;
         border-radius: 50%;
-        border: none;
+        color: #fff;
+        background: var(--teal);
+        box-shadow: 0 0 0 5px #0f766e20;
         cursor: pointer;
-        display: grid;
-        place-items: center;
-        background: var(--green);
-        box-shadow:
-          0 0 0 4px var(--green-soft),
-          0 8px 22px rgba(0, 0, 0, 0.14);
-        transition:
-          background 0.2s ease,
-          box-shadow 0.2s ease,
-          transform 0.12s ease;
       }
-      #ptt svg {
-        width: 34px;
-        height: 34px;
-        fill: none;
-        stroke: #fff;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-      #ptt .check {
-        display: none;
-      }
-
-      .stage[data-state="ready"] #ptt {
-        background: var(--green);
-        box-shadow:
-          0 0 0 5px var(--green-soft),
-          0 0 0 1.5px rgba(255, 255, 255, 0.7) inset,
-          0 8px 24px rgba(34, 197, 94, 0.3);
-        animation: breathe 3.2s ease-in-out infinite;
-      }
-      .stage[data-state="ready"] #ptt:hover {
-        transform: translateY(-2px);
-      }
-      .stage[data-state="live"] #ptt {
-        background: var(--green-deep);
-        transform: scale(1.06);
-        box-shadow:
-          0 0 0 9px var(--green-soft),
-          0 8px 24px rgba(34, 197, 94, 0.38);
-      }
-      .stage[data-state="idle"] #ptt,
-      .stage[data-state="thinking"] #ptt,
-      .stage[data-state="speaking"] #ptt,
-      .stage[data-state="ended"] #ptt {
-        background: var(--grey);
-        box-shadow:
-          0 0 0 4px rgba(0, 0, 0, 0.06),
-          0 8px 20px rgba(0, 0, 0, 0.1);
-      }
-      .stage[data-state="idle"] #ptt svg,
-      .stage[data-state="thinking"] #ptt svg,
-      .stage[data-state="speaking"] #ptt svg {
-        stroke: var(--grey-ink);
-      }
-      .stage[data-state="ended"] #ptt .mic {
-        display: none;
-      }
-      .stage[data-state="ended"] #ptt .check {
-        display: block;
-        stroke: var(--grey-ink);
+      #ptt[data-talking="true"] {
+        background: var(--coral);
+        box-shadow: 0 0 0 7px #df755e35;
       }
       #ptt:disabled {
         cursor: default;
+        opacity: 0.5;
       }
-      @keyframes breathe {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.03);
-        }
-      }
-
-      #status {
-        font-size: 1.25rem;
-        font-weight: 600;
-        min-height: 1.4em;
-        letter-spacing: -0.01em;
-      }
-      .instruct {
-        font-size: 0.9rem;
+      #talk-status {
         color: var(--muted);
-        max-width: 32ch;
-        line-height: 1.5;
-        min-height: 1.4em;
+        font-size: 0.84rem;
       }
-
-      .btn {
-        padding: 15px 36px;
-        font-size: 1rem;
-        font-weight: 600;
-        border: none;
-        border-radius: 12px;
-        color: #fff;
-        cursor: pointer;
-        background: var(--green);
-        box-shadow: 0 12px 36px var(--green-soft);
-        transition:
-          transform 0.12s ease,
-          opacity 0.2s ease;
-      }
-      .btn:hover:not(:disabled) {
-        transform: translateY(-2px);
-      }
-      .btn:disabled {
-        opacity: 0.55;
-        cursor: default;
-      }
-
-      [hidden] {
-        display: none !important;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation: none !important;
+      @media (max-width: 760px) {
+        main {
+          width: min(100% - 24px, 600px);
+          height: 100dvh;
+          padding-top: 24px;
+          padding-bottom: 24px;
+        }
+        header {
+          display: block;
+        }
+        .status {
+          margin-top: 12px;
+        }
+        .workspace {
+          grid-template-columns: 1fr;
+          height: calc(100% - 128px);
+          grid-template-rows: auto minmax(0, 1fr);
+          overflow: hidden;
+        }
+        .controls {
+          max-height: 210px;
+          overflow: auto;
+        }
+        .conversation {
+          min-height: 0;
         }
       }
     </style>
   </head>
   <body>
-    <section id="screen-welcome" class="screen centered">
-      <p class="eyebrow">Conversation study</p>
-      <p class="lead">Welcome, and thank you for taking part</p>
-      <p class="sub">
-        Please wait here. The researcher will start the study in a moment.
-      </p>
-    </section>
-
-    <section id="screen-demographic" class="screen form-screen">
-      <div class="formbar">
-        <p class="eyebrow">Step 1</p>
-        <p>A few quick questions before we begin</p>
+    <main>
+      <header>
+        <div>
+          <h1>EmotiConv</h1>
+        </div>
+        <div class="status" id="status">Connecting...</div>
+      </header>
+      <div class="workspace">
+        <aside class="panel controls">
+          <h2>Conversation setup</h2>
+          <label>Agent style</label>
+          <div class="choice">
+            <input
+              id="empathetic"
+              name="condition"
+              value="empathetic"
+              type="radio"
+              checked
+            /><label for="empathetic">Empathetic</label
+            ><input
+              id="control"
+              name="condition"
+              value="control"
+              type="radio"
+            /><label for="control">Neutral</label>
+          </div>
+          <label for="llm">Language model</label
+          ><select id="llm"></select>
+          <label for="tts">Voice model</label
+          ><select id="tts"></select>
+          <label for="stt">Speech recognition</label
+          ><select id="stt"></select>
+          <button id="save" disabled>Save and restart</button>
+        </aside>
+        <section class="panel conversation" aria-live="polite">
+          <div class="conversation-head">
+            <h2>Conversation</h2>
+          </div>
+          <div id="messages">
+            <div class="empty" id="empty">
+              Your messages and the companion's replies will appear here.
+            </div>
+          </div>
+          <form id="chat-form">
+            <input
+              id="chat-input"
+              autocomplete="off"
+              placeholder="Write a message..."
+              disabled
+            /><button id="send" disabled>Send</button>
+          </form>
+          <div class="talk-row">
+            <button
+              id="ptt"
+              data-talking="false"
+              disabled
+              aria-label="Hold to speak"
+            >
+              ●</button
+            ><span id="talk-status">Connecting...</span>
+          </div>
+        </section>
       </div>
-      <iframe
-        id="demoFrame"
-        title="Background questionnaire"
-        allow="fullscreen"
-      ></iframe>
-    </section>
-
-    <section id="screen-session" class="screen">
-      <div class="stage" id="stage" data-state="idle">
-        <button id="ptt" hidden aria-label="Hold to speak">
-          <svg class="mic" viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="9" y="2.5" width="6" height="11" rx="3" />
-            <path d="M5 11a7 7 0 0 0 14 0" />
-            <line x1="12" y1="18" x2="12" y2="21.5" />
-            <line x1="8.5" y1="21.5" x2="15.5" y2="21.5" />
-          </svg>
-          <svg class="check" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 13l4 4 10-11" />
-          </svg>
-        </button>
-      </div>
-
-      <div id="status">Ready when you are</div>
-      <p class="instruct" id="instruct">
-        When the button turns green, press and hold it — or hold the spacebar —
-        while you talk, then let go.
-      </p>
-      <button id="start" class="btn">Start the conversation</button>
-      <audio id="agentAudio" autoplay></audio>
-    </section>
-
-    <section id="screen-survey" class="screen form-screen">
-      <div class="formbar">
-        <p class="eyebrow">After the conversation</p>
-        <p>Please tell us how that conversation felt</p>
-      </div>
-      <iframe
-        id="surveyFrame"
-        title="Post-conversation survey"
-        allow="fullscreen"
-      ></iframe>
-    </section>
-
-    <section id="screen-survey_b" class="screen form-screen">
-      <div class="formbar">
-        <p class="eyebrow">After the conversation</p>
-        <p>Please tell us how that conversation felt</p>
-      </div>
-      <iframe
-        id="surveyBFrame"
-        title="Post-conversation survey"
-        allow="fullscreen"
-      ></iframe>
-    </section>
-
-    <section id="screen-thanks" class="screen centered">
-      <p class="eyebrow">All done</p>
-      <p class="lead">Thank you</p>
-      <p class="sub">
-        That's the end of the study. We really appreciate your time and your
-        answers.
-      </p>
-    </section>
-
+      <audio id="agent-audio" autoplay></audio>
+    </main>
     <script type="module">
       import {
         Room,
         RoomEvent,
         ParticipantKind,
       } from "https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.esm.mjs";
-
-      const screens = {
-        welcome: document.getElementById("screen-welcome"),
-        demographic: document.getElementById("screen-demographic"),
-        session: document.getElementById("screen-session"),
-        survey: document.getElementById("screen-survey"),
-        survey_b: document.getElementById("screen-survey_b"),
-        thanks: document.getElementById("screen-thanks"),
-      };
-      const demoFrame = document.getElementById("demoFrame");
-      const surveyFrame = document.getElementById("surveyFrame");
-      const surveyBFrame = document.getElementById("surveyBFrame");
-
-      function showScreen(page) {
-        for (const [name, el] of Object.entries(screens))
-          el.classList.toggle("active", name === page);
-      }
-      function setFrame(frame, url) {
-        const target = url || "about:blank";
-        if (frame.getAttribute("src") !== target)
-          frame.setAttribute("src", target);
-      }
-
-      const statusEl = document.getElementById("status");
-      const instructEl = document.getElementById("instruct");
-      const startBtn = document.getElementById("start");
-      const ptt = document.getElementById("ptt");
-      const stage = document.getElementById("stage");
-      const agentAudio = document.getElementById("agentAudio");
-
-      const setStatus = (t) => {
-        statusEl.textContent = t;
-      };
-      const setInstruct = (t) => {
-        instructEl.textContent = t;
-      };
-      const setStage = (s) => {
-        stage.dataset.state = s;
-      };
-
+      const ids = [
+        "llm",
+        "tts",
+        "stt",
+        "save",
+        "status",
+        "messages",
+        "empty",
+        "chat-form",
+        "chat-input",
+        "send",
+        "ptt",
+        "talk-status",
+        "agent-audio",
+      ];
+      const els = Object.fromEntries(
+        ids.map((id) => [id, document.getElementById(id)]),
+      );
       const voice = {
         room: null,
         agentId: null,
-        roomName: null,
         talking: false,
-        ended: false,
-        agentReady: false,
+        started: false,
+        connecting: false,
+        restart: 0,
       };
-
-      function resetSessionUI() {
-        voice.talking = false;
-        voice.ended = false;
-        voice.agentReady = false;
-        voice.agentId = null;
-        startBtn.hidden = false;
-        startBtn.disabled = false;
-        ptt.hidden = true;
-        ptt.disabled = true;
-        setStage("idle");
-        setStatus("Ready when you are");
-        setInstruct(
-          "When the button turns green, press and hold it — or hold the spacebar — while you talk, then let go.",
+      const isAgent = (p) =>
+        p.kind === ParticipantKind.AGENT ||
+        p.isAgent ||
+        (p.identity || "").startsWith("agent");
+      const addMessage = (role, text) => {
+        els.empty.hidden = true;
+        const item = document.createElement("div");
+        item.className = `message ${role}`;
+        item.textContent = text;
+        els.messages.append(item);
+        els.messages.scrollTop = els.messages.scrollHeight;
+      };
+      const addEmotionMessage = (label) => {
+        const item = document.createElement("div");
+        item.className = "emotion-message";
+        item.textContent = `Detected emotion: ${label}`;
+        els.messages.append(item);
+        els.messages.scrollTop = els.messages.scrollHeight;
+      };
+      const setOptions = (select, values) =>
+        select.replaceChildren(
+          ...values.map((value) => {
+            const option = document.createElement("option");
+            option.value = value;
+            option.textContent =
+              value === "whisper-local" ? "Whisper (local)" : value;
+            return option;
+          }),
         );
+      async function loadModels() {
+        const response = await fetch("/models");
+        const models = await response.json();
+        setOptions(els.llm, models.llm);
+        setOptions(els.tts, models.tts);
+        setOptions(els.stt, models.stt);
       }
-
-      async function teardownVoice() {
+      function handleData(payload, topic) {
+        const text = new TextDecoder().decode(payload);
+        if (topic === "chat") {
+          try {
+            const message = JSON.parse(text);
+            addMessage(message.role, message.text);
+          } catch (_) {}
+        }
+        if (topic === "emotion") {
+          try {
+            const label = JSON.parse(text).label;
+            addEmotionMessage(label);
+          } catch (_) {}
+        }
+        if (topic === "agent_state" && text === "listening")
+          els["talk-status"].textContent = "Hold the button to speak.";
+        if (topic === "notice" && text === "no_speech")
+          els["talk-status"].textContent = "No speech detected. Try again.";
+      }
+      async function rpc(method, payload = "") {
+        const deadline = Date.now() + 10000;
+        while (!voice.agentId && voice.room && Date.now() < deadline) {
+          await new Promise((resolve) => setTimeout(resolve, 50));
+        }
+        if (!voice.agentId || !voice.room)
+          throw new Error("The companion is still connecting.");
+        await voice.room.localParticipant.performRpc({
+          destinationIdentity: voice.agentId,
+          method,
+          payload,
+        });
+      }
+      function selectedConfig() {
+        return {
+          condition: document.querySelector('input[name="condition"]:checked')
+            .value,
+          llm_model: els.llm.value,
+          tts_model: els.tts.value,
+          stt_model: els.stt.value,
+        };
+      }
+      function resetConversation() {
+        els.messages.replaceChildren(els.empty);
+        els.empty.hidden = false;
+        els["chat-input"].disabled = true;
+        els.send.disabled = true;
+        els.ptt.disabled = true;
+        els["talk-status"].textContent = "Connecting...";
+      }
+      async function disconnect() {
         if (voice.room) {
           try {
             await voice.room.disconnect();
-          } catch (e) {}
+          } catch (_) {}
         }
         voice.room = null;
-        voice.roomName = null;
+        voice.agentId = null;
+        voice.talking = false;
+        voice.started = false;
       }
-
-      function isAgent(p) {
-        return (
-          p.kind === ParticipantKind.AGENT ||
-          p.isAgent ||
-          (p.identity || "").startsWith("agent")
+      async function connect() {
+        const attempt = ++voice.restart;
+        voice.connecting = true;
+        await disconnect();
+        resetConversation();
+        els.status.textContent = "Connecting...";
+        const config = {
+          ...selectedConfig(),
+        };
+        const setup = await fetch("/control/session", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(config),
+        });
+        if (!setup.ok) throw new Error("configuration rejected");
+        if (attempt !== voice.restart) return;
+        const tokenResponse = await fetch("/token");
+        if (!tokenResponse.ok) throw new Error("session unavailable");
+        const { url, token } = await tokenResponse.json();
+        if (attempt !== voice.restart) return;
+        voice.room = new Room();
+        voice.room.on(RoomEvent.TrackSubscribed, (track) => {
+          if (track.kind === "audio") track.attach(els["agent-audio"]);
+        });
+        voice.room.on(RoomEvent.ParticipantConnected, (p) => {
+          if (isAgent(p)) voice.agentId = p.identity;
+        });
+        voice.room.on(
+          RoomEvent.DataReceived,
+          (payload, _participant, _kind, topic) => handleData(payload, topic),
         );
+        await voice.room.connect(url, token);
+        await voice.room.localParticipant.setMicrophoneEnabled(true);
+        for (const p of voice.room.remoteParticipants.values())
+          if (isAgent(p)) voice.agentId = p.identity;
+        voice.started = true;
+        els["chat-input"].disabled = false;
+        els.send.disabled = false;
+        els.ptt.disabled = false;
+        els.status.textContent = "Connected. Say hello or type below.";
+        els["talk-status"].textContent = "Waiting for the companion...";
+        voice.connecting = false;
       }
-
-      function applyAgentState(state) {
-        if (voice.ended) return;
-        voice.agentReady = state === "listening" || state === "idle";
-        if (voice.talking) return;
-        if (voice.agentReady) {
-          ptt.disabled = false;
-          setStage("ready");
-          setStatus("Your turn");
-          setInstruct(
-            "Press and hold the button (or the spacebar) and speak. Let go when you finish.",
-          );
-        } else {
-          ptt.disabled = true;
-          setStage(state === "thinking" ? "thinking" : "speaking");
-          setStatus(
-            state === "thinking" ? "One moment…" : "Companion is speaking",
-          );
-          setInstruct(
-            state === "thinking"
-              ? "Preparing a reply."
-              : "Please listen, then it will be your turn.",
-          );
-        }
-      }
-
-      function noSpeech() {
-        if (voice.ended || voice.talking) return;
-        setStatus("Sorry, I didn’t catch that");
-        setInstruct(
-          "Hold the button (or the spacebar) and speak clearly, then let go.",
-        );
-        voice.agentReady = true;
-        ptt.disabled = false;
-        setStage("ready");
-      }
-
-      function sessionComplete() {
-        if (voice.ended) return;
-        voice.ended = true;
-        ptt.disabled = true;
-        setStage("ended");
-        setStatus("Conversation complete");
-        setInstruct(
-          "Thank you. Please wait — the researcher will continue shortly.",
-        );
-      }
-
-      startBtn.onclick = async () => {
-        startBtn.disabled = true;
-        setStatus("Connecting…");
-        setInstruct("Please allow microphone access if asked.");
-        let url, token;
+      els["chat-form"].onsubmit = async (event) => {
+        event.preventDefault();
+        const message = els["chat-input"].value.trim();
+        if (!message || !voice.started) return;
+        els.send.disabled = true;
+        els["chat-input"].value = "";
         try {
-          const res = await fetch("/token");
-          if (!res.ok) throw new Error("no session");
-          ({ url, token } = await res.json());
-        } catch (e) {
-          setStatus("Not quite ready");
-          setInstruct("Please wait for the researcher.");
-          startBtn.disabled = false;
-          return;
+          await rpc("chat_message", message);
+        } catch (error) {
+          els["chat-input"].value = message;
+          els.status.textContent = error.message;
+        } finally {
+          els.send.disabled = false;
         }
-
-        const room = new Room();
-        voice.room = room;
-        room.on(RoomEvent.TrackSubscribed, (track) => {
-          if (track.kind === "audio") track.attach(agentAudio);
-        });
-        room.on(RoomEvent.ParticipantConnected, (p) => {
-          if (isAgent(p)) voice.agentId = p.identity;
-        });
-        room.on(RoomEvent.DataReceived, (payload, _p, _k, topic) => {
-          const msg = new TextDecoder().decode(payload);
-          if (topic === "agent_state") applyAgentState(msg);
-          else if (topic === "notice") {
-            if (msg === "no_speech") noSpeech();
-          } else if (msg === "session_ended") sessionComplete();
-        });
-        room.on(RoomEvent.Disconnected, () => {
-          if (!voice.ended) sessionComplete();
-        });
-
-        await room.connect(url, token);
-        await room.localParticipant.setMicrophoneEnabled(true);
-        for (const p of room.remoteParticipants.values())
-          if (isAgent(p)) voice.agentId = p.identity;
-
-        startBtn.hidden = true;
-        ptt.hidden = false;
-        ptt.disabled = true;
-        setStage("idle");
-        setStatus("Getting ready…");
-        setInstruct("Your companion will say hello in a moment.");
       };
-
-      async function rpc(method) {
-        if (!voice.agentId || !voice.room) return;
-        try {
-          await voice.room.localParticipant.performRpc({
-            destinationIdentity: voice.agentId,
-            method,
-            payload: "",
-          });
-        } catch (e) {}
-      }
-
       async function startTalk() {
-        if (voice.talking || voice.ended || ptt.disabled || !voice.agentReady)
-          return;
+        if (!voice.started || voice.talking || els.ptt.disabled) return;
         voice.talking = true;
-        setStage("live");
-        setStatus("Listening");
-        setInstruct("Keep holding while you talk. Let go when you finish.");
+        els.ptt.dataset.talking = "true";
+        els["talk-status"].textContent = "Listening...";
         await rpc("start_turn");
       }
       async function stopTalk() {
         if (!voice.talking) return;
         voice.talking = false;
-        voice.agentReady = false;
-        ptt.disabled = true;
-        setStage("thinking");
-        setStatus("One moment…");
-        setInstruct("Preparing a reply.");
+        els.ptt.dataset.talking = "false";
+        els["talk-status"].textContent = "Preparing a reply...";
         await rpc("end_turn");
       }
-
-      const onSession = () => screens.session.classList.contains("active");
-      ptt.addEventListener("mousedown", startTalk);
-      ptt.addEventListener("touchstart", (e) => {
-        e.preventDefault();
+      els.ptt.onmousedown = startTalk;
+      window.onmouseup = stopTalk;
+      els.ptt.ontouchstart = (event) => {
+        event.preventDefault();
         startTalk();
-      });
-      window.addEventListener("mouseup", stopTalk);
-      ptt.addEventListener("touchend", (e) => {
-        e.preventDefault();
+      };
+      els.ptt.ontouchend = (event) => {
+        event.preventDefault();
         stopTalk();
-      });
-      window.addEventListener("keydown", (e) => {
-        if (e.code === "Space" && !e.repeat && onSession()) {
-          e.preventDefault();
+      };
+      window.onkeydown = (event) => {
+        if (
+          event.code === "Space" &&
+          !event.repeat &&
+          document.activeElement !== els["chat-input"]
+        ) {
+          event.preventDefault();
           startTalk();
         }
-      });
-      window.addEventListener("keyup", (e) => {
-        if (e.code === "Space" && onSession()) {
-          e.preventDefault();
+      };
+      window.onkeyup = (event) => {
+        if (
+          event.code === "Space" &&
+          document.activeElement !== els["chat-input"]
+        ) {
+          event.preventDefault();
           stopTalk();
         }
-      });
-
-      let state = {};
-      function handle(s) {
-        const prev = state;
-        state = s;
-        if (s.page === "demographic") setFrame(demoFrame, s.demographic_url);
-        if (s.page === "survey") setFrame(surveyFrame, s.survey_url);
-        if (s.page === "survey_b") setFrame(surveyBFrame, s.survey_b_url);
-        if (s.page === "session") {
-          if (s.room !== voice.roomName) {
-            teardownVoice().then(() => {
-              voice.roomName = s.room;
-              resetSessionUI();
-            });
-          }
-        } else if (prev.page === "session") {
-          teardownVoice();
-        }
-        showScreen(s.page);
-      }
-      const es = new EventSource("/events");
-      es.onmessage = (e) => {
-        try {
-          handle(JSON.parse(e.data));
-        } catch (err) {}
       };
+      async function restartSession() {
+        els.save.disabled = true;
+        try {
+          await connect();
+        } catch (error) {
+          voice.connecting = false;
+          els.status.textContent = error.message || "Unable to connect.";
+          els["talk-status"].textContent = "Connection unavailable.";
+        } finally {
+          els.save.disabled = false;
+        }
+      }
+      els.save.addEventListener("click", restartSession);
+      loadModels()
+        .then(() => {
+          els.save.disabled = false;
+          return restartSession();
+        })
+        .catch((error) => {
+          els.status.textContent = error.message || "Unable to connect.";
+          els["talk-status"].textContent = "Connection unavailable.";
+        });
     </script>
   </body>
 </html>

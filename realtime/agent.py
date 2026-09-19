@@ -1,5 +1,7 @@
 import asyncio
+import base64
 import datetime
+import json
 import os
 import re
 from pathlib import Path
@@ -19,14 +21,13 @@ from prompt import (
     INSTRUCTIONS_CONTROL, INSTRUCTIONS_EMPATHETIC,
 )
 from stt_faster_whisper import FasterWhisperSTT
+from model_options import validate_models
 
 load_dotenv(".env.local")
 load_dotenv(".env")
 
 HERE = Path(__file__).resolve().parent
 LOG_PATH = HERE / "log.txt"
-MAX_USER_TURNS = 7
-
 _engine: EmotionEngine | None = None
 
 def get_engine() -> EmotionEngine:
@@ -35,11 +36,17 @@ def get_engine() -> EmotionEngine:
         _engine = EmotionEngine()
     return _engine
 
-def parse_room(name: str) -> tuple[str, int]:
+def parse_room(name: str) -> tuple[str, int, dict]:
     parts = (name or "").split("-")
     condition = "control" if len(parts) > 1 and parts[1] == "ctl" else "empathetic"
     session_no = next((int(p) for p in parts if p.isdigit()), 0)
-    return condition, session_no
+    try:
+        encoded = name.rsplit(".", 1)[-1]
+        encoded += "=" * (-len(encoded) % 4)
+        models = validate_models(json.loads(base64.urlsafe_b64decode(encoded)))
+    except (ValueError, json.JSONDecodeError, TypeError):
+        models = validate_models({})
+    return condition, session_no, models
 
 MIN_SPEECH_SEC = 0.25
 MIN_SPEECH_RMS = 0.005
@@ -103,6 +110,7 @@ class StudyAgent(Agent):
         self.ending = False
         self._pending = None
         self.notify = None
+        self.publish = None
 
     async def stt_node(self, audio, model_settings):
         async def tee():
@@ -113,7 +121,19 @@ class StudyAgent(Agent):
             yield ev
 
     async def tts_node(self, text, model_settings):
-        async for frame in Agent.default.tts_node(self, _strip_tag_stream(text), model_settings):
+        chunks = []
+        async for chunk in text:
+            chunks.append(chunk)
+        response = _strip_tag("".join(chunks))
+        if response and self.publish is not None:
+            await self.publish(
+                "chat", json.dumps({"role": "assistant", "text": response})
+            )
+
+        async def response_stream():
+            yield response
+
+        async for frame in Agent.default.tts_node(self, response_stream(), model_settings):
             yield frame
 
     async def on_user_turn_completed(self, turn_ctx, new_message):
@@ -124,12 +144,18 @@ class StudyAgent(Agent):
             if self.notify is not None:
                 await self.notify("no_speech")
             raise StopResponse()
+        if self.publish is not None:
+            await self.publish(
+                "chat", json.dumps({"role": "user", "text": text})
+            )
         scores = None
         if self.engine is not None:
             scores = await asyncio.to_thread(self.engine.add_user_turn, text, wav)
             new_message.content = [f"[{_emotion_tag(scores)}] {text}"]
         self.user_turns += 1
         self._pending = {"turn": self.user_turns, "user": text, "scores": scores}
+        if self.publish is not None and scores:
+            await self.publish("emotion", json.dumps({"label": max(scores, key=scores.get), "scores": scores}))
 
 server = AgentServer()
 
@@ -137,22 +163,27 @@ server = AgentServer()
 async def entrypoint(ctx: agents.JobContext):
     await ctx.connect()
 
-    condition, session_no = parse_room(ctx.room.name)
+    condition, session_no, models = parse_room(ctx.room.name)
+    engine = get_engine()
+    engine.reset()
     if condition == "empathetic":
-        engine = get_engine()
-        engine.reset()
         instructions, greeting = INSTRUCTIONS_EMPATHETIC, GREETING_EMPATHETIC
     else:
-        engine = None
         instructions, greeting = INSTRUCTIONS_CONTROL, GREETING_CONTROL
 
     agent = StudyAgent(instructions, engine, condition, session_no)
 
+    if models["stt_model"] == "whisper-local":
+        selected_stt = stt_lib.StreamAdapter(
+            stt=FasterWhisperSTT(model=os.getenv("WHISPER_MODEL", "small.en")),
+            vad=silero.VAD.load(),
+        )
+    else:
+        selected_stt = inference.STT(model=models["stt_model"], language="en")
     session = AgentSession(
-        stt=stt_lib.StreamAdapter(stt=FasterWhisperSTT(model=os.getenv("WHISPER_MODEL", "small.en")),
-                                  vad=silero.VAD.load()),
-        llm=inference.LLM(model=os.getenv("LLM_MODEL", "google/gemini-2.5-flash")),
-        tts=inference.TTS(model=os.getenv("TTS_MODEL", "cartesia/sonic-3"), language="en", voice="9626c31c-bec5-4cca-baa8-f8ba9e84c8bc"),
+        stt=selected_stt,
+        llm=inference.LLM(model=models["llm_model"]),
+        tts=inference.TTS(model=models["tts_model"], language="en", voice="9626c31c-bec5-4cca-baa8-f8ba9e84c8bc"),
         turn_detection="manual",
     )
 
@@ -180,19 +211,18 @@ async def entrypoint(ctx: agents.JobContext):
             pass
 
     agent.notify = lambda msg: publish("notice", msg)
+    agent.publish = publish
 
     @session.on("conversation_item_added")
     def _on_item(ev):
         item = ev.item
-        if getattr(item, "role", None) != "assistant" or not agent._pending:
+        if getattr(item, "role", None) != "assistant":
             return
-        p = agent._pending
-        agent._pending = None
-        _write_log(agent.condition, agent.session_no, p["turn"], p["user"], p["scores"],
-                   item.text_content or "")
-        asyncio.create_task(publish("progress", f"{agent.user_turns}/{MAX_USER_TURNS}"))
-        if agent.user_turns >= MAX_USER_TURNS:
-            agent.ending = True
+        text = item.text_content or ""
+        if agent._pending:
+            p = agent._pending
+            agent._pending = None
+            _write_log(agent.condition, agent.session_no, p["turn"], p["user"], p["scores"], text)
 
     @session.on("agent_state_changed")
     def _on_state(ev):
@@ -216,6 +246,21 @@ async def entrypoint(ctx: agents.JobContext):
     async def end_turn(data: rtc.RpcInvocationData):
         session.input.set_audio_enabled(False)
         await session.commit_user_turn(transcript_timeout=10.0)
+        return "ok"
+
+    @ctx.room.local_participant.register_rpc_method("chat_message")
+    async def chat_message(data: rtc.RpcInvocationData):
+        message = data.payload.strip()
+        if not message:
+            return "empty"
+        await publish("chat", json.dumps({"role": "user", "text": message}))
+        scores = await asyncio.to_thread(
+            agent.engine.add_user_turn, message, np.zeros(0, dtype=np.float32)
+        )
+        await publish("emotion", json.dumps({"label": max(scores, key=scores.get), "scores": scores}))
+        await session.generate_reply(
+            user_input=f"[{_emotion_tag(scores)}] {message}", input_modality="text"
+        )
         return "ok"
 
     await session.start(agent=agent, room=ctx.room)

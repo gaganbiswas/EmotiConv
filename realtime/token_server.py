@@ -1,4 +1,5 @@
 import asyncio
+import base64
 import json
 import os
 import uuid
@@ -8,6 +9,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from livekit import api
+from model_options import LLM_MODELS, STT_MODELS, TTS_MODELS, validate_models
 
 load_dotenv(".env.local")
 load_dotenv(".env")
@@ -15,35 +17,16 @@ load_dotenv(".env")
 HERE = Path(__file__).resolve().parent
 CONFIG_PATH = HERE / "study_config.json"
 
-COND_CODE = {"empathetic": "emp", "control": "ctl"}
-PAGES = {"welcome", "demographic", "session", "survey", "survey_b", "thanks"}
-
-def _load_config() -> dict:
-    if CONFIG_PATH.exists():
-        try:
-            return json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
-        except Exception:
-            pass
-    return {"demographic_url": "", "survey_url": "", "survey_b_url": ""}
-
-def _embed(url: str) -> str:
-    if not url or "embed" in url:
-        return url
-    return f"{url}{'&' if '?' in url else '?'}embed=true"
-
 class Study:
 
     def __init__(self):
-        cfg = _load_config()
-        self.demographic_url = _embed(cfg.get("demographic_url", ""))
-        self.survey_url = _embed(cfg.get("survey_url", ""))
-        self.survey_b_url = _embed(cfg.get("survey_b_url", ""))
-        self.page = "welcome"
-        self.condition: str | None = None
+        self.page = "session"
+        self.condition = "empathetic"
         self.session_no = 0
         self.room: str | None = None
         self.rev = 0
         self.subscribers: set[asyncio.Queue] = set()
+        self.models = validate_models({})
 
     def snapshot(self) -> dict:
         return {
@@ -51,9 +34,7 @@ class Study:
             "condition": self.condition,
             "session_no": self.session_no,
             "room": self.room,
-            "demographic_url": self.demographic_url,
-            "survey_url": self.survey_url,
-            "survey_b_url": self.survey_b_url,
+            **self.models,
             "rev": self.rev,
         }
 
@@ -67,10 +48,18 @@ class Study:
         self.page = page
         await self._broadcast()
 
-    async def start_session(self, condition: str):
+    async def start_session(self, config: dict):
+        condition = config.get("condition", "empathetic")
+        if condition not in {"empathetic", "control"}:
+            raise ValueError("condition must be 'empathetic' or 'control'")
         self.condition = condition
+        self.models = validate_models(config)
         self.session_no += 1
-        self.room = f"study-{COND_CODE[condition]}-{self.session_no}-{uuid.uuid4().hex[:6]}"
+        payload = base64.urlsafe_b64encode(
+            json.dumps(self.models, separators=(",", ":")).encode()
+        ).decode().rstrip("=")
+        code = "emp" if condition == "empathetic" else "ctl"
+        self.room = f"study-{code}-{self.session_no}-{uuid.uuid4().hex[:6]}.{payload}"
         self.page = "session"
         await self._broadcast()
 
@@ -84,6 +73,10 @@ def index():
 @app.get("/state")
 def state():
     return JSONResponse(study.snapshot())
+
+@app.get("/models")
+def models():
+    return JSONResponse({"llm": LLM_MODELS, "tts": TTS_MODELS, "stt": STT_MODELS})
 
 @app.get("/events")
 async def events(request: Request):
@@ -128,18 +121,17 @@ def token():
 @app.post("/control/page")
 async def control_page(body: dict):
     page = body.get("page", "welcome")
-    if page not in PAGES:
+    if page != "session":
         return JSONResponse({"error": f"unknown page {page!r}"}, status_code=400)
     await study.set_page(page)
     return study.snapshot()
 
 @app.post("/control/session")
 async def control_session(body: dict):
-    cond = body.get("condition")
-    if cond not in COND_CODE:
-        return JSONResponse({"error": "condition must be 'empathetic' or 'control'"},
-                            status_code=400)
-    await study.start_session(cond)
+    try:
+        await study.start_session(body)
+    except ValueError as exc:
+        return JSONResponse({"error": str(exc)}, status_code=400)
     return study.snapshot()
 
 if __name__ == "__main__":

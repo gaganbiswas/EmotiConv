@@ -194,6 +194,10 @@ async def entrypoint(ctx: agents.JobContext):
         turn_detection="manual",
     )
 
+    async def cleanup_session():
+        agent.engine = None
+        await asyncio.to_thread(_release_room, ctx.room.name, lease)
+
     async def end_session():
         try:
             await ctx.room.local_participant.publish_data(b"session_ended", reliable=True, topic="status")
@@ -240,6 +244,10 @@ async def entrypoint(ctx: agents.JobContext):
         else:
             asyncio.create_task(publish_state(state))
 
+    @session.on("close")
+    def _on_close(_event):
+        asyncio.create_task(cleanup_session())
+
     @ctx.room.local_participant.register_rpc_method("start_turn")
     async def start_turn(data: rtc.RpcInvocationData):
         session.interrupt()
@@ -274,10 +282,9 @@ async def entrypoint(ctx: agents.JobContext):
         await session.start(agent=agent, room=ctx.room)
         session.input.set_audio_enabled(False)
         await session.generate_reply(instructions=greeting)
-    finally:
-        agent.engine = None
-        del engine
-        await asyncio.to_thread(_release_room, ctx.room.name, lease)
+    except Exception:
+        await cleanup_session()
+        raise
 
 if __name__ == "__main__":
     agents.cli.run_app(server)

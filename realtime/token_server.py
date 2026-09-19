@@ -6,7 +6,7 @@ import uuid
 from pathlib import Path
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from livekit import api
 from model_options import LLM_MODELS, STT_MODELS, TTS_MODELS, validate_models
@@ -27,6 +27,7 @@ class Study:
         self.rev = 0
         self.subscribers: set[asyncio.Queue] = set()
         self.models = validate_models({})
+        self.lease: str | None = None
 
     def snapshot(self) -> dict:
         return {
@@ -34,6 +35,7 @@ class Study:
             "condition": self.condition,
             "session_no": self.session_no,
             "room": self.room,
+            "busy": self.lease is not None,
             **self.models,
             "rev": self.rev,
         }
@@ -48,20 +50,32 @@ class Study:
         self.page = page
         await self._broadcast()
 
-    async def start_session(self, config: dict):
+    async def start_session(self, config: dict, lease: str | None):
+        if self.lease is not None and self.lease != lease:
+            raise RuntimeError("max user limit reached")
         condition = config.get("condition", "empathetic")
         if condition not in {"empathetic", "control"}:
             raise ValueError("condition must be 'empathetic' or 'control'")
         self.condition = condition
         self.models = validate_models(config)
         self.session_no += 1
+        self.lease = lease or uuid.uuid4().hex
+        room_config = {**self.models, "lease": self.lease}
         payload = base64.urlsafe_b64encode(
-            json.dumps(self.models, separators=(",", ":")).encode()
+            json.dumps(room_config, separators=(",", ":")).encode()
         ).decode().rstrip("=")
         code = "emp" if condition == "empathetic" else "ctl"
         self.room = f"study-{code}-{self.session_no}-{uuid.uuid4().hex[:6]}.{payload}"
         self.page = "session"
         await self._broadcast()
+
+    async def end_session(self, room: str | None, lease: str | None):
+        if self.lease is None or self.lease != lease or self.room != room:
+            return False
+        self.lease = None
+        self.room = None
+        await self._broadcast()
+        return True
 
 study = Study()
 app = FastAPI()
@@ -127,12 +141,22 @@ async def control_page(body: dict):
     return study.snapshot()
 
 @app.post("/control/session")
-async def control_session(body: dict):
+async def control_session(body: dict, request: Request, response: Response):
     try:
-        await study.start_session(body)
+        lease = request.cookies.get("study_lease")
+        await study.start_session(body, lease)
+        response.set_cookie("study_lease", study.lease, httponly=True, samesite="lax")
+    except RuntimeError as exc:
+        return JSONResponse({"error": str(exc)}, status_code=409)
     except ValueError as exc:
         return JSONResponse({"error": str(exc)}, status_code=400)
     return study.snapshot()
+
+@app.post("/control/session/end")
+async def control_session_end(body: dict, request: Request):
+    lease = request.cookies.get("study_lease") or body.get("lease")
+    await study.end_session(body.get("room"), lease)
+    return {"ok": True}
 
 if __name__ == "__main__":
     import uvicorn

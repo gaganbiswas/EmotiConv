@@ -483,6 +483,15 @@
         voice.talking = false;
         voice.started = false;
       }
+      function releaseSession() {
+        if (!voice.room) return;
+        navigator.sendBeacon(
+          "/control/session/end",
+          new Blob([JSON.stringify({ room: voice.room.name })], {
+            type: "application/json",
+          }),
+        );
+      }
       async function connect() {
         const attempt = ++voice.restart;
         voice.connecting = true;
@@ -497,7 +506,13 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(config),
         });
-        if (!setup.ok) throw new Error("configuration rejected");
+        if (!setup.ok) {
+          let error = "configuration rejected";
+          try {
+            error = (await setup.json()).error || error;
+          } catch (_) {}
+          throw new Error(error);
+        }
         if (attempt !== voice.restart) return;
         const tokenResponse = await fetch("/token");
         if (!tokenResponse.ok) throw new Error("session unavailable");
@@ -597,6 +612,7 @@
         }
       }
       els.save.addEventListener("click", restartSession);
+      window.addEventListener("pagehide", releaseSession);
       loadModels()
         .then(() => {
           els.save.disabled = false;

@@ -21,8 +21,8 @@ STT_MODELS = [
 def validate_models(config: dict) -> dict:
     values = {
         "llm_model": config.get("llm_model", LLM_MODELS[0]),
-        "tts_model": config.get("tts_model", TTS_MODELS[0]),
-        "stt_model": config.get("stt_model", STT_MODELS[0]),
+        "tts_model": config.get("tts_model", "cartesia/sonic-2"),
+        "stt_model": config.get("stt_model", "whisper-local"),
     }
     if values["llm_model"] not in LLM_MODELS:
         raise ValueError("Unsupported LLM model")

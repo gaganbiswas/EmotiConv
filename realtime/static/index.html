@@ -386,6 +386,7 @@
         started: false,
         connecting: false,
         restart: 0,
+        roomName: null,
       };
       const isAgent = (p) =>
         p.kind === ParticipantKind.AGENT ||
@@ -504,11 +505,24 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(config),
         });
-        if (!setup.ok) throw new Error("configuration rejected");
+        if (!setup.ok) {
+          if (setup.status === 409) {
+            window.location.assign("/max-user-limit");
+            return;
+          }
+          throw new Error("configuration rejected");
+        }
         if (attempt !== voice.restart) return;
         const tokenResponse = await fetch("/token");
-        if (!tokenResponse.ok) throw new Error("session unavailable");
-        const { url, token } = await tokenResponse.json();
+        if (!tokenResponse.ok) {
+          if (tokenResponse.status === 409) {
+            window.location.assign("/max-user-limit");
+            return;
+          }
+          throw new Error("session unavailable");
+        }
+        const { url, token, room } = await tokenResponse.json();
+        voice.roomName = room;
         if (attempt !== voice.restart) return;
         voice.room = new Room();
         voice.room.on(RoomEvent.TrackSubscribed, (track) => {
@@ -604,6 +618,15 @@
         }
       }
       els.save.addEventListener("click", restartSession);
+      window.addEventListener("pagehide", () => {
+        if (!voice.roomName) return;
+        navigator.sendBeacon(
+          "/control/session/end",
+          new Blob([JSON.stringify({ room: voice.roomName })], {
+            type: "application/json",
+          }),
+        );
+      });
       loadModels()
         .then(() => {
           els.save.disabled = false;

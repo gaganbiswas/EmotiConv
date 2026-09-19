@@ -406,22 +406,29 @@
         els.messages.append(item);
         els.messages.scrollTop = els.messages.scrollHeight;
       };
-      const setOptions = (select, values) =>
+      const modelLabels = {
+        "google/gemini-2.5-flash": "Gemini 2.5 Flash",
+        "cartesia/sonic-2": "Sonic 2",
+        "cartesia/sonic-3": "Sonic 3",
+        "whisper-local": "Whisper (local)",
+      };
+      const setOptions = (select, values, defaultValue) => {
         select.replaceChildren(
           ...values.map((value) => {
             const option = document.createElement("option");
             option.value = value;
-            option.textContent =
-              value === "whisper-local" ? "Whisper (local)" : value;
+            option.textContent = modelLabels[value] || value;
             return option;
           }),
         );
+        select.value = values.includes(defaultValue) ? defaultValue : values[0];
+      };
       async function loadModels() {
         const response = await fetch("/models");
         const models = await response.json();
-        setOptions(els.llm, models.llm);
-        setOptions(els.tts, models.tts);
-        setOptions(els.stt, models.stt);
+        setOptions(els.llm, models.llm, "google/gemini-2.5-flash");
+        setOptions(els.tts, models.tts, "cartesia/sonic-2");
+        setOptions(els.stt, models.stt, "whisper-local");
       }
       function handleData(payload, topic) {
         const text = new TextDecoder().decode(payload);

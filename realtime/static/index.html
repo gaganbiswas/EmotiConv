@@ -406,23 +406,22 @@
         els.messages.append(item);
         els.messages.scrollTop = els.messages.scrollHeight;
       };
-      const setOptions = (select, values, defaultValue) =>
+      const setOptions = (select, values) =>
         select.replaceChildren(
           ...values.map((value) => {
             const option = document.createElement("option");
             option.value = value;
             option.textContent =
               value === "whisper-local" ? "Whisper (local)" : value;
-            option.selected = value === defaultValue;
             return option;
           }),
         );
       async function loadModels() {
         const response = await fetch("/models");
         const models = await response.json();
-        setOptions(els.llm, models.llm, "google/gemini-2.5-flash");
-        setOptions(els.tts, models.tts, "cartesia/sonic-2");
-        setOptions(els.stt, models.stt, "whisper-local");
+        setOptions(els.llm, models.llm);
+        setOptions(els.tts, models.tts);
+        setOptions(els.stt, models.stt);
       }
       function handleData(payload, topic) {
         const text = new TextDecoder().decode(payload);
@@ -484,15 +483,6 @@
         voice.talking = false;
         voice.started = false;
       }
-      function releaseSession() {
-        if (!voice.room) return;
-        navigator.sendBeacon(
-          "/control/session/end",
-          new Blob([JSON.stringify({ room: voice.room.name })], {
-            type: "application/json",
-          }),
-        );
-      }
       async function connect() {
         const attempt = ++voice.restart;
         voice.connecting = true;
@@ -507,13 +497,7 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(config),
         });
-        if (!setup.ok) {
-          let error = "configuration rejected";
-          try {
-            error = (await setup.json()).error || error;
-          } catch (_) {}
-          throw new Error(error);
-        }
+        if (!setup.ok) throw new Error("configuration rejected");
         if (attempt !== voice.restart) return;
         const tokenResponse = await fetch("/token");
         if (!tokenResponse.ok) throw new Error("session unavailable");
@@ -613,7 +597,6 @@
         }
       }
       els.save.addEventListener("click", restartSession);
-      window.addEventListener("pagehide", releaseSession);
       loadModels()
         .then(() => {
           els.save.disabled = false;

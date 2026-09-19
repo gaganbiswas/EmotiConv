@@ -4,7 +4,6 @@ import datetime
 import json
 import os
 import re
-import urllib.request
 from pathlib import Path
 
 import numpy as np
@@ -29,20 +28,25 @@ load_dotenv(".env")
 
 HERE = Path(__file__).resolve().parent
 LOG_PATH = HERE / "log.txt"
-def parse_room(name: str) -> tuple[str, int, dict, str | None]:
+_engine: EmotionEngine | None = None
+
+def get_engine() -> EmotionEngine:
+    global _engine
+    if _engine is None:
+        _engine = EmotionEngine()
+    return _engine
+
+def parse_room(name: str) -> tuple[str, int, dict]:
     parts = (name or "").split("-")
     condition = "control" if len(parts) > 1 and parts[1] == "ctl" else "empathetic"
     session_no = next((int(p) for p in parts if p.isdigit()), 0)
     try:
         encoded = name.rsplit(".", 1)[-1]
         encoded += "=" * (-len(encoded) % 4)
-        room_config = json.loads(base64.urlsafe_b64decode(encoded))
-        lease = room_config.pop("lease", None)
-        models = validate_models(room_config)
+        models = validate_models(json.loads(base64.urlsafe_b64decode(encoded)))
     except (ValueError, json.JSONDecodeError, TypeError):
         models = validate_models({})
-        lease = None
-    return condition, session_no, models, lease
+    return condition, session_no, models
 
 MIN_SPEECH_SEC = 0.25
 MIN_SPEECH_RMS = 0.005
@@ -94,18 +98,6 @@ def _write_log(condition, session_no, turn, user_text, scores, response):
             f"user: {user_text!r} | {emo} | assistant: {_strip_tag(response)!r}\n")
     with LOG_PATH.open("a", encoding="utf-8") as f:
         f.write(line)
-
-def _release_room(room: str, lease: str | None):
-    request = urllib.request.Request(
-        "http://127.0.0.1:8000/control/session/end",
-        data=json.dumps({"room": room, "lease": lease}).encode(),
-        headers={"Content-Type": "application/json"},
-        method="POST",
-    )
-    try:
-        urllib.request.urlopen(request, timeout=5).close()
-    except Exception:
-        pass
 
 class StudyAgent(Agent):
     def __init__(self, instructions, engine, condition, session_no):
@@ -171,8 +163,9 @@ server = AgentServer()
 async def entrypoint(ctx: agents.JobContext):
     await ctx.connect()
 
-    condition, session_no, models, lease = parse_room(ctx.room.name)
-    engine = EmotionEngine()
+    condition, session_no, models = parse_room(ctx.room.name)
+    engine = get_engine()
+    engine.reset()
     if condition == "empathetic":
         instructions, greeting = INSTRUCTIONS_EMPATHETIC, GREETING_EMPATHETIC
     else:
@@ -193,10 +186,6 @@ async def entrypoint(ctx: agents.JobContext):
         tts=inference.TTS(model=models["tts_model"], language="en", voice="9626c31c-bec5-4cca-baa8-f8ba9e84c8bc"),
         turn_detection="manual",
     )
-
-    async def cleanup_session():
-        agent.engine = None
-        await asyncio.to_thread(_release_room, ctx.room.name, lease)
 
     async def end_session():
         try:
@@ -244,10 +233,6 @@ async def entrypoint(ctx: agents.JobContext):
         else:
             asyncio.create_task(publish_state(state))
 
-    @session.on("close")
-    def _on_close(_event):
-        asyncio.create_task(cleanup_session())
-
     @ctx.room.local_participant.register_rpc_method("start_turn")
     async def start_turn(data: rtc.RpcInvocationData):
         session.interrupt()
@@ -278,13 +263,9 @@ async def entrypoint(ctx: agents.JobContext):
         )
         return "ok"
 
-    try:
-        await session.start(agent=agent, room=ctx.room)
-        session.input.set_audio_enabled(False)
-        await session.generate_reply(instructions=greeting)
-    except Exception:
-        await cleanup_session()
-        raise
+    await session.start(agent=agent, room=ctx.room)
+    session.input.set_audio_enabled(False)
+    await session.generate_reply(instructions=greeting)
 
 if __name__ == "__main__":
     agents.cli.run_app(server)

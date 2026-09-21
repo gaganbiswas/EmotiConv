@@ -1,4 +1,3 @@
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -7,11 +6,10 @@ import librosa
 from transformers import AutoTokenizer, AutoModel
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "iemocap"))
 from model import EmotionGAT
 
 EMOTIONS = ["neutral", "happy", "angry", "sad"]
-DEFAULT_CKPT = ROOT / "iemocap" / "model_4class" / "best.pt"
+DEFAULT_CKPT = ROOT / "realtime" / "best.pt"
 
 class EmotionEngine:
     def __init__(self, ckpt_path=DEFAULT_CKPT, device=None):

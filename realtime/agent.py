@@ -16,10 +16,7 @@ from livekit.agents import (
 from livekit.plugins import silero
 
 from emotion_engine import EmotionEngine
-from prompt import (
-    GREETING_CONTROL, GREETING_EMPATHETIC,
-    INSTRUCTIONS_CONTROL, INSTRUCTIONS_EMPATHETIC,
-)
+from prompt import INSTRUCTIONS_EMPATHETIC
 from stt_faster_whisper import FasterWhisperSTT
 from model_options import validate_models
 
@@ -38,7 +35,6 @@ def get_engine() -> EmotionEngine:
 
 def parse_room(name: str) -> tuple[str, int, dict]:
     parts = (name or "").split("-")
-    condition = "control" if len(parts) > 1 and parts[1] == "ctl" else "empathetic"
     session_no = next((int(p) for p in parts if p.isdigit()), 0)
     try:
         encoded = name.rsplit(".", 1)[-1]
@@ -46,7 +42,7 @@ def parse_room(name: str) -> tuple[str, int, dict]:
         models = validate_models(json.loads(base64.urlsafe_b64decode(encoded)))
     except (ValueError, json.JSONDecodeError, TypeError):
         models = validate_models({})
-    return condition, session_no, models
+    return "empathetic", session_no, models
 
 MIN_SPEECH_SEC = 0.25
 MIN_SPEECH_RMS = 0.005
@@ -166,10 +162,7 @@ async def entrypoint(ctx: agents.JobContext):
     condition, session_no, models = parse_room(ctx.room.name)
     engine = get_engine()
     engine.reset()
-    if condition == "empathetic":
-        instructions, greeting = INSTRUCTIONS_EMPATHETIC, GREETING_EMPATHETIC
-    else:
-        instructions, greeting = INSTRUCTIONS_CONTROL, GREETING_CONTROL
+    instructions = INSTRUCTIONS_EMPATHETIC
 
     agent = StudyAgent(instructions, engine, condition, session_no)
 
@@ -248,24 +241,8 @@ async def entrypoint(ctx: agents.JobContext):
         await session.commit_user_turn(transcript_timeout=10.0)
         return "ok"
 
-    @ctx.room.local_participant.register_rpc_method("chat_message")
-    async def chat_message(data: rtc.RpcInvocationData):
-        message = data.payload.strip()
-        if not message:
-            return "empty"
-        await publish("chat", json.dumps({"role": "user", "text": message}))
-        scores = await asyncio.to_thread(
-            agent.engine.add_user_turn, message, np.zeros(0, dtype=np.float32)
-        )
-        await publish("emotion", json.dumps({"label": max(scores, key=scores.get), "scores": scores}))
-        await session.generate_reply(
-            user_input=f"[{_emotion_tag(scores)}] {message}", input_modality="text"
-        )
-        return "ok"
-
     await session.start(agent=agent, room=ctx.room)
     session.input.set_audio_enabled(False)
-    await session.generate_reply(instructions=greeting)
 
 if __name__ == "__main__":
     agents.cli.run_app(server)

@@ -59,8 +59,23 @@
           serif;
       }
       .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         color: var(--muted);
         font-size: 0.9rem;
+      }
+      .connection-dot {
+        width: 9px;
+        height: 9px;
+        flex: 0 0 9px;
+        border-radius: 50%;
+        background: var(--coral);
+        box-shadow: 0 0 0 3px #df755e24;
+      }
+      .status.connected .connection-dot {
+        background: #2f9e5b;
+        box-shadow: 0 0 0 3px #2f9e5b24;
       }
       .workspace {
         display: grid;
@@ -107,35 +122,6 @@
       select:disabled {
         color: var(--muted);
         background: #f0f2ed;
-      }
-      .choice {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 7px;
-      }
-      .choice input {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-      }
-      .choice label {
-        margin: 0;
-        padding: 11px 8px;
-        border: 1px solid var(--line);
-        border-radius: 5px;
-        text-align: center;
-        cursor: pointer;
-        text-transform: none;
-        letter-spacing: 0;
-      }
-      .choice input:checked + label {
-        border-color: var(--teal);
-        color: var(--teal-dark);
-        background: #e2efeb;
-      }
-      .choice input:disabled + label {
-        cursor: default;
-        opacity: 0.6;
       }
       .conversation {
         min-height: 0;
@@ -194,28 +180,6 @@
         text-align: center;
         line-height: 1.5;
       }
-      #chat-form {
-        display: flex;
-        gap: 10px;
-        padding: 16px 18px;
-        border-top: 1px solid var(--line);
-        background: #fbfaf5;
-      }
-      #chat-input {
-        flex: 1;
-      }
-      #send {
-        padding: 0 18px;
-        border: 0;
-        border-radius: 5px;
-        color: #fff;
-        background: var(--coral);
-        cursor: pointer;
-      }
-      #send:disabled {
-        cursor: default;
-        opacity: 0.5;
-      }
       #save {
         width: 100%;
         margin-top: 24px;
@@ -247,6 +211,11 @@
         background: var(--teal);
         box-shadow: 0 0 0 5px #0f766e20;
         cursor: pointer;
+      }
+      #ptt svg {
+        width: 22px;
+        height: 22px;
+        vertical-align: middle;
       }
       #ptt[data-talking="true"] {
         background: var(--coral);
@@ -295,27 +264,14 @@
         <div>
           <h1>EmotiConv</h1>
         </div>
-        <div class="status" id="status">Connecting...</div>
+        <div class="status" id="status">
+          <span class="connection-dot" aria-hidden="true"></span>
+          <span id="status-text">Connecting...</span>
+        </div>
       </header>
       <div class="workspace">
         <aside class="panel controls">
           <h2>Conversation setup</h2>
-          <label>Agent style</label>
-          <div class="choice">
-            <input
-              id="empathetic"
-              name="condition"
-              value="empathetic"
-              type="radio"
-              checked
-            /><label for="empathetic">Empathetic</label
-            ><input
-              id="control"
-              name="condition"
-              value="control"
-              type="radio"
-            /><label for="control">Neutral</label>
-          </div>
           <label for="llm">Language model</label
           ><select id="llm"></select>
           <label for="tts">Voice model</label
@@ -330,25 +286,31 @@
           </div>
           <div id="messages">
             <div class="empty" id="empty">
-              Your messages and the companion's replies will appear here.
+              Your messages and the agent's replies will appear here.
             </div>
           </div>
-          <form id="chat-form">
-            <input
-              id="chat-input"
-              autocomplete="off"
-              placeholder="Write a message..."
-              disabled
-            /><button id="send" disabled>Send</button>
-          </form>
           <div class="talk-row">
             <button
               id="ptt"
               data-talking="false"
               disabled
-              aria-label="Hold to speak"
+              aria-label="Hold the button or space to speak"
             >
-              ●</button
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="9" y="2" width="6" height="12" rx="3" />
+                <path d="M5 10a7 7 0 0 0 14 0" />
+                <line x1="12" y1="19" x2="12" y2="22" />
+                <line x1="8" y1="22" x2="16" y2="22" />
+              </svg></button
             ><span id="talk-status">Connecting...</span>
           </div>
         </section>
@@ -367,11 +329,9 @@
         "stt",
         "save",
         "status",
+        "status-text",
         "messages",
         "empty",
-        "chat-form",
-        "chat-input",
-        "send",
         "ptt",
         "talk-status",
         "agent-audio",
@@ -379,6 +339,10 @@
       const els = Object.fromEntries(
         ids.map((id) => [id, document.getElementById(id)]),
       );
+      const setConnectionStatus = (text, connected = false) => {
+        els["status-text"].textContent = text;
+        els.status.classList.toggle("connected", connected);
+      };
       const voice = {
         room: null,
         agentId: null,
@@ -446,7 +410,7 @@
           } catch (_) {}
         }
         if (topic === "agent_state" && text === "listening")
-          els["talk-status"].textContent = "Hold the button to speak.";
+          els["talk-status"].textContent = "Hold the button or space to speak.";
         if (topic === "notice" && text === "no_speech")
           els["talk-status"].textContent = "No speech detected. Try again.";
       }
@@ -456,7 +420,7 @@
           await new Promise((resolve) => setTimeout(resolve, 50));
         }
         if (!voice.agentId || !voice.room)
-          throw new Error("The companion is still connecting.");
+          throw new Error("The agent is still connecting.");
         await voice.room.localParticipant.performRpc({
           destinationIdentity: voice.agentId,
           method,
@@ -465,8 +429,6 @@
       }
       function selectedConfig() {
         return {
-          condition: document.querySelector('input[name="condition"]:checked')
-            .value,
           llm_model: els.llm.value,
           tts_model: els.tts.value,
           stt_model: els.stt.value,
@@ -475,8 +437,6 @@
       function resetConversation() {
         els.messages.replaceChildren(els.empty);
         els.empty.hidden = false;
-        els["chat-input"].disabled = true;
-        els.send.disabled = true;
         els.ptt.disabled = true;
         els["talk-status"].textContent = "Connecting...";
       }
@@ -496,7 +456,7 @@
         voice.connecting = true;
         await disconnect();
         resetConversation();
-        els.status.textContent = "Connecting...";
+        setConnectionStatus("Connecting...");
         const config = {
           ...selectedConfig(),
         };
@@ -540,28 +500,14 @@
         for (const p of voice.room.remoteParticipants.values())
           if (isAgent(p)) voice.agentId = p.identity;
         voice.started = true;
-        els["chat-input"].disabled = false;
-        els.send.disabled = false;
         els.ptt.disabled = false;
-        els.status.textContent = "Connected. Say hello or type below.";
-        els["talk-status"].textContent = "Waiting for the companion...";
+        setConnectionStatus(
+          "Connected. Hold the button or space to speak.",
+          true,
+        );
+        els["talk-status"].textContent = "Waiting for the agent...";
         voice.connecting = false;
       }
-      els["chat-form"].onsubmit = async (event) => {
-        event.preventDefault();
-        const message = els["chat-input"].value.trim();
-        if (!message || !voice.started) return;
-        els.send.disabled = true;
-        els["chat-input"].value = "";
-        try {
-          await rpc("chat_message", message);
-        } catch (error) {
-          els["chat-input"].value = message;
-          els.status.textContent = error.message;
-        } finally {
-          els.send.disabled = false;
-        }
-      };
       async function startTalk() {
         if (!voice.started || voice.talking || els.ptt.disabled) return;
         voice.talking = true;
@@ -587,20 +533,13 @@
         stopTalk();
       };
       window.onkeydown = (event) => {
-        if (
-          event.code === "Space" &&
-          !event.repeat &&
-          document.activeElement !== els["chat-input"]
-        ) {
+        if (event.code === "Space" && !event.repeat) {
           event.preventDefault();
           startTalk();
         }
       };
       window.onkeyup = (event) => {
-        if (
-          event.code === "Space" &&
-          document.activeElement !== els["chat-input"]
-        ) {
+        if (event.code === "Space") {
           event.preventDefault();
           stopTalk();
         }
@@ -611,7 +550,7 @@
           await connect();
         } catch (error) {
           voice.connecting = false;
-          els.status.textContent = error.message || "Unable to connect.";
+          setConnectionStatus(error.message || "Unable to connect.");
           els["talk-status"].textContent = "Connection unavailable.";
         } finally {
           els.save.disabled = false;
@@ -633,7 +572,7 @@
           return restartSession();
         })
         .catch((error) => {
-          els.status.textContent = error.message || "Unable to connect.";
+          setConnectionStatus(error.message || "Unable to connect.");
           els["talk-status"].textContent = "Connection unavailable.";
         });
     </script>

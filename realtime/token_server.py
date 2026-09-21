@@ -54,18 +54,14 @@ class Study:
         lease = config.pop("_lease", None)
         if self.lease is not None and self.lease != lease:
             raise RuntimeError("max user limit reached")
-        condition = config.get("condition", "empathetic")
-        if condition not in {"empathetic", "control"}:
-            raise ValueError("condition must be 'empathetic' or 'control'")
-        self.condition = condition
+        self.condition = "empathetic"
         self.models = validate_models(config)
         self.session_no += 1
         self.lease = lease or uuid.uuid4().hex
         payload = base64.urlsafe_b64encode(
             json.dumps(self.models, separators=(",", ":")).encode()
         ).decode().rstrip("=")
-        code = "emp" if condition == "empathetic" else "ctl"
-        self.room = f"study-{code}-{self.session_no}-{uuid.uuid4().hex[:6]}.{payload}"
+        self.room = f"study-emp-{self.session_no}-{uuid.uuid4().hex[:6]}.{payload}"
         self.page = "session"
         await self._broadcast()
 

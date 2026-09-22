@@ -166,13 +166,6 @@
         background: #e8eee6;
         border-bottom-left-radius: 2px;
       }
-      .emotion-message {
-        align-self: flex-start;
-        margin-left: 15px;
-        color: #7b827e;
-        font-size: 0.78rem;
-        font-style: italic;
-      }
       .empty {
         margin: auto;
         max-width: 28ch;
@@ -364,13 +357,6 @@
         els.messages.append(item);
         els.messages.scrollTop = els.messages.scrollHeight;
       };
-      const addEmotionMessage = (label) => {
-        const item = document.createElement("div");
-        item.className = "emotion-message";
-        item.textContent = `Detected emotion: ${label}`;
-        els.messages.append(item);
-        els.messages.scrollTop = els.messages.scrollHeight;
-      };
       const modelLabels = {
         "google/gemini-2.5-flash": "Gemini 2.5 Flash",
         "cartesia/sonic-2": "Sonic 2",
@@ -401,12 +387,6 @@
           try {
             const message = JSON.parse(text);
             addMessage(message.role, message.text);
-          } catch (_) {}
-        }
-        if (topic === "emotion") {
-          try {
-            const label = JSON.parse(text).label;
-            addEmotionMessage(label);
           } catch (_) {}
         }
         if (topic === "agent_state" && text === "listening")

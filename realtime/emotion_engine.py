@@ -29,8 +29,8 @@ class EmotionEngine:
             p=arch.get("dropout", 0.1),
         ).to(self.device).eval()
         self.model.load_state_dict(ck["model"])
-        self.tok = AutoTokenizer.from_pretrained("bert-base-uncased")
-        self.bert = AutoModel.from_pretrained("bert-base-uncased").to(self.device).eval()
+        self.tok = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
+        self.bert = AutoModel.from_pretrained("distilbert/distilbert-base-uncased").to(self.device).eval()
         self.reset()
 
     def reset(self):

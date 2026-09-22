@@ -187,6 +187,27 @@
         cursor: default;
         opacity: 0.5;
       }
+      .emotion-toggle {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      .emotion-toggle input {
+        width: auto;
+        accent-color: var(--teal);
+      }
+      .detected-emotion {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
       .talk-row {
         display: flex;
         align-items: center;
@@ -271,6 +292,10 @@
           ><select id="tts"></select>
           <label for="stt">Speech recognition</label
           ><select id="stt"></select>
+          <label class="emotion-toggle" for="show-emotion">
+            <input id="show-emotion" type="checkbox" checked />
+            Show detected emotion
+          </label>
           <button id="save" disabled>Save and restart</button>
         </aside>
         <section class="panel conversation" aria-live="polite">
@@ -320,6 +345,7 @@
         "llm",
         "tts",
         "stt",
+        "show-emotion",
         "save",
         "status",
         "status-text",
@@ -344,6 +370,7 @@
         connecting: false,
         restart: 0,
         roomName: null,
+        latestUserMessage: null,
       };
       const isAgent = (p) =>
         p.kind === ParticipantKind.AGENT ||
@@ -356,6 +383,23 @@
         item.textContent = text;
         els.messages.append(item);
         els.messages.scrollTop = els.messages.scrollHeight;
+        return item;
+      };
+      const setEmotionVisibility = (visible) => {
+        document.querySelectorAll(".detected-emotion").forEach((item) => {
+          item.hidden = !visible;
+        });
+      };
+      const showEmotion = (label, confidence) => {
+        if (!voice.latestUserMessage) return;
+        let item = voice.latestUserMessage.querySelector(".detected-emotion");
+        if (!item) {
+          item = document.createElement("span");
+          item.className = "detected-emotion";
+          voice.latestUserMessage.append(item);
+        }
+        item.textContent = `Detected emotion: ${label} (${(confidence * 100).toFixed(0)}%)`;
+        item.hidden = !els["show-emotion"].checked;
       };
       const modelLabels = {
         "google/gemini-2.5-flash": "Gemini 2.5 Flash",
@@ -386,7 +430,14 @@
         if (topic === "chat") {
           try {
             const message = JSON.parse(text);
-            addMessage(message.role, message.text);
+            const item = addMessage(message.role, message.text);
+            if (message.role === "user") voice.latestUserMessage = item;
+          } catch (_) {}
+        }
+        if (topic === "emotion") {
+          try {
+            const emotion = JSON.parse(text);
+            showEmotion(emotion.label, emotion.scores[emotion.label]);
           } catch (_) {}
         }
         if (topic === "agent_state" && text === "listening")
@@ -417,6 +468,7 @@
       function resetConversation() {
         els.messages.replaceChildren(els.empty);
         els.empty.hidden = false;
+        voice.latestUserMessage = null;
         els.ptt.disabled = true;
         els["talk-status"].textContent = "Connecting...";
       }
@@ -551,6 +603,9 @@
         }
       }
       els.save.addEventListener("click", restartSession);
+      els["show-emotion"].addEventListener("change", (event) => {
+        setEmotionVisibility(event.target.checked);
+      });
       window.addEventListener("pagehide", () => {
         if (!voice.roomName) return;
         navigator.sendBeacon(

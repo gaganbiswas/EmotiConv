@@ -23,20 +23,19 @@ class Study:
         self.page = "session"
         self.condition = "empathetic"
         self.session_no = 0
-        self.room: str | None = None
         self.rev = 0
         self.subscribers: set[asyncio.Queue] = set()
-        self.models = validate_models({})
-        self.lease: str | None = None
+        self.sessions: dict[str, dict] = {}
 
-    def snapshot(self) -> dict:
+    def snapshot(self, lease: str | None = None) -> dict:
+        session = self.sessions.get(lease or "")
         return {
             "page": self.page,
             "condition": self.condition,
-            "session_no": self.session_no,
-            "room": self.room,
-            "busy": self.lease is not None,
-            **self.models,
+            "session_no": session["session_no"] if session else 0,
+            "room": session["room"] if session else None,
+            "busy": False,
+            **(session["models"] if session else validate_models({})),
             "rev": self.rev,
         }
 
@@ -52,24 +51,28 @@ class Study:
 
     async def start_session(self, config: dict):
         lease = config.pop("_lease", None)
-        if self.lease is not None and self.lease != lease:
-            raise RuntimeError("max user limit reached")
         self.condition = "empathetic"
-        self.models = validate_models(config)
+        models = validate_models(config)
         self.session_no += 1
-        self.lease = lease or uuid.uuid4().hex
+        lease = lease or uuid.uuid4().hex
         payload = base64.urlsafe_b64encode(
-            json.dumps(self.models, separators=(",", ":")).encode()
+            json.dumps(models, separators=(",", ":")).encode()
         ).decode().rstrip("=")
-        self.room = f"study-emp-{self.session_no}-{uuid.uuid4().hex[:6]}.{payload}"
+        room = f"study-emp-{self.session_no}-{uuid.uuid4().hex[:6]}.{payload}"
+        self.sessions[lease] = {
+            "session_no": self.session_no,
+            "room": room,
+            "models": models,
+        }
         self.page = "session"
         await self._broadcast()
+        return lease
 
     async def end_session(self, room: str | None, lease: str | None):
-        if self.room != room or self.lease != lease:
+        session = self.sessions.get(lease or "")
+        if not session or session["room"] != room:
             return False
-        self.room = None
-        self.lease = None
+        del self.sessions[lease]
         await self._broadcast()
         return True
 
@@ -79,22 +82,6 @@ app = FastAPI()
 @app.get("/")
 def index():
     return FileResponse(HERE / "static" / "index.html")
-
-@app.get("/max-user-limit", response_class=HTMLResponse)
-def max_user_limit():
-    return """
-    <!doctype html><html lang="en"><head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Maximum users reached</title>
-    <style>body{margin:0;min-height:100vh;display:grid;place-items:center;
-    font:16px system-ui,sans-serif;color:#24323a;background:#f7f3eb}
-    main{max-width:440px;margin:24px;padding:32px;text-align:center;
-    background:#fff;border:1px solid #ddd5c8;border-radius:8px}h1{margin-top:0}
-    p{color:#5c6870;line-height:1.5}</style></head><body><main>
-    <h1>Maximum user limit reached</h1>
-    <p>Someone is currently using the conversation. Please try again later.</p>
-    </main></body></html>
-    """
 
 @app.get("/state")
 def state():
@@ -130,11 +117,11 @@ async def events(request: Request):
 
 @app.get("/token")
 def token(request: Request):
-    if study.page != "session" or not study.room:
+    lease = request.cookies.get("study_lease")
+    session = study.sessions.get(lease or "")
+    if study.page != "session" or not session:
         return JSONResponse({"error": "no active session"}, status_code=409)
-    if request.cookies.get("study_lease") != study.lease:
-        return JSONResponse({"error": "max user limit reached"}, status_code=409)
-    room = study.room
+    room = session["room"]
     identity = f"user-{uuid.uuid4().hex[:6]}"
     jwt = (
         api.AccessToken(os.environ["LIVEKIT_API_KEY"], os.environ["LIVEKIT_API_SECRET"])
@@ -158,13 +145,13 @@ async def control_page(body: dict):
 async def control_session(body: dict, request: Request, response: Response):
     try:
         config = {**body, "_lease": request.cookies.get("study_lease")}
-        await study.start_session(config)
-        response.set_cookie("study_lease", study.lease, httponly=True, samesite="lax")
+        lease = await study.start_session(config)
+        response.set_cookie("study_lease", lease, httponly=True, samesite="lax")
     except RuntimeError as exc:
         return JSONResponse({"error": str(exc)}, status_code=409)
     except ValueError as exc:
         return JSONResponse({"error": str(exc)}, status_code=400)
-    return study.snapshot()
+    return study.snapshot(lease)
 
 @app.post("/control/session/end")
 async def control_session_end(body: dict, request: Request):

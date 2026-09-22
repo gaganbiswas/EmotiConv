@@ -466,19 +466,11 @@
           body: JSON.stringify(config),
         });
         if (!setup.ok) {
-          if (setup.status === 409) {
-            window.location.assign("/max-user-limit");
-            return;
-          }
           throw new Error("configuration rejected");
         }
         if (attempt !== voice.restart) return;
         const tokenResponse = await fetch("/token");
         if (!tokenResponse.ok) {
-          if (tokenResponse.status === 409) {
-            window.location.assign("/max-user-limit");
-            return;
-          }
           throw new Error("session unavailable");
         }
         const { url, token, room } = await tokenResponse.json();
@@ -489,7 +481,21 @@
           if (track.kind === "audio") track.attach(els["agent-audio"]);
         });
         voice.room.on(RoomEvent.ParticipantConnected, (p) => {
-          if (isAgent(p)) voice.agentId = p.identity;
+          if (isAgent(p)) {
+            voice.agentId = p.identity;
+            if (voice.started) els.ptt.disabled = false;
+            setConnectionStatus("Connected to room. Agent connected.", true);
+            els["talk-status"].textContent = "Waiting for the agent...";
+          }
+        });
+        voice.room.on(RoomEvent.ParticipantDisconnected, (p) => {
+          if (isAgent(p) && p.identity === voice.agentId) {
+            voice.agentId = null;
+            els.ptt.disabled = true;
+            setConnectionStatus("Connected to room. Waiting for agent", true);
+            els["talk-status"].textContent =
+              "Agent disconnected. Waiting to reconnect...";
+          }
         });
         voice.room.on(
           RoomEvent.DataReceived,
@@ -497,15 +503,23 @@
         );
         await voice.room.connect(url, token);
         await voice.room.localParticipant.setMicrophoneEnabled(true);
+        if (attempt !== voice.restart) {
+          await disconnect();
+          return;
+        }
         for (const p of voice.room.remoteParticipants.values())
           if (isAgent(p)) voice.agentId = p.identity;
         voice.started = true;
-        els.ptt.disabled = false;
+        els.ptt.disabled = !voice.agentId;
         setConnectionStatus(
-          "Connected. Hold the button or space to speak.",
+          voice.agentId
+            ? "Connected to room. Agent connected."
+            : "Connected to room. Waiting for agent",
           true,
         );
-        els["talk-status"].textContent = "Waiting for the agent...";
+        els["talk-status"].textContent = voice.agentId
+          ? "Waiting for the agent..."
+          : "Waiting for the agent to join...";
         voice.connecting = false;
       }
       async function startTalk() {

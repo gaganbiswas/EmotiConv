@@ -105,8 +105,8 @@ def main():
     p.add_argument("--sr", type=int, default=16000)
     args = p.parse_args()
 
-    tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
-    model = AutoModel.from_pretrained("distilbert-base-uncased").to(args.device).eval()
+    tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
+    model = AutoModel.from_pretrained("distilbert/distilbert-base-uncased").to(args.device).eval()
 
     for split in args.splits:
         csv_path = root / f"meld_{split}.csv"

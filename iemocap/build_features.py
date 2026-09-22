@@ -147,8 +147,8 @@ def main():
     args = p.parse_args()
     os.makedirs(args.out_dir, exist_ok=True)
 
-    tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
-    model = AutoModel.from_pretrained("bert-base-uncased").to(args.device).eval()
+    tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
+    model = AutoModel.from_pretrained("distilbert/distilbert-base-uncased").to(args.device).eval()
 
     build_features(args.csv_path, args.out_jsonl, tokenizer, model, args.device, sr=args.sr)
 

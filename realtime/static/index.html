@@ -148,21 +148,32 @@
         flex-direction: column;
         gap: 12px;
       }
-      .message {
+      .message-row {
         max-width: min(78%, 620px);
+        display: flex;
+        flex-direction: column;
+      }
+      .message-row.user {
+        align-self: flex-end;
+        align-items: flex-end;
+      }
+      .message-row.assistant {
+        align-self: flex-start;
+        align-items: flex-start;
+      }
+      .message {
+        max-width: 100%;
         padding: 12px 15px;
         border-radius: 8px;
         line-height: 1.45;
         white-space: pre-wrap;
       }
       .message.user {
-        align-self: flex-end;
         color: #fff;
         background: var(--teal);
         border-bottom-right-radius: 2px;
       }
       .message.assistant {
-        align-self: flex-start;
         background: #e8eee6;
         border-bottom-left-radius: 2px;
       }
@@ -202,11 +213,14 @@
       .detected-emotion {
         display: block;
         margin-top: 6px;
-        color: var(--muted);
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
+        padding: 0 2px;
+        color: #4f5753;
+        font-size: 0.68rem;
+        font-style: italic;
+        text-align: right;
+      }
+      .detected-emotion[hidden] {
+        display: none;
       }
       .talk-row {
         display: flex;
@@ -378,12 +392,15 @@
         (p.identity || "").startsWith("agent");
       const addMessage = (role, text) => {
         els.empty.hidden = true;
+        const row = document.createElement("div");
+        row.className = `message-row ${role}`;
         const item = document.createElement("div");
         item.className = `message ${role}`;
         item.textContent = text;
-        els.messages.append(item);
+        row.append(item);
+        els.messages.append(row);
         els.messages.scrollTop = els.messages.scrollHeight;
-        return item;
+        return row;
       };
       const setEmotionVisibility = (visible) => {
         document.querySelectorAll(".detected-emotion").forEach((item) => {
@@ -398,7 +415,7 @@
           item.className = "detected-emotion";
           voice.latestUserMessage.append(item);
         }
-        item.textContent = `Detected emotion: ${label} (${(confidence * 100).toFixed(0)}%)`;
+        item.textContent = `${label} (${(confidence * 100).toFixed(0)}%)`;
         item.hidden = !els["show-emotion"].checked;
       };
       const modelLabels = {
